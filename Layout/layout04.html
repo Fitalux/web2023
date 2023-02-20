@@ -4,89 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃4</title>
+    <title>레이아웃 4</title>
     <style>
         *{
             margin: 0;
             padding: 0;
         }
+        #wrap {
+            width: 100%;
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #E0F2F1;
+            margin: 0 auto;
+        }
+        #nav {
+            width: 100%;
+            height: 300px;
+            background-color: #80CBC4;
+            margin: 0 auto;
 
-    boby {
-        background-color: #000000;
-    }
-    #wrap {
-        width: 1200px;
-        height: 1080px;
-        margin: 0 auto;
-    }
-    #header {
-        width: 1200px;
-        height: 100px;
-        background-color: #111111;
-    }
-    #nav {
-        width: 1200px;
-        height: 100px;
-        background-color: #222222;
-    }
-    #side{
-        width: 400px;
-        height: 780px;
-        float: left;
-    }
-    #side1
-    {
-        width: 400px;
-        height: 390px;
-        background-color: #444444;
-        float: left;
-    }
-    #side2
-    {
-        width: 400px;
-        height: 390px;
-        background-color: #555555;
-        float: left;
-    }
-    #contents {
-        width: 800px;
-        height: 780px;
-        float: left;
-    }
-    #contents1
-    {
-        width: 800px;
-        height: 390px;
-        background-color: #777777;
-        float: left;
-    }
-    #contents2 {
-        width: 800px;
-        height: 390px;
-        background-color: #888888;
-        float: left;
-    }
-    #footer {
-        width: 1200px;
-        height: 100px;
-        background-color: #999999;
-        clear: both;
-    }
-        </style>
+        }
+        #section {
+            width: 100%;
+            height: 580px;
+            background-color: #26A69A;
+            margin: 0 auto;
+
+        }
+        #footrer {
+            width: 100%;
+            height: 100px;
+            background-color: #00796B;
+            margin: 0 auto;
+        }
+        #aside{
+           width: 600px;
+           height: 580px;
+           background-color: #000005;
+        }
+        .container {
+            width: 1200px;
+            height: inherit;
+            background-color: rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+         }
+    </style>
 </head>
 <body>
-    <div id="wrap">
-        <div id="header"></div>
-        <div id="nav"></div>
-        <div id="side">
-            <div id="side1"></div>
-            <div id="side2"></div>
+    <div>
+        <div id="wrap">
+            <div id="header">
+                <div class="container"></div>
+            </div>
+            <div id="nav">
+                <div class="container"></div>
+            </div>
+                <div id="section">
+                    <div class="container">
+                        <div class="aside"></div>
+                    </div>
+                </div>
+                <div id="footrer">
+                    <div class="container"></div>
+                </div>
         </div>
-        <div id="contents">
-            <div id="contents1"></div>
-            <div id="contents2"></div>
-        </div>
-        <div id="footer"></div>
     </div>
 </body>
 </html>

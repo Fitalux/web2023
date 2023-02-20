@@ -417,6 +417,7 @@ const obj = [
 console.log(obj [0].a);
 console.log(obj [0].b);
 console.log(obj [1].c);
+}
 </code></pre>
                 </div>
                 <div class="result">
@@ -434,14 +435,14 @@ console.log(obj [1].c);
 
             <div id="sample14" class="sample">
                 <h3>14. 객체 : 데이터 저장(키와 값) : 표현방법 6 : 객체 안의 배열</h3>
-                <p>b와 c 같이 객체 안에 배열이 존재하면 대괄호와 x,y를 사용하여 값을 불러와야 함.</p><br>
+                <p>b와 c 같이 객체 안에 배열이 존재하면 대괄호와 x,y를 사용하여 값을 불러와야 함.</p>
                 <p>단순히 b,c를 적으면 배열이 불러와지기 때문.</p>
                 <div class="script">
 <pre><code code class="language-js">{
 const obj = {
      a: 100,
      b: [200, 300],
-     c: {x:400, y: 500},
+     c: {x: 400, y: 500},
      d: "javascript"
  }
 
@@ -451,6 +452,7 @@ const obj = {
  console.log(obj.c.x);
  console.log(obj.c.y);
  console.log(obj.d);
+}
 </code></pre>
                 </div>
                 <div class="result">
@@ -471,7 +473,7 @@ const obj = {
 
             <div id="sample15" class="sample">
                 <h3>15. 객체 : 데이터 저장(키와 값) : 표현방법 7</h3>
-                <p>데이터 값에 변수를 저장시키는 형태.</p><br>
+                <p>데이터 값에 변수를 저장시키는 형태.</p>
                 <p>a 대신에 변수가 저장된 것. (키 값은 생략)</p>
                 <div class="script">
 <pre><code code class="language-js">{
@@ -484,6 +486,7 @@ const obj= {a, b, c};
 console.log(a);
 console.log(b);
 console.log(c);
+}
 </code></pre>
                 </div>
                 <div class="result">
@@ -500,12 +503,11 @@ console.log(c);
             <!-- //sample15 -->
             
             <div id="sample16" class="sample">
-                <h3>15. 객체 : 데이터 저장(키와 값) : 표현방법 8</h3>
-                <p>함수가 사용된 객체 표현 방법.</p><br>
-                <p></p>
+                <h3>16. 객체 : 데이터 저장(키와 값) : 표현방법 8</h3>
+                <p>함수가 사용된 객체 표현 방법.</p>
                 <div class="script">
 <pre><code code class="language-js">{
-cconst obj = {
+const obj = {
     a: 100,
     b: [200,300],
     c: "javascript",
@@ -521,6 +523,7 @@ console.log(obj.b[1]);
 console.log(obj.c);
 (X) console.log(obj.d);  - 실행문이기 때문에 console.log 작성 X.
 obj.d() 
+}
 </code></pre>
                 </div>
                 <div class="result">
@@ -538,8 +541,6 @@ obj.d()
             </div>
             <!-- //sample16 -->
            
-
-
         </div>
     </div>
 </main>
