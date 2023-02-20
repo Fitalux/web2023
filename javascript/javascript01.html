@@ -57,7 +57,8 @@
                  </ul>
             </div> 
             <div class="main__sample">
-                <div id="sample01" class="sample">
+
+            <div id="sample01" class="sample">
                 <h3>01. 변수 : 데이터 저장</h3>
                 <p>변수는 데이터를 저장하는 저장소입니다.</p>
                 <div class="script">
@@ -137,9 +138,14 @@
 </code></pre>
                 </div>
                 <div class="result">
-                    400<br>
-                    600<br>
-                    javascriptreact
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            400<br>
+                            600<br>
+                            javascriptreact
+                        </div>
+                    </details>
                 </div>
             </div>
             <!-- //sample03 -->
@@ -164,7 +170,12 @@ console.log(z);
 </code></pre>
                 </div>
                 <div class="result">
-                    Assignment to constant variable
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            Assignment to constant variable
+                        </div>
+                    </details>
                 </div>
             </div>
             <!-- //sample04 -->
@@ -186,9 +197,14 @@ console.log(arr[2]);
 </code></pre>
                 </div>
                 <div class="result">
-                    100<br>
-                    200<br>
-                    javascript
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript
+                        </div>
+                    </details>
                 </div>
             </div>
             <!-- //sample05 -->
@@ -207,9 +223,14 @@ console.log(arr[2]);
 </code></pre>
                 </div>
                 <div class="result">
-                    100<br>
-                    200<br>
-                    javascript
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript
+                        </div>
+                    </details>
                 </div>
             </div>
             <!-- //sample06 -->
@@ -232,9 +253,14 @@ console.log(arr[2]);
     </code></pre>
                     </div>
                     <div class="result">
-                        100<br>
-                        200<br>
-                        javascript
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
                     </div>
                 </div>
                 <!-- //sample07 -->
@@ -253,9 +279,14 @@ console.log(arr[2]);
     </code></pre>
                     </div>
                     <div class="result">
-                        100<br>
-                        200<br>
-                        javascript
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
                     </div>
                 </div>
                 <!-- //sample08 -->
@@ -277,9 +308,14 @@ console.log(arr[2]);
     </code></pre>
                     </div>
                     <div class="result">
-                        100<br>
-                        200<br>
-                        javascript
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
                     </div>
                 </div>
                 <!-- //sample09 -->
@@ -301,9 +337,14 @@ console.log(arr[2]);
     </code></pre>
                     </div>
                     <div class="result">
-                        100<br>
-                        200<br>
-                        javascript
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
                     </div>
             </div>
             <!-- //sample10 -->
@@ -325,9 +366,14 @@ console.log(obj.c);
 </code></pre>
                 </div>
                 <div class="result">
-                    100<br>
-                    200<br>
-                    javascript
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript
+                        </div>
+                    </details>
                 </div>
             </div>
             <!-- //sample11 -->
@@ -346,12 +392,153 @@ console.log(obj.c);
 </code></pre>
                 </div>
                 <div class="result">
-                    100<br>
-                    200<br>
-                    javascript
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript
+                        </div>
+                    </details>
                 </div>
             </div>
             <!-- //sample12 -->
+
+            <div id="sample13" class="sample">
+                <h3>13. 객체 : 데이터 저장(키와 값) : 표현방법 5 : 배열 안의 객체</h3>
+                <p>불러오는 방식이 배열과 객체의 특징을 모두 가지고 있음.</p>
+                <div class="script">
+<pre><code code class="language-js">{
+const obj = [
+        {a:100, b:200},
+        {c:"javascript"}
+     ];
+
+console.log(obj [0].a);
+console.log(obj [0].b);
+console.log(obj [1].c);
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
+                </div>
+            </div>
+            <!-- //sample13 -->
+
+            <div id="sample14" class="sample">
+                <h3>14. 객체 : 데이터 저장(키와 값) : 표현방법 6 : 객체 안의 배열</h3>
+                <p>b와 c 같이 객체 안에 배열이 존재하면 대괄호와 x,y를 사용하여 값을 불러와야 함.</p><br>
+                <p>단순히 b,c를 적으면 배열이 불러와지기 때문.</p>
+                <div class="script">
+<pre><code code class="language-js">{
+const obj = {
+     a: 100,
+     b: [200, 300],
+     c: {x:400, y: 500},
+     d: "javascript"
+ }
+
+ console.log(obj.a);
+ console.log(obj.b[0]);
+ console.log(obj.b[1]);
+ console.log(obj.c.x);
+ console.log(obj.c.y);
+ console.log(obj.d);
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                300<br>
+                                400<br>
+                                500<br>
+                                javascript
+                            </div>
+                        </details>
+                </div>
+            </div>
+            <!-- //sample14 -->
+
+            <div id="sample15" class="sample">
+                <h3>15. 객체 : 데이터 저장(키와 값) : 표현방법 7</h3>
+                <p>데이터 값에 변수를 저장시키는 형태.</p><br>
+                <p>a 대신에 변수가 저장된 것. (키 값은 생략)</p>
+                <div class="script">
+<pre><code code class="language-js">{
+const a = 100;
+const b = 200;
+const c = "javascript";
+
+const obj= {a, b, c};
+
+console.log(a);
+console.log(b);
+console.log(c);
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
+                </div>
+            </div>
+            <!-- //sample15 -->
+            
+            <div id="sample16" class="sample">
+                <h3>15. 객체 : 데이터 저장(키와 값) : 표현방법 8</h3>
+                <p>함수가 사용된 객체 표현 방법.</p><br>
+                <p></p>
+                <div class="script">
+<pre><code code class="language-js">{
+cconst obj = {
+    a: 100,
+    b: [200,300],
+    c: "javascript",
+    d: function(){
+        console.log("javascript가 실행되었습니다.");
+    }
+}
+
+console.log(obj.a);
+console.log(obj.b[0]);
+console.log(obj.b[1]);
+(X) console.log(obj.b[2]); //undefiend
+console.log(obj.c);
+(X) console.log(obj.d);  - 실행문이기 때문에 console.log 작성 X.
+obj.d() 
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                300<br>
+                                javascript<br>
+                                javascript가 실행되었습니다.
+                            </div>
+                        </details>
+                </div>
+            </div>
+            <!-- //sample16 -->
+           
+
 
         </div>
     </div>
