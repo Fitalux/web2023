@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레아아웃 4 - grid</title>
+</head>
+<style>
+    *{
+        margin: 0; 
+        padding: 0;
+    }
+    #wrap {
+        margin: 0 auto;
+        width: 1200px;
+        display: grid;
+        grid-area: 
+        "header1 header header header1"
+        "nav1 nav nav nav1"
+        "section1 section section section1 "
+        "footer footer"
+        ;
+        grid-template-rows: 100px 300px 580px 100px;    
+        grid-template-columns: 100;
+    }
+    #header {
+        background-color: #B2DFDB;
+    }
+    #header1 {
+        background-color: #E0F2F1;
+    }
+    #nav {
+        background-color: #4DB6AC;
+    }
+    #nav1 {
+        background-color: #80CBC4;
+    }
+    #section {
+        background-color: #009688;
+    }
+    #section1 {
+        background-color: #26A69A;
+    }
+    #footer {
+        background-color: #00796B;
+    }
+    #footer1 {
+        background-color: #00897B;
+    }
+</style>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <header id="header1"></header>
+        <nav id="nav"></nav>
+        <nav id="nav1"></nav>
+        <section id="section"></section>
+        <section id="section1"></section>
+        <footer id="footer"></footer>
+        <footer id="footer1"></footer>
+    </div>
+</body>
+</html>
