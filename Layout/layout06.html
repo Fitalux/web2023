@@ -4,83 +4,96 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃 6</title>
+    <title>레이아웃 06 - float 반응형</title>
     <style>
-        *{
+        * {
             margin: 0;
-            padding: 0;;
+            padding: 0;
+        }
+       
+        body {
+            background-color: #FFF3E0;
         }
         #wrap {
-            width: 100%;
+            width: 1200px;
+            margin: 0 auto;
         }
         #header {
             width: 100%;
             height: 100px;
-            background-color: #EEEBE9;
+            background-color: #FFE0B2;
         }
         #nav {
             width: 100%;
             height: 100px;
-            background-color: #B9AAA5;
+            background-color: #FFCC80;
         }
-        #section {
-            width: 100%;
+        #aside {
+            width: 30%;
             height: 780px;
-            background-color: #886F65;
+            background-color: #FFB74D;
+            float: left;
+        }
+        #content {
+            width: 70%;
+            height: 780px;
+            background-color: #FFA726;
+            float: left;
         }
         #footer {
             width: 100%;
             height: 100px;
-            background-color: #4E342E;
+            background-color: #FF9800;
+            clear: both;
         }
-        .container {
-            width: 1200px;
-            height: inherit;
-            margin: 0 auto;
-            background-color: rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 1200px) {
+            #wrap {
+                width: 96%;
+                
+            }
         }
-        #header1 {
-            width: 1200px;
-            height: 100px;
-            background-color: #9D8980;
+        @media (max-width: 768px) {
+            #wrap {
+                width: 100%;       
+           }
         }
-        #nav1 {
-            width: 1200px;
-            height: 200px;
-            background-color: #684D43;
+        @media (max-width: 600px) {
+            #wrap {
+                width: 100%;       
+           }
+           #aside {
+                width: 100%;
+                height: 300px;
+           }
+           #contents {
+                width: 100%;
+                height: 480px;
+           }
         }
-        #aside1 {
-            width: 600px;
-            height: 480px;
-            background-color: #594139;
-            float: left;
+        /* float으로 인한 깨짐 현상 방지
+        1. clear:both;
+        2. 부모박스에 overflow: hidden
+        3. clearfix 이용 
+        */
+         /* .clearfix::before,
+        .clearfix::after {
+            content: '';
+            display: block;
+            line-height: 0;
         }
-        #aside2 {
-            width: 600px;
-            height: 480px;
-            background-color: #4A352F;
-        }
+        .clearfix::after {
+            clear: both;
+        } */
     </style>
 </head>
 <body>
     <div id="wrap">
-        <div id="header">
-            <div class="container"></div>
-        </div>
-        <div id="nav">
-            <div class="container"></div>
-        </div>
-        <div id="section">
-            <div class="container">
-                <div id="header1"></div>
-                <div id="nav1"></div>
-                <div id="aside1"></div>
-                <div id="aside2"></div>
-            </div>
-        </div>
-        <div id="footer">
-            <div class="container"></div>
-        </div>
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="aside"></div>
+        <div id="content"></div>
+        <div id="footer"></div>
     </div>
 </body>
 </html>

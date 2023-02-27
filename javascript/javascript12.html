@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" sizes="192x192"  href="assets/ico/javascript192x192.png">
 </head>
 <body>
-    <header id="header">
+<header id="header">
         <h1><a href="index.html">Javascript</a></h1>
         <nav>
             <ul>
@@ -41,11 +41,11 @@
                 <li><a href="javascript17.html">패럴랙스 효과</a></li>
                 <li><a href="javascript18.html">게임 효과</a></li>
             </ul>
-        </nav>
-    </header>
-    <!-- //header -->
+    </nav>
+</header>
+<!-- //header -->
     
-    <main id="main">
+<main id="main">
     <div class="container">
         <div class="main_menu">
                 <ul>
@@ -53,6 +53,9 @@
                     <li><a href="#">02. 데이터 이펙트 : 0부터 50까지 출력하기</a></li>
                     <li><a href="#">03. 데이터 이펙트 : 1부터 100까지 짝수만 출력하기</a></li>
                     <li><a href="#">04. 데이터 이펙트 : 1부터 100까지 5의 배수만 출력하기</a></li>
+                    <li><a href="#">05. 데이터 이펙트 : 1부터 100까지 짝수(파란색) 홀수(빨간색) 출력하기</a></li>
+                    <li><a href="#">06. 데이터 이펙트 : for문을 이용해서 100칸 테이블 만들기</a></li>
+                    <li><a href="#">07. 데이터 이펙트 : 중첩 for문을 이용해서 구구단 만들기</a></li>
                  </ul>
                  
             <div class="main__sample">
@@ -60,7 +63,7 @@
                     <h3>01. 데이터 이펙트 : 1부터 100까지 출력하기</h3>
                     <p>for문을 이용해서 1~100까지 출력하는 예제입니다.</p>
                     <div class="script">
-<pre class="line-numbers"><code class="language-js">for(let i=; i&lt;=100; i++){ 
+<pre class="line-numbers"><code class="language-js">for(let i=1; i&lt;=100; i++){ 
         console.log(i)
 }
 </code></pre>
@@ -140,8 +143,8 @@ for (let i=1; i&lt;=100; i++){
 
                 <div id="sample04" class="sample">
                     <h3>04. 데이터 이펙트 : 1부터 100까지의 수 중에 5의 배수만 출력 </h3>
-                    <p>조건문인 if문과 증감연산자를 이용하여 5의 배수만 출력하는 예제입니다.</p>
-    <pre class="line-numbers"><code class="language-js">1. 
+                    <p>조건문인 if문과 연산자를 이용하여 5의 배수만 출력하는 예제입니다.</p>
+<pre class="line-numbers"><code class="language-js">1. 
 for(let i=0; i&lt;=100; i+=5) {
 console.log(i)
 }
@@ -172,46 +175,248 @@ for (let i=1; i&lt;=100; i++){
                     </div>
                 </div>
                 <!-- //sample04 -->
+
+                <div id="sample05" class="sample">
+                    <h3>05. 데이터 이펙트 : 1부터 100까지 짝수(파란색) 홀수(빨간색) 출력하기 </h3>
+                    <p>반복문(for)과 조건문(if)을 이용한 짝수, 홀수 색이 다르게 출력하는 방법.</p>
+<pre class="line-numbers"><code class="language-js"> for(let i=1; i&lt;=100; i++) {
+    if(i % 2 == 0) {
+        document.write("&lt;span style='color:blue'&gt;"+i+"&lt;/span&gt;");
+    }
+    if(i % 2 == 1) {
+        document.write("&lt;span style='color:red'&gt;"+i+"&lt;/span&gt;");
+    }
+
+</code></pre>
+
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <span style="color: blue;"> 2, 4, 6, 8, 10 ····· 100 </span> <br> <Br>
+                                <span style="color:red">1, 3, 5, 7, 9 ····· 99</span>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="notice">
+                        <h4>짝수와 홀수의 색을 다르게 출력하는 예제</h4>
+                        <p>조건문(if)를 두 번 사용하였으며 결과값이 짝수일 경우에는 1번 조건문이, 홀수일 경우에는 2번 조건문이 실행됨.</p>
+                        <p>for은 100까지의 수를 세어주는 반복문이고 if는 for의 변수 값에 따라 조건이 달라지는 조건문임.</p>
+                        <p>두 조건문은 형제 관계이니 정렬에 주의해야 함.</p>
+                        <p>또한 큰 따옴표(" ") 안에는 큰 따옴표가 올 수 없기 때문에 작은 따옴표(' ')를 사용해야함.</p>
+                    </div>
+                </div>
+                <!-- //sample05 -->
+
+                <div id="sample06" class="sample">
+                    <h3>06. 데이터 이펙트 : for문을 이용해서 100칸 테이블 만들기</h3>
+                    <p>반복문(for)과 조건문(if)을 이용하여 100칸 테이블을 출력 시키는 방법.</p>
+<pre class="line-numbers"><code class="language-js"> {let table = "&lt;table border='1'&gt;";
+for(let i=1; i&lt;=10, i++){
+    table += "&lt;tr&gt;";
+
+    for(let j=1; i&lt;=10; j++)
+        table += "&lt;td&gt;"+j+"&lt;/td&gt;";  
+    }
+    
+    table += "&lt;/tr&gt;"
+}
+table += "&lt;/table&gt;"
+        
+document.write(table);
+</code></pre>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                             <table border="1">
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                </tr><tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                </tr><tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                </tr><tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                </tr><tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                </tr><tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                </tr><tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                </tr><tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                </tr><tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                </tr><tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                </tr>
+                             </table>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="notice">
+                        <h4>for문 만을 사용하여 100칸 테이블을 출력하는 예제</h4>
+                        <p>tr이 한 번 반복되는 동안 td는 10번 반복되는 구조로,</p>
+                        <p>이번 예제는 5번 예제와 다르게 2번 for문이 1번 for문의 자녀가 됨.</p>
+                        <p>데이터 저장하기에서 배웠듯이 변수는 값을 변경할 수 있기 때문에</p>
+                        <p>1번과 2번 for문에 각각 다른 i와 j처럼 다른 변수를 선언해 주어야 함.</p>
+                    </div>
+                </div>
+                <!-- //sample06 -->
+
+                <div id="sample07" class="sample">
+                    <h3>07. 데이터 이펙트 : 중첩 for문을 이용해서 구구단 만들기</h3>
+                    <p>반복문(for)를 중첩해서 이용하여 구구단 만드는 방법.</p>
+<pre class="line-numbers"><code class="language-js">for(let i=2; i&lt;=9; i++){
+    document.write(i + "단","&lt;br&gt;");
+
+    for(let j=1; j&lt;=9; j++){
+        document.write(i + "X" + j + "=" + i*j);    //i(곱해지는 수) * j (곱하는 수)
+        document.write("&lt;br&gt;");               //가독성을 위하여 줄바꿈 태그를 추가함.
+    }
+
+    document.write("&lt;br&gt;&lt;br&gt;");         //각 숫자의 단이 깔끔하게 정리되기 위하여 줄바꿈 태그를 추가함.
+}
+</code></pre>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                2단<br>2X1=2<br>2X2=4<br>2X3=6<br>2X4=8<br>2X5=10<br>2X6=12<br>2X7=14<br>2X8=16<br>2X9=18<br>                
+                                ····· <br>
+                                9단<br> 9X1=9<br>9X2=18<br>9X3=27<br>9X4=36<br>9X5=45<br>9X6=54<br>9X7=63<br>9X8=72<br>9X9=81
+                            </div>
+                        </details>
+                    </div>
+                    <div class="notice">
+                        <h4>중첩 for문으로 구구단 만들기 예제</h4>
+                        <p>반복문(for문)을 두 번 사용하였으며, 6번 예제체럼 1번 for문이 1번 반복될동안 2번 for문은 여러번 반복되는 구조. </p>
+                        <p>1번 for문은 큰 단락으로 구구단으로 쳤을 때 'n단'에 해당되는 반복문임. (곱해지는 수)</p>
+                        <p>i의 값을 변경하면 구구단으로 출력할 수 있는 단의 수가 늘어남. ex) 9단까지 -> 13단까지</p>
+                        <p>2번 for문은 단락 안의 내용으로 'n단'에 곱해지는 '1~9'까지의 수. (즉, 곱하는 수)</p>
+                        <p>j의 값을 변경하면 i(곱해지는 수)에 곱하는 수가 늘어남. ex)nX9 -> nX13</p>
+                        <p>*는 곱하기 연산자이며, 연산자를 바꾸면 다른 연산도 가능함. ex) * (곱하기 연산) -> / (나누기 연산)</p>
+                    </div>
+                </div>
+                <!-- //sample07 -->
             </div>
          </div>
     </div>
 </main>
 <!-- //main -->
 
-    <footer id="footer">
-        <a href="mailto:goed0522@gmail.com">goed0522@gmail.com</a>
-    </footer>
-    <!-- //footer -->
+<footer id="footer">
+    <a href="mailto:goed0522@gmail.com">goed0522@gmail.com</a>
+</footer>
+<!-- //footer -->
 
-    <script src="assets/js/prism.js"></script>
-    <script>
-        //01. 1부터 100까지 출력
-        // for(let i=; i<=100; i++) {
-        //     console.log(i)
-        // }
+<script src="assets/js/prism.js"></script>
+<script>
 
-        //02. 0부터 50까지 출력
-        // for(let i=0; i<=50; i++) {
-        //     console.log(i)
-        // }
 
-        //03. 1부터 100까지 짝수만 출력
-        // for(let i=0; i<=100; i+=2) {        //i = i + 2 
-        //     console.log(i)
-        // }
-
-        //04. 1부터 100까지 5의 배수만 출력 
-        //조건문인 if문과 증감연산자를 이용한 방법.
-        // for(let i=0; i<=100; i+=5) {
-        //     console.log(i)
-        // }
-
-        //4-1
-            for (let i=1; i<=100; i++){
-                if(i % 5 == 0) { 
-                    console.log(i)
-                } 
-            }
 
 </script>
 
