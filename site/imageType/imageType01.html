@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형01</title>
+
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-weight: normal;
+        }
+        img {
+            vertical-align: top;
+        }
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+            /* background-color: rgba(0,0,0,0.1); */
+        }
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+        .section {
+            padding: 120px 0;
+            text-align: center;
+        }
+        .section__h2 {
+            font-size: 50px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+        .section__desc {
+            font-size: 22px;
+            color: #666;
+            font-weight: 300;
+            margin-bottom: 70px;
+        }
+        /* imag_wrap */
+        .image__wrap {
+
+        }
+        .imag_inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .imag_inner .image {
+            width: 570px;
+            height: 370px;
+            background-color: #ccc;
+            position: relative;
+        }
+        .image__body {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            color: #fff;
+            text-align: left;
+            padding: 30px;
+        }
+        .image__body .title {
+            font-size: 32px;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+        .image__body .dese {
+            margin-bottom: 15px;
+            line-height: 1.5;
+            padding-right: 20%;
+        }
+        .image__body .btn {
+         color: #fff;
+         background-color: rgba(0,0,0,0.5);
+         padding: 10px 30px;
+         display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="image__wrap section nexon">
+        <div class="container">
+            <h2 class="section__h2">Milky way</h2>
+            <p class="section__desc">Milky way는 은하수 뿐 아니라 우리 은하를 가리키는 말이기도 합니다.</p>
+            <div class="imag_inner">
+                <article class="image">
+                    <figure>
+                        <img src="../asset/img/imageType01_01.jpg" alt="태양계가 속해 있는 우리 은하">
+                    </figure class="img__header">
+                    <div class="image__body">
+                        <h3 class="title">태양계가 속해 있는 우리 은하</h3>
+                        <p class="desc">은하수는 밤하늘에 천구를 아치형으로 가로지르는 흰 빛의 흐릿한 띠 모양으로 보입니다. </p>
+                        <a href="#" class="btn">자세히 보기</a>
+                    </div>
+                </article>
+                <article class="image">
+                    <figure class="img__header">
+                        <img src="../asset/img/imageType01_02.jpg" alt="은하수의 물리적 크기">
+                    </figure>
+                    <div class="image__body">
+                        <h3 class="title">은하수의 물리적 크기</h3>
+                        <p class="desc">은하수의 원반은 직경이 약 100,000광년이고, 평균적으로 약 1,000광년 두께입니다.</p>
+                        <a href="#" class="btn">자세히 보기</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

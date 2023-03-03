@@ -54,7 +54,6 @@
                 <li><a href="#">03. 삼항 연산자 (조건식)</a></li>
                 <li><a href="#">04. 다중 if문(else if)</a></li>
                 <li><a href="#">05. 중첩 if문</a></li>
-
                 <li><a href="#">06. swich문</a></li>
                 <li><a href="#">07. while문</a></li>
                 <li><a href="#">08. do while문 (반복해서 실행시킬 때)</a></li>
@@ -248,6 +247,119 @@ document.write("실행되었습니다 (false)");
                 </div>
                 <!-- //sample05 -->
 
+                <div id="sample06" class="sample">
+                    <h3>06. swich문</h3>
+                    <p></p>
+                    <div class="script">
+<pre><code class="language-js">{
+const num = 100;
+
+switch(num) {
+    case 90:
+        document.write("실행90");
+        break;
+    case 80:
+        document.write("실행80");
+        break;
+    case 70:
+        document.write("실행70");
+        break;
+    case 60:
+        document.write("실행60");
+        break;
+    case 50:
+        document.write("실행50");
+        break;
+    default:
+        document.write("0");
+}
+}
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                0 <br>
+                                해당하는 값이 없으므로 0 출력
+                            </div>
+                        </details>
+                    </div>
+                    <div class="notice">
+                        <h4>06. swich문</h4>
+                        <p>다중 if문과 같은 형식이지만 else if 대신 case를 사용함.</p>
+                        <p>case와 값을 하나씩 비교하여 일치하는 case를 실행(출력) 시킴.</p>
+                        <p>if와 다르게 조건을 만족한 후에도 식이 종료되지 않으므로 break를 사용하여 끊어주어야 함.</p>
+                        <p>break를 사용하지 않아도 결괏값은 출력이 되지만 페이지 창의 로딩이 계속 되므로 끊어주는 것이 좋음.</p>
+                        <p>default는 case와 일치하는 값이 없을 때 출력됨.</p>
+                    </div>
+                </div>
+                <!-- //sample06 -->
+
+                <div id="sample07" class="sample">
+                    <h3>07. while문</h3>
+                    <p></p>
+                    <div class="script">
+<pre><code class="language-js">{
+let num = 0;
+
+while(num&lt;5) {
+    num++;                          //1
+    document.write(num);            //2
+}
+}
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                0 1 2 3 4
+                            </div>
+                        </details>
+                    </div>
+                    <div class="notice">
+                        <h4>while 반복문</h4>
+                        <p>조건부터 체크한 후 조건이 참(ture)인 동안 문장을 반복함.</p>
+                        <p>조건이 false라면 문장은 한 번도 실행되지 않을 수도 있음.</p>
+                        <p>출력문 다음에(2번 위치) 증가식이 오면 증가가 되지 않은 상태에서 출력되어 0부터 시작하고,</p>
+                        <p>출력문 이전에(1번 위치) 증가식이 오면 증가가 된 상태에서 출력되기 때문에 1부터 시작함.</p>
+                    </div>
+                </div>
+                <!-- //sample07 -->
+
+                <div id="sample08" class="sample">
+                    <h3>08. do while문</h3>
+                    <p>초기 값이나 반복 횟수 없이 조건만 주어졌을 때 주로 사용하는 반복문.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+let num2 = 0;
+do{
+    document.write(num2);
+    num2++;
+} while(num2&lt;5);
+}
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                0 1 2 3 4<br>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="notice">
+                        <h4>do while문</h4>
+                        <p>do while문은 while문과 다르게 일단 결과를 출력하고 조건을 체크하므로 </p>
+                        <p>while문에서는 나타나지 않을 식을 작성하여도 결과값이 한 번은 출력이 됨.</p>
+                        <p>do를 먼저 실행하기 때문에 첫 번째 실행은 조건에 상관없이 실행함.</p>
+                        <p>또한 do while문은 조건식을 뒤에 작성함.</p>
+                        <p>while문과 같이 증감식의 위치에 따라 결과값이 달라짐. </p>
+                    </div>
+                </div>
+                <!-- //sample08 -->
+
                 <div id="sample09" class="sample">
                     <h3>09. for문</h3>
                     <p>같은 일이 여러 번 반복되어야 하는 여러 예제들을 for문을 사용하여 해결하는 방법.</p>
@@ -304,6 +416,124 @@ document.write("실행되었습니다 (false)");
                 </div>
                 <!-- //sample09 -->
                 
+                <div id="sample10" class="sample">
+                    <h3>10. 중첩 for문</h3>
+                    <p>중첩 for문을 사용하여 100칸 테이블 만들기</p>
+                    <div class="script">
+<pre><code class="language-js">{ 
+for(let i=1; i&lt;=10, i++){                        //1
+    table += "&lt;tr&gt;";
+
+    for(let j=1; i&lt;=10; j++)                     //2
+        table += "&lt;td&gt;"+j+"&lt;/td&gt;";      //3
+    }
+    
+    table += "&lt;/tr&gt;"                          //4
+}
+table += "&lt;/table&gt;"                           //5
+        
+document.write(table);
+}
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                            {
+                                let table = "<table border='1'>";
+                                for(i=1; i<=10; i++) {
+                                    table += "<tr>";
+                                    for(j=1; j<=10; j++){
+                                        table +="<td>"+j+"</td>";
+                                    }
+                                    table += "</tr>";
+                                }
+                                table += "</table>";
+                                document.write(table);
+                            }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="notice">
+                        <h4>중첩 for문</h4>
+                        <p>1. 1부터 10까지 반복되는 반복문. 표의 세로(행)을 만드는 반복문임. </p>
+                        <p>2. 1부터 10까지 10번 반복되는 반복문. 표의 세로(열)을 만드는 반복문임.</p>
+                        <p>2. 2번 식이 100번 반복되기 때문에 테이블이 100칸 생기는 것.</p>
+                        <p>3. 테이블 안에 숫자를 넣기 위한 식으로, 1부터 10까지만이 반복되어 들어감.</p>
+                        <p>4. 테이블을 만들 때 행 안에 열을 넣고 닫듯이, 닫아주어야 함.</p>
+                        <p>5. 식을 종결하기 위해 테이블을 닫아줌.</p>
+                    </div>
+                </div>
+                <!-- //sample10 -->
+
+                <div id="sample11" class="sample">
+                    <h3>11. break 문</h3>
+                    <p>현재 실행문을 중지시키고 다음 실행문으로 넘어가게 하는 중지문.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+for(let i=1; i&lt;100; i++){
+    document.write(i)
+    if(i == 50) {
+        break;
+    }
+}
+    document.write("&lt;br&gt;");
+}  
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                            1, 2, 3, 4, 5 ····· 50<br>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="notice">
+                        <h4>break</h4>
+                        <p>현재 실행문을 중지 시키고 다음 실행문으로 넘어가게 함.</p>
+                        <p>반복문은 지정한 횟수만큼 명령을 반복하지만, break문을 사용하면 반복문을 중간에 끝내게 하여 </p>
+                        <p>식이 조건을 만족하여 종결되는 것이 아니라 break문 사용하여 반복문을 빠져나오게 하는 것.</p>
+                        <p>1부터 100까지 출력해야 하는 반복문이지만, 중간에 break문을 만나 50까지 반복하고 나서 식이 종결됨.</p>
+                    </div>
+                </div>
+                <!-- //sample011 -->
+
+                <div id="sample12" class="sample">
+                    <h3>12. coutinue 문</h3>
+                    <p>조건을 만족하면 실행하던 반복 문장을 건너뛴다.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+for(let i=1; i&lt;10; i++){
+    if(i == 10) {
+        continue;
+    }
+document.write(i); //document 문이 continue 이전에 있으면 10이 출력됨.
+}
+
+}  
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                            1, 2, 3, 4, 5, 6, 7, 8, 9<br>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="notice">
+                        <h4>continue문</h4>
+                        <p>조건에 해당되는 값을 만났을 때 실행하던 반복 문장을 건너뛰고 반복문의 맨 앞으로 되돌아가서 다음 반복 과정으로 넘어가도록 함.</p>
+                        <p>반복 과정을 한 차례 건너뛰는 것이기 때문에 조건에 해당하는 값(10)이 출력되지 않음.</p>
+                        <p>continue문이 출력문 이후에 위치하면 건너 뛰어지지 않고 조건에 일치하는 값도 출력됨.</p>
+                    </div>
+                </div>
+                <!-- //sample012 -->
+
             </div>
         </div>  
     </div>
@@ -318,65 +548,107 @@ document.write("실행되었습니다 (false)");
     <script src="assets/js/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
     <script>
-
-        //09. for 문
-
-        // const arr = [1,2,3,4,5,6,7,8,9]
-        // for(let i=1; i<=arr.length; i++) {
-        // if(i % 2 == 1) {
-        //     document.write(arr[i]);
-        // }
-        // document.write("<br>");
-        // }
     
-        //결과값이 2,4,6,8,undefind 로 나오는데 이는 그 이후의 배열까지 세었기 때문.
-        //i % 2 == 1이 짝수가 나오는 이유는 배열이 0으로 시작하여 배열 위치가 홀수에 저장되어 있기 때문임. 
-        //i의 값을 1 낮추거나,  조건식에 있는 등호를 빼면 결과값에 undefind가 나오지 않음.
-
-
-        // for(let i=0; i<arr.length; i+=2) {
-        //         document.write(arr[i]);
-        //     }
-        //     document.write("<br>");
-
-            //i += 2 이 홀수가 나오는 이유는 배열이 0으로 시작하여 배열 위치가 짝수에 저장되어 있기 때문임.
-
-
-        // let num = 0;    
-        // for(let a=1; a<=25; a++) {
-        //      document.write(a)
-        //      document.write("<br>")
-        //      num++;
-        // }
-        //     document.write("<br>");
-        //     document.write(num);
-
-    //     const arr = [1,2,3,4,5,6,7,8,9]
-
-    //     for(let i=1; i<=arr.length; i++) {
-    //     if(i % 2 == 0) {
-    //         document.write("<span style='color:red'>"+i+"</span>");     //1
-    //     } else {
-    //         document.write(`<span style='color:blue'>${i}</span>`);     //2
-    //     }
-    // }
-
-    let a = 1;
-    let table = "<table border='1'>";
-   
-      for(let i=1; i<=5; i++) {
-           table += "<tr>";
         
-           for(let j=1; j<=5; j++) {
-               table += "<td>"+a+"</td>";
-                a++
-           }
-               table += "</tr>";
-   }
-           table += "</table>";
-           document.write(table);
-           
-    </script>
+            //홀짝 다른 색으로 테이블 안에 출력
+        // {   let table = "<table border='1'>";
+        //     let count = 0;
+
+        //     for(let i=0; i<5; i++) {
+        //         table += "<tr>";
+        //         for(let j=0; j<5; j++) {
+        //             count++
+        //             if(count % 2 == 0){
+        //                 table += "<td style='color:red'>"+count+"</td>";
+        //             } else {
+        //                 table += "<td style='color:blue'>"+count+"</td>";
+        //             }
+        //         }
+        //         table += "</tr>";
+        //     }
+        //     table += "</table>";
+        // }
+        //     document.write(table)
+        // }
+        // document.write("<br><br>")
+        
+        // //25칸 테이블에 3의 배수 출력, 5의 배수와 겹치는 값은 빨간색으로 출력되게 하기
+    //    {
+    //     let table = "<table border='1'>";
+    //     let count = 0;
+
+    //         for(let i=0; i<5; i++) {
+    //             table += "<tr>";
+    //             for(let j=0; j<5; j++) {
+    //                 count +=3
+    //                 if(count % 5 == 0){
+    //                     table += "<td style='color:red'>"+count+"</td>";
+    //                 } else {
+    //                     table +="<td>"+count+"</td>"
+    //                 }
+    //             }
+    //             table += "</tr>";
+    //         }
+    //         table += "</table>";
+
+    //         document.write(table)
+    //     }
+
+            //11. break문
+            // {
+            //     for(let i=1; i<100; i++){
+            //         document.write(i)
+            //         if(i == 50) {
+            //             break;
+            //         }
+            //     }
+            //     document.write("<br>");
+            // }
+            //     document.write("<br>");
+
+            //12. continue문
+            // {
+            //     for(let i=1; i<100; i++){
+            //         if(i == 10) {
+            //             continue;
+            //         }
+            //         document.write(i); //document 문이 continue 이전에 있으면 10이 출력됨.
+            //     }
+            // }
+
+
+        function isPositive(n) {
+            if (n > 0) {
+                alert(`${n}은 양수입니다.`);
+            } else if (n < 0) {
+                alert(`${n}은 음수입니다.`);
+            } else {
+                alert(`${n}은 0입니다.`);   //<<alert가 사용되는 이유
+            }
+        }
+ 
+                const number = parseInt(prompt('숫자를 입력하세요.'));    //parseInt<<책에 안 나와서 어떤 함수인지 모르겠음
+                // parseInt() 는 숫자가 아닐 경우 NaN을 반환함
+                if(!isNaN(number)) {  // 숫자일 경우에만 실행
+                isPositive(number);  
+                }
+
+function getGCD(n, m) {     //4,12                //변수가 두 개 필요하므로 매개변수 함수 작성.
+  let max = n > m ? n : m;                  //max가 n>m일 때, 출력값이 n이 참이 됨.(ture)
+  let GCD = 0;                              //최대공약수를 구할 변수
+  for (let i = 1; i <= max; i++) {          //i가 max까지 반복되는 반복문을 작성
+    if (n % i === 0 && m % i === 0) {       //n을 i로 나누어도 나머지가 0, m을 i로 나누어도 나머지가 0이어야 하는 조건을 만족해야 하기 때문에 &&(AND) 연산자 사용.
+
+      GCD = i;   // 최대공약수              //변수 GDC는 i가 됨.
+    }
+  }
+  return GCD;                               //변수 GDC를 리턴값으로 불러옴. 리턴값으로 불러오는 이유??
+}
+
+document.write(`308과 20의 최대공약수 : ${getGCD(308, 20)}`);
+document.write(`45과 38의 최대공약수 : ${getGCD(45, 38)}`);
+
+</script>
 
 </body>
 </html>

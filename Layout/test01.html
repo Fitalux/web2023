@@ -1,84 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>레이아웃 그리드3</title>
     <style>
-        * {
+        *{
             margin: 0;
             padding: 0;
+        }
+        body{
+            background-color: #E1F5FE;
         }
         #wrap {
             width: 1200px;
             margin: 0 auto;
-            overflow: hidden;
+            display: grid;
+            grid-template-areas: 
+            "header header header"
+            "nav nav nav"
+            "aside article1 article2"
+            "aside article3 article3"
+            "aside article4 article4"
+            "footer footer footer"
+            ;
+            grid-template-columns: 300px 450px 450px;
+            grid-template-rows: 100px 100px 260px 260px 260px 100px;
+        }
+        #header {
+            background-color: #B3E5FC;
+            grid-area: header;
+        }
+        #nav {
+            background-color: #81D4FA;
+            grid-area: nav;
         }
         #aside {
-            width: 300px;
-            height: 1000px;
-            float: left;
+            background-color: #4FC3F7;
+            grid-area: aside;
         }
-        .side1 {
-            height: 300px;
-            background-color: #111;
+        #article1 {
+            background-color: #29B6F6;
+            grid-area: article1;
         }
-        .side2 {
-            height: 300px;
-            background-color: #222;
+        #article2 {
+            background-color: #144a63;
+            grid-area: article2;
         }
-        .side3 {
-            height: 400px;
-            background-color: #333;
+        #article3 {
+            background-color: #03A9F4;
+            grid-area: article3;
         }
-        #contents {
-            width: 900px;
-            float: left;
+        #article4 {
+            background-color: #039BE5;
+            grid-area: article4;
         }
-        .banner {
-            height: 500px;
-            background-color: #444;
-        }
-        .content {
-            height: 300px;
-            background-color: #555;
-        }
-        .footer {
-            height: 200px;
-            background-color: #666;
-        }
-        .clearfix::before,
-        .clearfix::after {
-            content: '';
-            display: block;
-            line-height: 0;
-        }
-        .clearfix::after {
-            clear: both;
+        #footer {
+            background-color: #0288D1;
+            grid-area: footer;
         }
     </style>
 </head>
 <body>
     <div id="wrap">
-        <div id="aside">
-            <div class="side1"></div>
-            <div class="side2"></div>
-            <div class="side3"></div>
-        </div>
-        <div id="contents">
-            <div class="banner"></div>
-            <div class="content clearfix">
-                <div class="c1"></div>
-                <div class="c2"></div>
-                <div class="c3"></div>
-            </div>
-            <div class="footer clearfix">
-                <div class="f1"></div>
-                <div class="f2"></div>
-                <div class="f3"></div>
-            </div>
-        </div>
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <aside id="aside"></aside>
+        <article id="article1"></article>
+        <article id="article2"></article>
+        <article id="article3"></article>
+        <article id="article4"></article>
+        <footer id="footer"></footer>
     </div>
 </body>
 </html>
