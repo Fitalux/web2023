@@ -8,19 +8,23 @@
 
     <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
     <style>
+        /* reset */
         * {
             margin: 0;
             padding: 0;
         }
         a {
             text-decoration: none;
+            color:#000;
         }
         h1,h2,h3,h4,h5,h6 {
             font-weight: normal;
         }
         img {
             vertical-align: top;
+            width: 100%;
         }
+         /* common */
         .container {
             width: 1160px;
             margin: 0 auto;
@@ -33,6 +37,8 @@
         }
         .section {
             padding: 120px 0;
+        }
+        .section.center {
             text-align: center;
         }
         .section__h2 {
@@ -44,10 +50,11 @@
         .section__desc {
             font-size: 22px;
             color: #666;
-            font-weight: 300;
             margin-bottom: 70px;
+            font-weight: 300;
+            line-height: 1.5;
         }
-        /* imag_wrap */
+        /* imag_type */
         .image__wrap {
 
         }
@@ -89,7 +96,7 @@
     </style>
 </head>
 <body>
-    <section class="image__wrap section nexon">
+    <section class="image__wrap section center nexon">
         <div class="container">
             <h2 class="section__h2">Milky way</h2>
             <p class="section__desc">Milky way는 은하수 뿐 아니라 우리 은하를 가리키는 말이기도 합니다.</p>
@@ -106,11 +113,11 @@
                 </article>
                 <article class="image">
                     <figure class="img__header">
-                        <img src="../asset/img/imageType01_02.jpg" alt="은하수의 물리적 크기">
+                        <img src="../asset/img/imageType01_02.jpg" alt="우리 은하의 물리적 크기">
                     </figure>
                     <div class="image__body">
-                        <h3 class="title">은하수의 물리적 크기</h3>
-                        <p class="desc">은하수의 원반은 직경이 약 100,000광년이고, 평균적으로 약 1,000광년 두께입니다.</p>
+                        <h3 class="title">우리 은하의 물리적 크기</h3>
+                        <p class="desc">우리 은하의 원반은 직경이 약 100,000광년이고, 평균적으로 약 1,000광년 두께입니다.</p>
                         <a href="#" class="btn">자세히 보기</a>
                     </div>
                 </article>
