@@ -213,7 +213,7 @@ document.write(func( ));
                     <div class="script">
 <pre><code class="language-js">{
 func = ( ) =&gt; {
-     document.write("실행되었습니다(4)");
+     document.write("실행되었습니다");
     }
 func ( );
 }
@@ -223,7 +223,7 @@ func ( );
                         <details>
                             <summary>결과 확인하기</summary>
                             <div>
-                                실행되었습니다(4)
+                                실행되었습니다
                             </div>
                         </details>
                     </div>
@@ -242,7 +242,7 @@ func ( );
                     <div class="script">
 <pre><code class="language-js">{
 const func = ( ) =&gt; {
-    document.write("실행되었습니다(5)");
+    document.write("실행되었습니다");
     }
 func ( );
 }
@@ -252,7 +252,7 @@ func ( );
                         <details>
                             <summary>결과 확인하기</summary>
                             <div>
-                                실행되었습니다(5)
+                                실행되었습니다
                             </div>
                         </details>
                     </div>
@@ -271,9 +271,9 @@ func ( );
                     <div class="script">
 <pre><code class="language-js">{
 func = (str) =&gt; {
-    document.write(str)
-    }
-func("실행되었습니다(6)");
+    document.write(str);
+}
+func("실행되었습니다");
 }
 </code></pre>
                 </div>
@@ -281,7 +281,7 @@ func("실행되었습니다(6)");
                         <details>
                             <summary>결과 확인하기</summary>
                             <div>
-                                실행되었습니다(6)
+                                실행되었습니다
                             </div>
                         </details>
                     </div>
@@ -295,7 +295,7 @@ func("실행되었습니다(6)");
                 <!-- //sample07 -->
 
                 <div id="sample08" class="sample">
-                    <h3>화살표 함수 : 리턴값 함수</h3>
+                    <h3>08. 화살표 함수 : 리턴값 함수</h3>
                     <p>에크마스크립트  2015부터 추가된 내용으로 '=&gt;'를 이용하여 함수를 간결하게 표현한 것.</p>
                     <div class="script">
 <pre><code class="language-js">{
@@ -325,15 +325,14 @@ document.write(func( ));
                 <!-- //sample08 -->
 
                 <div id="sample09" class="sample">
-                    <h3>화살표 함수 : 익명 함수 + 매개변수 함수 + 리턴값 함수</h3>
-                    <p>에크마스크립트  2015부터 추가된 내용으로 '=&gt;'를 이용하여 함수를 간결하게 표현한 것.</p>
+                    <h3>09. 화살표 함수 : 익명 함수 + 매개변수 함수 + 리턴값 함수</h3>
+                    <p>화살표 함수를 통하여 익명 함수, 매개변수, 리턴값 함수를 한꺼번에 사용할 수 있다.</p>
                     <div class="script">
-<pre><code class="language-js">{
-func = ( ) =&gt; {
-    const str = "실행되었습니다(7)<br>";
-    return str;
-    }
-document.write(func( ));
+<pre><code class="language-js">{ 
+    const func = (str) =&gt; {
+        return str;
+    };
+    document.write(func("실행되었습니다"))
 }
 </code></pre>
                 </div>
@@ -341,18 +340,101 @@ document.write(func( ));
                         <details>
                             <summary>결과 확인하기</summary>
                             <div>
-                                실행되었습니다(7)
+                               실행되었습니다
                             </div>
                         </details>
                     </div>
                     <div class="notice">
-                        <h4>화살표 함수 : 선언적 함수</h4>
+                        <h4>화살표 함수 : 익명 함수 + 매개변수 함수 + 리턴값 함수</h4>
                         <p>function 키워드를 생략하고 부등호 "="와 "&gt;"를 합쳐 코딩함.</p>
                         <p>항상 익명 함수 형식으로 표현함.</p>
                         <p>단일 명령문일 경우에는 함수의 중괄호{ }와 return을 생략할 수 있음.</p>
                     </div>
                 </div>
                 <!-- //sample09 -->
+
+                <div id="sample10" class="sample">
+                    <h3>10. 화살표 함수 : 익명 함수 + 매개변수 함수 + 리턴값 함수 + 괄호생략</h3>
+                    <p>화살표 함수를 통하여 익명 함수, 매개변수 함수, 리턴값 함수를 한꺼번에 사용하면서 괄호도 생략할 수 있다.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const func = str =&gt; {
+        return str;
+    }
+    document.write(func("실행되었습니다"))
+}
+</code></pre>
+                </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                               실행되었습니다
+                            </div>
+                        </details>
+                    </div>
+                    <div class="notice">
+                        <h4>화살표 함수 : 익명 함수 + 매개변수 함수 + 리턴값 함수</h4>
+                        <p>function 키워드를 생략하고 부등호 "="와 "&gt;"를 합쳐 코딩함.</p>
+                        <p>항상 익명 함수 형식으로 표현함.</p>
+                        <p>단일 명령문일 경우에는 함수의 중괄호{ }와 return을 생략할 수 있음.</p>
+                    </div>
+                </div>
+                <!-- //sample09 -->
+
+                <div id="sample11" class="sample">
+                    <h3>11. 화살표 함수 : 익명 함수 + 매개변수 함수 + 리턴값 함수 + 괄호생략 + 리턴 생략</h3>
+                    <p>화살표 함수를 통하여 익명 함수, 매개변수 함수, 리턴값 함수를 한꺼번에 사용하면서 괄호와 리턴까지 생략할 수 있다.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const func = str =&gt; str;
+    document.write(func("실행되었습니다"))
+}
+</code></pre>
+                </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                               실행되었습니다
+                            </div>
+                        </details>
+                    </div>
+                    <div class="notice">
+                        <h4>화살표 함수 : 익명 함수 + 매개변수 함수 + 리턴값 함수</h4>
+                        <p>function 키워드를 생략하고 부등호 "="와 "&gt;"를 합쳐 코딩함.</p>
+                        <p>항상 익명 함수 형식으로 표현함.</p>
+                        <p>단일 명령문일 경우에는 함수의 중괄호{ }와 return을 생략할 수 있음.</p>
+                    </div>
+                </div>
+                <!-- //sample11 -->
+
+                <div id="sample12" class="sample">
+                    <h3>12. 화살표 함수 : 선언적 함수 + 매개변수 함수 + 리턴값 함수 + 괄호생략 + 리턴 생략</h3>
+                    <p>화살표 함수를 선언적 함수의 형식으로 사용하면서 익명 함수, 매개변수 함수, 리턴값 함수를 한꺼번에 사용하면서 괄호와 리턴까지 생략할 수 있다.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    func = str =&gt; str;
+             document.write(func("실행되었습니다."));
+}
+</code></pre>
+                </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                               실행되었습니다
+                            </div>
+                        </details>
+                    </div>
+                    <div class="notice">
+                        <h4>화살표 함수 : 익명 함수 + 매개변수 함수 + 리턴값 함수</h4>
+                        <p>function 키워드를 생략하고 부등호 "="와 "&gt;"를 합쳐 코딩함.</p>
+                        <p>항상 익명 함수 형식으로 표현함.</p>
+                        <p>단일 명령문일 경우에는 함수의 중괄호{ }와 return을 생략할 수 있음.</p>
+                    </div>
+                </div>
+                <!-- //sample12 -->
 
             </div> 
         </div>
@@ -378,33 +460,7 @@ document.write(func( ));
         //쓸 수 있는 특수기호는 _ (언더 하이픈), $ (달러) 정도만 사용할 수 있음.
 
 
-        //09. 화살표 함수 : 익명 함수 + 매개변수 함수 + 리턴값 함수
-        {
-            //  a = () => {
-            //     document.write("실행1");
-            // }
-            // a();
 
-            // const b = () => {
-            //     document.write("실행2");
-            // }
-            // b();
-
-            //  c = (str1,str2,str3) => {
-            //     document.write(str1,str2,str3);
-            // }
-            // c("실행3","실행4","실행5");  //매개변수는 2개 이상 쓸 수 있음.
-
-            //  d = (x, y, z) => {
-            //     return (x+y+z);
-            // }
-            // document.write(d (1,2,3));
-
-            // const func = (str) => {
-            //     document.write(str);
-            // }
-            // document.write(func("실행되었습니다.1"));
-        }
 
         //10. 화살표 함수 : 익명 함수 + 매개변수 함수 + 리턴값 함수 + 괄호생략
         {
