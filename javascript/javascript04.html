@@ -617,36 +617,36 @@ document.write(i); //document 문이 continue 이전에 있으면 10이 출력�
             // }
 
 
-        function isPositive(n) {
-            if (n > 0) {
-                alert(`${n}은 양수입니다.`);
-            } else if (n < 0) {
-                alert(`${n}은 음수입니다.`);
-            } else {
-                alert(`${n}은 0입니다.`);   //<<alert가 사용되는 이유
-            }
-        }
+//         function isPositive(n) {
+//             if (n > 0) {
+//                 alert(`${n}은 양수입니다.`);
+//             } else if (n < 0) {
+//                 alert(`${n}은 음수입니다.`);
+//             } else {
+//                 alert(`${n}은 0입니다.`);   //<<alert가 사용되는 이유
+//             }
+//         }
  
-                const number = parseInt(prompt('숫자를 입력하세요.'));    //parseInt<<책에 안 나와서 어떤 함수인지 모르겠음
-                // parseInt() 는 숫자가 아닐 경우 NaN을 반환함
-                if(!isNaN(number)) {  // 숫자일 경우에만 실행
-                isPositive(number);  
-                }
+//                 const number = parseInt(prompt('숫자를 입력하세요.'));    //parseInt<<책에 안 나와서 어떤 함수인지 모르겠음
+//                 // parseInt() 는 숫자가 아닐 경우 NaN을 반환함
+//                 if(!isNaN(number)) {  // 숫자일 경우에만 실행
+//                 isPositive(number);  
+//                 }
 
-function getGCD(n, m) {     //4,12                //변수가 두 개 필요하므로 매개변수 함수 작성.
-  let max = n > m ? n : m;                  //max가 n>m일 때, 출력값이 n이 참이 됨.(ture)
-  let GCD = 0;                              //최대공약수를 구할 변수
-  for (let i = 1; i <= max; i++) {          //i가 max까지 반복되는 반복문을 작성
-    if (n % i === 0 && m % i === 0) {       //n을 i로 나누어도 나머지가 0, m을 i로 나누어도 나머지가 0이어야 하는 조건을 만족해야 하기 때문에 &&(AND) 연산자 사용.
+// function getGCD(n, m) {     //4,12                //변수가 두 개 필요하므로 매개변수 함수 작성.
+//   let max = n > m ? n : m;                  //max가 n>m일 때, 출력값이 n이 참이 됨.(ture)
+//   let GCD = 0;                              //최대공약수를 구할 변수
+//   for (let i = 1; i <= max; i++) {          //i가 max까지 반복되는 반복문을 작성
+//     if (n % i === 0 && m % i === 0) {       //n을 i로 나누어도 나머지가 0, m을 i로 나누어도 나머지가 0이어야 하는 조건을 만족해야 하기 때문에 &&(AND) 연산자 사용.
 
-      GCD = i;   // 최대공약수              //변수 GDC는 i가 됨.
-    }
-  }
-  return GCD;                               //변수 GDC를 리턴값으로 불러옴. 리턴값으로 불러오는 이유??
-}
+//       GCD = i;   // 최대공약수              //변수 GDC는 i가 됨.
+//     }
+//   }
+//   return GCD;                               //변수 GDC를 리턴값으로 불러옴. 리턴값으로 불러오는 이유??
+// }
 
-document.write(`308과 20의 최대공약수 : ${getGCD(308, 20)}`);
-document.write(`45과 38의 최대공약수 : ${getGCD(45, 38)}`);
+// document.write(`308과 20의 최대공약수 : ${getGCD(308, 20)}`);
+// document.write(`45과 38의 최대공약수 : ${getGCD(45, 38)}`);
 
 </script>
 
