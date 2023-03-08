@@ -474,7 +474,7 @@
 .like .tongue::after {
     height: 24px;
     animation: movetongue 0.1s linear 0.35s infinite alternate forwards;
-            animation: movetongue 0.1s linear 0.35s infinite alternate forwards;
+    animation: movetongue 0.1s linear 0.35s infinite alternate forwards;
 }
 .like .chin {
     top: 34%;
