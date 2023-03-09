@@ -3,14 +3,12 @@
 
 블로그 : https://fitalux.tistory.com/
 
-##HTML
-블록구조와 인라인 구조
-시멘틱 태그
-
 #JAVASCRICPT
-변수, 상수, 배열, 객체
+퀴즈 이펙트 : https://fitalux.github.io/web2023/javascript/quiz/quizEffect01.html
 
-##Class Table 코딩
-## 레이아웃 연습
-## 레이아웃01
-## 레이아웃02
+
+#2023 사이트 프로젝트
+이미지 유형 01 : https://fitalux.github.io/web2023/site/imageType/imageType01.html
+카드 유형 01 : https://fitalux.github.io/web2023/site/cardType/cardType01.html
+텍스트 유형 01 :https://fitalux.github.io/web2023/site/textType/textType01.html
+슬라이드 유형 01 : https://fitalux.github.io/web2023/site/sliderType/sliderType01.html
