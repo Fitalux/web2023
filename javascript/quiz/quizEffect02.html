@@ -17,6 +17,8 @@
             <ul>
                 <li><a href="quizEffect01.html">1</a></li>
                 <li class="active"><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
             </ul>
     </header>
     <!-- //header -->
@@ -60,9 +62,7 @@
                         <button class="confirm">정답 확인하기 </button>
                         <div class="result"></div>
                     </div>
-                </div>
-                <div class="quiz__footer">
-                    <div class="quiz__desc">해설</div>
+                    <div class="quiz__desc"></div>
                 </div>
             </div>
         </div>
@@ -85,13 +85,12 @@
     const quizAnswerResult = quizWrap.querySelector(".quiz__answer .result");
     const dogWrap = quizWrap.querySelector(".dog__wrap");
     const quizDesc = quizWrap.querySelector(".quiz__desc");
-    const quizFooter = quizWrap.querySelector(".quiz__footer");
     const quizAnswerInput = quizWrap.querySelector(".quiz__answer .input");
     
 
     //문제 정보
     const infoType = "정보처리 기능사";
-    const infoTime = "2011년 5회";
+    const infoTime = " 2011년 5회";
     const infoNumber = "2";
     const infoQuestion = "프레젠테이션 화면 전체를 전환하는 단위를 의미하는 것은?";
     const infoAnswer = "슬라이드";
@@ -107,12 +106,12 @@
 
     //정답 & 해설 숨기기
     quizAnswerResult.style.display = "none";
-    quizFooter.style.display = "none";
+    quizAnswerResult.style.display = "none";
 
     //사용자 정답
     quizAnswerConfirm.addEventListener("click", function () {
         quizAnswerResult.style.display = "block";           //정답 나타냄
-        quizAnswerConfirm.style.display = "none";           //정답 확인버튼 숨김
+        quizDesc.style.display = "none";           //정답 확인버튼 숨김
 
         const userAnswer = quizAnswerInput.value.trim();
         if(infoAnswer == userAnswer) {
