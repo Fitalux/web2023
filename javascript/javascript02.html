@@ -80,9 +80,9 @@
                         <p>변수 안에 저장된 데이터를 불러오는 방법.</p>
                         <div class="script">
 <pre><code>{
-let x = 100, y = 200, z = "javascript";
+    let x = 100, y = 200, z = "javascript";
 
-console.log(x, y, z);
+    console.log(x, y, z);
 }
 </code></pre>
                         </div>
@@ -109,9 +109,9 @@ console.log(x, y, z);
                         <p>상수 안에 저장된 데이터를 불러오는 방법.</p>
                         <div class="script">
 <pre><code>{ 
-let x = 100, y = 200, z = "javascript";
+    let x = 100, y = 200, z = "javascript";
 
-console.log(x, y, z);
+    console.log(x, y, z);
 }
 </code></pre>
                         </div>
@@ -138,9 +138,9 @@ console.log(x, y, z);
                         <p>배열 안에 저장된 데이터를 불러오는 방법.</p>
                         <div class="script">
 <pre><code>{ 
-const arr = [100, 200, "javascript"];
+    const arr = [100, 200, "javascript"];
 
-console.log(arr[0], arr[1], arr[2]);
+    console.log(arr[0], arr[1], arr[2]);
 }
 </code></pre>
                         </div>
@@ -167,12 +167,12 @@ console.log(arr[0], arr[1], arr[2]);
                         <p>배열 안에 배열이 있는 형태의 데이터를 불러오는 방법.</p>
                         <div class="script">
 <pre><code>{ 
-const arr = [100, 200, ["javascript","react"]];
+    const arr = [100, 200, ["javascript","react"]];
 
-console.log(arr[0]);
-console.log(arr[1]);
-console.log(arr[2][0]);
-console.log(arr[2][1]);
+    console.log(arr[0]);
+    console.log(arr[1]);
+    console.log(arr[2][0]);
+    console.log(arr[2][1]);
 }
 </code></pre>
                         </div>
@@ -200,9 +200,9 @@ console.log(arr[2][1]);
                         <p>배열 안에 있는 값의 갯수를 구하는 방법.</p>
                         <div class="script">
 <pre><code>{ 
-const arr = [100, 200, "javascript"];
+    const arr = [100, 200, "javascript"];
 
-console.log(arr.length)
+    console.log(arr.length)
 }
 </code></pre>
                         </div>
@@ -225,25 +225,26 @@ console.log(arr.length)
                         <h3>06. 배열 : 데이터 불러오기 : for문</h3>
                         <p>for문을 사용하여 배열 안에 있는 여러 개의 데이터를 불러오는 방법.</p>
                         <div class="script">
-<pre><code> 1. {
-const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-        
-console.log(arr[0]);
-console.log(arr[1]);
-console.log(arr[2]);
-console.log(arr[3]);
-console.log(arr[4]);
-console.log(arr[5]);
-console.log(arr[6]);
-console.log(arr[7]);
-console.log(arr[8]);
+<pre><code> 
+1. 
+{
+    const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            
+    console.log(arr[0]);
+    console.log(arr[1]);
+    console.log(arr[2]);
+    console.log(arr[3]);
+    console.log(arr[4]);
+    console.log(arr[5]);
+    console.log(arr[6]);
+    console.log(arr[7]);
+    console.log(arr[8]);
 }
 
 2. 
 {
     for(let i = 0; i&lt;9; i++) {
-
-    console.log(arr[i]);
+        console.log(arr[i]);
     }
 }
 </code></pre>
@@ -274,12 +275,12 @@ console.log(arr[8]);
                         <p>for문 안에 for 문이 있는 구조로 첫번째 for문 안에서 두번째 for문이 반복된다.</p>
                         <div class="script">
 <pre><code> { 
-for(let i=1; i&lt;=10; i++ ){
-    console.log("i : " + i);
-    for(let j=1; j&lt;=10; j++){
-        console.log("j : " + j);
+    for(let i=1; i&lt;=10; i++ ){
+        console.log("i : " + i);
+        for(let j=1; j&lt;=10; j++){
+            console.log("j : " + j);
+        }
     }
-}
 }
 </code></pre>
                         </div>
@@ -309,12 +310,13 @@ for(let i=1; i&lt;=10; i++ ){
                         <p>forEach문은 콜백 함수이며, 배열에서만 사용할 수 있다.</p>
                         <div class="script">
 <pre><code> { 
-const num = [100, 200, 300, 400, 500];
-num.forEach(function(element, index, array) {
-    document.write(element,"&lt;br&gt;");
-    document.write(index,"&lt;br&gt;");
-    document.write(array,"&lt;br&gt;");
-}) 
+    const num = [100, 200, 300, 400, 500];
+    
+    num.forEach(function(element, index, array) {
+        document.write(element,"&lt;br&gt;");
+        document.write(index,"&lt;br&gt;");
+        document.write(array,"&lt;br&gt;");
+        }) 
 }               
 </code></pre>
                         </div>
@@ -359,11 +361,11 @@ num.forEach(function(element, index, array) {
                         <p>반복 가능 자료에서 사용하는 반복문으로 가장 많이 사용되는 반복문 중 하나이다.</p>
                         <div class="script">
 <pre><code> { 
-const arr = [100, 200, 300, 400, 500];
-        
-for(let i of arr) {                                 //타겟, 대상을 정해준 다음 그 값을 i라고 선언하는 것.
-    document.write(i,",");
-}
+    const arr = [100, 200, 300, 400, 500];
+            
+    for(let i of arr) {                        //타겟, 대상을 정해준 다음 그 값을 i라고 선언하는 것.         
+        document.write(i,","); 
+    }
 }
 </code></pre>
                         </div>
@@ -390,10 +392,10 @@ for(let i of arr) {                                 //타겟, 대상을 정해�
                         <p>반복해서 객체의 값을 가져와서 처리할 수 있게 하는 반복문.</p>
                         <div class="script">
 <pre><code> {
-const arr = [100, 200, 300, 400, 500]
-for (let i in arr) {                            //index, 즉 자리값이 출력됨.
-    document.write(i); or document.write(arr[i]);
-}
+    const arr = [100, 200, 300, 400, 500]
+    for (let i in arr) {                            //index, 즉 자리값이 출력됨.
+        document.write(i); or document.write(arr[i]);
+    }
 }                                                    //객체 (키와 값)를 불러오기 위해 만든 것.
 </code></pre>
                         </div>
@@ -466,8 +468,8 @@ num.map(function(el, i, a){
                         <p>배열에 포함된 항목을 목록으로 바꾸어 주는 연산자.</p>
                         <div class="script">
 <pre><code> {  
-let arr1 = [100, 200, 300, 400, 500];
-let arr2 = [600, 700, 800, 900];
+    let arr1 = [100, 200, 300, 400, 500];
+    let arr2 = [600, 700, 800, 900];
 
     console.log(arr1);
     console.log(...arr1,);
@@ -499,13 +501,13 @@ let arr2 = [600, 700, 800, 900];
                         <p>배열을 비롯한 반복 가능한 자료, 객체의 요소를 분해하여 여러 변수에 할당할 수 있다.</p>
                         <div class="script">
 <pre><code> {  
-let a, b, c;
+    let a, b, c;
 
-[a, b, c] = [100, 200, "javascript"];
+    [a, b, c] = [100, 200, "javascript"];
 
-console.log(a)
-console.log(b)
-console.log(c)
+    console.log(a)
+    console.log(b)
+    console.log(c)
 }                                                    
 </code></pre>
                         </div>
@@ -538,14 +540,14 @@ console.log(c)
                         <p>객체 안에 있는 값을 .(온점)을 찍어 불러오는 방법.</p>
                         <div class="script">
 <pre><code> { 
-const obj = {
-    a:100,
-    b:200,
-    c:"javascript"
-}
-console.log(obj.a);
-console.log(obj.b);
-console.log(obj.c);
+    const obj = {
+        a:100,
+        b:200,
+        c:"javascript"
+    }
+    console.log(obj.a);
+    console.log(obj.b);
+    console.log(obj.c);
 }                                                    
 </code></pre>
                         </div>
@@ -572,14 +574,14 @@ console.log(obj.c);
                         <p>객체 안에 있는 값을 object를 사용하여 불러오는 방법.</p>
                         <div class="script">
 <pre><code> { 
-const obj = {
-    a:100,
-    b:200,
-    c:"javascript"
-}
-console.log(Object.keys(obj));    
-console.log(Object.values(obj));       
-console.log(Object.entries(obj));       
+    const obj = {
+        a:100,
+        b:200,
+        c:"javascript"
+    }
+    console.log(Object.keys(obj));    
+    console.log(Object.values(obj));       
+    console.log(Object.entries(obj));       
 }                                                    
 </code></pre>
                         </div>
@@ -609,18 +611,18 @@ console.log(Object.entries(obj));
                         <p>객체 안에 있는 값을 변수처럼 선언하여 불러오는 방법.</p>
                         <div class="script">
 <pre><code> { 
-const obj = {
-    a:100,
-    b:200,
-    c:"javascript"
-}
-const name1 = obj.a;
-const name2 = obj.b;
-const name3 = obj.c;
+    const obj = {
+        a:100,
+        b:200,
+        c:"javascript"
+    }
+    const name1 = obj.a;
+    const name2 = obj.b;
+    const name3 = obj.c;
 
-console.log(name1)
-console.log(name2)
-console.log(name3)
+    console.log(name1)
+    console.log(name2)
+    console.log(name3)
 }                                                    
 </code></pre>
                         </div>
@@ -649,14 +651,15 @@ console.log(name3)
                         <p>객체 안에 있는 값을 for in문을 사용하여 불러오는 방법.</p>
                         <div class="script">
 <pre><code> {  
-const obj = {
-    a:100,  
-    b:200,
-    c:"javascript"
+    const obj = {
+        a:100,  
+        b:200,
+        c:"javascript"
     }
-for (let key in obj){
-    console.log(key);
-    console.log(obj[key]);
+
+    for (let key in obj){
+        console.log(key);
+        console.log(obj[key]);
     }
 }                                                    
 </code></pre>
@@ -688,9 +691,10 @@ for (let key in obj){
                         <h3>18. 객체 : 데이터 불러오기 : map()</h3>
                         <p>객체 안에 있는 값을 map()을 사용하여 불러오는 방법.</p>
                         <div class="script">
-<pre><code> {      const obj = [
-    {a:100, b:200, c:"javascript"}
-]
+<pre><code> {      
+    const obj = [
+        {a:100, b:200, c:"javascript"}
+    ]
     obj.map((el) =&gt; {
         console.log(el.a)
         console.log(el.b)
@@ -726,20 +730,21 @@ for (let key in obj){
                         <h3>19. 객체 : 데이터 불러오기 : hasOwnproperty()</h3>
                         <p>객체 안에 있는 값을 hasOwnProperty()를 통해 확인하고 불러오는 방법.</p>
                         <div class="script">
-<pre><code> {  const obj = {
-    a:100,
-    b:200,
-    c:"javascript"
-}
-console.log(obj.hasOwnProperty("a"));   //true
-console.log(obj.hasOwnProperty("b"));   //true
-console.log(obj.hasOwnProperty("c"));   //true
-console.log(obj.hasOwnProperty("d"));   //false
+<pre><code> {  
+    const obj = {
+        a:100,
+        b:200,
+        c:"javascript"
+    }
+    console.log(obj.hasOwnProperty("a"));   //true
+    console.log(obj.hasOwnProperty("b"));   //true
+    console.log(obj.hasOwnProperty("c"));   //true
+    console.log(obj.hasOwnProperty("d"));   //false
 
-console.log("a" in obj);        
-console.log("b" in obj);
-console.log("c" in obj);
-console.log("d" in obj);
+    console.log("a" in obj);        
+    console.log("b" in obj);
+    console.log("c" in obj);
+    console.log("d" in obj);
 }                                                    
 </code></pre>
                         </div>
@@ -777,44 +782,47 @@ console.log("d" in obj);
                         <p>객체 내의 속성들을 개별적인 값으로 분해하지 않고도 객체에 값을 추가하거나 덮어씌울 수 있다.</p>
                         <div class="script">
 <pre><code> {  
-1. const obj = {
-    a:100,
-    b:200,
-    c:"javascript"
-}
-const spread = {...obj}
+    1. 
+    const obj = {
+        a:100,
+        b:200,
+        c:"javascript"
+    }
+    const spread = {...obj}
 
-console.log(spread.a);
-console.log(spread.b);
-console.log(spread.c);
+    console.log(spread.a);
+    console.log(spread.b);
+    console.log(spread.c);
 
-2.  const obj = {
-    a:100,
-    b:200,
-    c:"javascript"
-}
-const spread = {...obj, d:"react"}
+2.  
+    const obj = {
+        a:100,
+        b:200,
+        c:"javascript"
+    }
+    const spread = {...obj, d:"react"}
 
-console.log(spread.a);
-console.log(spread.b);
-console.log(spread.c);
-console.log(spread.d);
+    console.log(spread.a);
+    console.log(spread.b);
+    console.log(spread.c);
+    console.log(spread.d);
 
-3. const obj1 = {
-    a:100,
-    b:200
-} 
-const obj2 = {
-    c:"javascript",
-    d:"react"
-} 
+3. 
+    const obj1 = {
+        a:100,
+        b:200
+    } 
+    const obj2 = {
+        c:"javascript",
+        d:"react"
+    } 
 
-const spread = {...obj1, ...obj2}
+    const spread = {...obj1, ...obj2}
 
-console.log(spread.a);
-console.log(spread.b);
-console.log(spread.c);
-console.log(spread.d);
+    console.log(spread.a);
+    console.log(spread.b);
+    console.log(spread.c);
+    console.log(spread.d);
 }                                                    
 </code></pre>
                         </div>
@@ -849,29 +857,31 @@ console.log(spread.d);
                         <p>객체를 분해하여 개별적인 변수에 할당하는 것.</p>
                         <div class="script">
 <pre><code> {  
-1. const obj = {
-    a:100,
-    b:200,
-    c:"javascript"
-}
-const {a, b, c} = obj;
+1. 
+    const obj = {
+        a:100,
+        b:200,
+        c:"javascript"
+    }
+    const {a, b, c} = obj;
 
-console.log(a);
-console.log(b);
-console.log(c);
+    console.log(a);
+    console.log(b);
+    console.log(c);
 
-console.log(x);         //undefind (키값을 그대로 써주어야 함)
+    console.log(x);         //undefind (키값을 그대로 써주어야 함)
 
-2. const obj = {
-    a:100,
-    b:200,
-    c:"javascript"
-}
-const {a:name1, b:name2, c:name3} = obj;
+2. 
+    const obj = {
+        a:100,
+        b:200,
+        c:"javascript"
+    }
+    const {a:name1, b:name2, c:name3} = obj;
 
-console.log(name1);
-console.log(name2);
-console.log(name3);
+    console.log(name1);
+    console.log(name2);
+    console.log(name3);
 }                                                    
 </code></pre>
                         </div>

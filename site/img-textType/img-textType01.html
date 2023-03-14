@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지/텍스트 유형 01</title>
+
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+
+    <style> 
+        /* reset */
+         * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color:#000;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-weight: normal;
+        }
+        img {
+            vertical-align: top;
+            width: 100%;
+        }
+        .mt10 {margin-top: 10px !important;}
+        .mt20 {margin-top: 20px !important;}
+        .mt30 {margin-top: 30px !important;}
+        .mt40 {margin-top: 40px !important;}
+        .mt50 {margin-top: 50px !important;}
+        .mt60 {margin-top: 60px !important;}
+        .mt70 {margin-top: 70px !important;}
+
+        .mb10 {margin-bottom: 10px !important;}
+        .mb20 {margin-bottom: 20px !important;}
+        .mb30 {margin-bottom: 30px !important;}
+        .mb40 {margin-bottom: 40px !important;}
+        .mb50 {margin-bottom: 50px !important;}
+        .mb60 {margin-bottom: 60px !important;}
+        .mb70 {margin-bottom: 70px !important;}
+
+        /* common */
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+            /* background-color: rgba(0,0,0,0.1); */
+        }
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section.center {
+            text-align: center;
+        }
+        .section__small {
+            font-size: 14px;
+            border-radius: 50px;
+            background-color: #AC43FF;
+            color: #fff;
+            padding: 1px 23px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .section__h2 {
+            font-size: 50px;
+            color: #000;
+            font-weight: 400;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+        .section__desc {
+            font-size: 22px;
+            color: #666;
+            margin-bottom: 70px;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+        .img-text__inner {
+            justify-content: space-between;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .img-text__inner .text {
+            width: 374px;
+            height: 500px;
+            margin-right: 15px;
+        }
+        .image__body {
+            width: 374px;
+            height: 500px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        </style>
+</head>
+<body>
+    <section class="img-text__wrap section nexon">
+        <div class="container">
+            <div class="img-text__inner">
+                <article class="text">
+                    <span class="section__small">notice</span>
+                    <h2 class="section__h2">나선형 은하(Spiral Galaxy)</h2>
+                    <span class="desc">나선형 은하는 중심 부분에 바(bar)와 팔(arm) 형태로 뻗어나가는 구조입니다.</span>
+                    <p class="desc">
+                        나선형 은하 안에는 주로 별들이 모여있는 은하원반이 있습니다. 이 은하원반 안에는 다양한 크기와 모양의 은하들이 분포해 있습니다.
+                        이러한 은하들은 대부분 나선형 은하 안의 중심 부분인 바 주변이나 나선형 팔 사이에 위치하고 있습니다. 이러한 은하들을 위성 은하(Satellite Galaxy) 또는 동반 은하(Companion Galaxy)라고 합니다.
+                        이렇게 나선형 은하 안에 위치한 위성 은하들은 나선형 은하와 서로 상호작용하면서 형태를 바꾸는 등의 영향을 끼치기도 하며, 형태에 따라 다양한 종류가 있습니다.</p>
+                </article>
+                    <article class="image">
+                        <figure class="image__body">
+                            <img src="../asset/img/img-textType01_01.jpg" alt="나선 은하">
+                        </figure>
+                    </article>
+                    <article>
+                        <figure class="image__body">
+                            <img src="../asset/img/img-textType01_02.jpg" alt="나선형 은하">
+                        </figure>
+                    </article>
+            </div>
+        </div>
+    </section>
+</body>   
+</html>

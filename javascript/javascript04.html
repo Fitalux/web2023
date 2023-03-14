@@ -68,12 +68,13 @@
                     <h3>01. if문</h3>
                     <p>if문은 가장 기본적인 조건문입니다.</p>
                     <div class="script">
-<pre><code class="language-js">
-if(0) {
-    document.write("실행되었습니다 (true)");
-} else {
-    document.write("실행되었습니다 (false)");
-}  
+<pre><code class="language-js">{
+    if(0) {
+        document.write("실행되었습니다 (true)");
+    } else {
+        document.write("실행되었습니다 (false)");
+    } 
+} 
 </code></pre>
                 </div>
                     <div class="result">
@@ -100,17 +101,17 @@ if(0) {
                     <p>if문을 생략할 수 있습니다.</p>
                     <div class="script">
 <pre><code class="language-js">{ 
-const num = 100;
+    const num = 100;
 1. 
-if(num) {
-    document.write("실행되었습니다(true)");
-} else {
-    document.write("실행되었습니다(false)");
-}               //생략X
+    if(num) {
+        document.write("실행되었습니다(true)");
+    } else {
+        document.write("실행되었습니다(false)");
+    }               //생략X
 
 2. 
-if(num) document.write("실행되었습니다(ture)")
-else document.write("실행되었습니다(false)") //생략O
+    if(num) document.write("실행되었습니다(ture)")
+    else document.write("실행되었습니다(false)") //생략O
 }
 </code></pre>
                     </div>
@@ -136,17 +137,17 @@ else document.write("실행되었습니다(false)") //생략O
                     <p>세 항으로 줄여서 삼항 연산자라고 부릅니다.</p>
                     <div class="script">
 <pre><code class="language-js">{
-const num = 100;
+    const num = 100;
 
 1.
-if(num == 100){
-    document.write("True");
-} else {
-    document.write("false");
-}
+    if(num == 100){
+        document.write("True");
+    } else {
+        document.write("false");
+    }
 
 2.
-(num == 100) ? document.write("True") : document.write("false");
+    (num == 100) ? document.write("True") : document.write("false");
 }
 </code></pre>
                     </div>
@@ -173,18 +174,18 @@ if(num == 100){
                     <p>여러 개의 조건문을 사용하기 때문에 여러 조건을 검사할 수 있습니다.</p>
                     <div class="script">
 <pre><code class="language-js">{
-const num = 100;
-if(num == 90) {
-    document.write("실행되었습니다(num == 90)");
-} else if(num == 100) {
-    document.write("실행되었습니다(num == 100)");
-} else if(num == 110) {
-    document.write("실행되었습니다(num == 110)");
-} else if(num == 120) {
-    document.write("실행되었습니다(num == 120)");
-} else {
-    document.write("실행되었습니다");
-}
+    const num = 100;
+    if(num == 90) {
+        document.write("실행되었습니다(num == 90)");
+    } else if(num == 100) {
+        document.write("실행되었습니다(num == 100)");
+    } else if(num == 110) {
+        document.write("실행되었습니다(num == 110)");
+    } else if(num == 120) {
+        document.write("실행되었습니다(num == 120)");
+    } else {
+        document.write("실행되었습니다");
+    }
 }
 </code></pre>
                     </div>
@@ -213,18 +214,18 @@ if(num == 90) {
                     <p>조건문if 안에 또 다른 조건문 (if)를 포함하여 더욱 복잡한 조건을 만족할 때 사용한다.</p>
                     <div class="script">
 <pre><code class="language-js">{
-const num = 100;
-if(num == 100) {
-    document.write("실행되었습니다(1)");
+    const num = 100;
     if(num == 100) {
-        document.write("실행되었습니다(2)");
-    } 
+        document.write("실행되었습니다(1)");
         if(num == 100) {
-            document.write("실행되었습니다(3)");
-    } 
-} else {
-    document.write("실행되었습니다(4)");
-}
+            document.write("실행되었습니다(2)");
+        } 
+            if(num == 100) {
+                document.write("실행되었습니다(3)");
+        } 
+    } else {
+        document.write("실행되었습니다(4)");
+    }
 }
 </code></pre>
                     </div>
@@ -252,27 +253,27 @@ if(num == 100) {
                     <p></p>
                     <div class="script">
 <pre><code class="language-js">{
-const num = 100;
+    const num = 100;
 
-switch(num) {
-    case 90:
-        document.write("실행90");
-        break;
-    case 80:
-        document.write("실행80");
-        break;
-    case 70:
-        document.write("실행70");
-        break;
-    case 60:
-        document.write("실행60");
-        break;
-    case 50:
-        document.write("실행50");
-        break;
-    default:
-        document.write("0");
-}
+    switch(num) {
+        case 90:
+            document.write("실행90");
+            break;
+        case 80:
+            document.write("실행80");
+            break;
+        case 70:
+            document.write("실행70");
+            break;
+        case 60:
+            document.write("실행60");
+            break;
+        case 50:
+            document.write("실행50");
+            break;
+        default:
+            document.write("0");
+    }
 }
 </code></pre>
                     </div>
@@ -301,12 +302,12 @@ switch(num) {
                     <p></p>
                     <div class="script">
 <pre><code class="language-js">{
-let num = 0;
+    let num = 0;
 
-while(num&lt;5) {
-    num++;                          //1
-    document.write(num);            //2
-}
+    while(num&lt;5) {
+        num++;                          //1
+        document.write(num);            //2
+    }
 }
 </code></pre>
                     </div>
@@ -333,11 +334,12 @@ while(num&lt;5) {
                     <p>초기 값이나 반복 횟수 없이 조건만 주어졌을 때 주로 사용하는 반복문.</p>
                     <div class="script">
 <pre><code class="language-js">{
-let num2 = 0;
-do{
-    document.write(num2);
-    num2++;
-} while(num2&lt;5);
+    let num2 = 0;
+    
+    do{
+        document.write(num2);
+        num2++;
+    } while(num2&lt;5);
 }
 </code></pre>
                     </div>
@@ -366,32 +368,33 @@ do{
                     <div class="script">
 <pre><code class="language-js">
 1. 
-for (let i=1; i&lt;=100; i++) {
-    document.write(i);
-}                                   //for문을 사용하여 1부터 100까지 출력
+    for (let i=1; i&lt;=100; i++) {
+        document.write(i);
+    }                                   //for문을 사용하여 1부터 100까지 출력
 
 2. 
-const arr = [1,2,3,4,5,6,7,8,9]
-for (let i=0; i&lt;=arr.length; i++) {
-    document.write(arr[i]);
-}                                   //for문을 사용하여 배열 안에 있는 값 출력
+    const arr = [1,2,3,4,5,6,7,8,9]
+    for (let i=0; i&lt;=arr.length; i++) {
+        document.write(arr[i]);
+    }                                   //for문을 사용하여 배열 안에 있는 값 출력
 
 3. 
-for(let i=1; i&lt;arr.length; i++) {
-    if(i % 2 == 0) {
-        document.write("&lt;span style='color:red'&gt;"+i+"&lt;/span&gt;");     //1
-} else {
-        document.write(`&lt;span style='color:blue'&gt;${i}&lt;/span&gt;`);     //2
-}
-    document.write("&lt;br&gt;");                    //2번 배열 안에서 짝수는 빨간색으로 홀수는 파란색으로 출력
+    for(let i=1; i&lt;arr.length; i++) {
+        if(i % 2 == 0) {
+            document.write("&lt;span style='color:red'&gt;"+i+"&lt;/span&gt;");     //1
+    } else {
+            document.write(`&lt;span style='color:blue'&gt;${i}&lt;/span&gt;`);     //2
+    }
+        document.write("&lt;br&gt;");                    //2번 배열 안에서 짝수는 빨간색으로 홀수는 파란색으로 출력
+    }
 
 4.  
-for(let i=0; i&lt;=arr.length; i++) {
-    if(arr[i] % 2 == 0) {
-        document.write(arr[i]);
+    for(let i=0; i&lt;=arr.length; i++) {
+        if(arr[i] % 2 == 0) {
+            document.write(arr[i]);
+        }
+        document.write("&lt;br&gt;");           //2번 배열 안에서 짝수 구하기
     }
-    document.write("&lt;br&gt;");           //2번 배열 안에서 짝수 구하기
-}
 </code></pre>
                     </div>
                     <div class="result">
@@ -423,15 +426,15 @@ for(let i=0; i&lt;=arr.length; i++) {
                     <p>중첩 for문을 사용하여 100칸 테이블 만들기</p>
                     <div class="script">
 <pre><code class="language-js">{ 
-for(let i=1; i&lt;=10, i++){                        //1
-    table += "&lt;tr&gt;";
-    for(let j=1; i&lt;=10; j++)  {                  //2
-        table += "&lt;td&gt;"+j+"&lt;/td&gt;";      //3
+    for(let i=1; i&lt;=10, i++){                        //1
+        table += "&lt;tr&gt;";
+        for(let j=1; i&lt;=10; j++)  {                  //2
+            table += "&lt;td&gt;"+j+"&lt;/td&gt;";      //3
+        }
+        table += "&lt;/tr&gt;"                          //4
     }
-    table += "&lt;/tr&gt;"                          //4
-}
-table += "&lt;/table&gt;"                           //5
-document.write(table);
+    table += "&lt;/table&gt;"                           //5
+    document.write(table);
 }
 </code></pre>
                     </div>
@@ -473,13 +476,13 @@ document.write(table);
                     <p>현재 실행문을 중지시키고 다음 실행문으로 넘어가게 하는 중지문.</p>
                     <div class="script">
 <pre><code class="language-js">{
-for(let i=1; i&lt;100; i++){
-    document.write(i)
-    if(i == 50) {
-        break;
+    for(let i=1; i&lt;100; i++){
+        document.write(i)
+        if(i == 50) {
+            break;
+        }
     }
-}
-document.write("&lt;br&gt;");
+    document.write("&lt;br&gt;");
 }  
 </code></pre>
                     </div>
@@ -506,13 +509,12 @@ document.write("&lt;br&gt;");
                     <p>조건을 만족하면 실행하던 반복 문장을 건너뛴다.</p>
                     <div class="script">
 <pre><code class="language-js">{
-for(let i=1; i&lt;10; i++){
-    if(i == 10) {
-        continue;
+    for(let i=1; i&lt;10; i++){
+        if(i == 10) {
+            continue;
+        }
+        document.write(i); //document 문이 continue 이전에 있으면 10이 출력됨.
     }
-document.write(i); //document 문이 continue 이전에 있으면 10이 출력됨.
-}
-
 }  
 </code></pre>
                     </div>
