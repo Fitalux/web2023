@@ -74,94 +74,68 @@
 
 
 
+//1~10까지 출력    
+{
+    for(let i=1; i<=10; i++){
+        document.write(i,",");
+    }
+}
+document.write("<br><br>")
 
 
-
-
-
-
-    //1.선언적 함수
-    {
-        function func(){
-            document.write("함수가 실행되었습니다.1<br>")
+//1~10 짝수만 출력
+{
+    for(i=0; i<=10; i++) {
+        if(i%2==0){
+            document.write(i,",")
         }
-        func();
     }
+}
 
-    //2. 익명 함수
-    {
-        const func = function(){
-            document.write("함수가 실행되었습니다2<br>")
+document.write("<br><br>")
+
+//1~10까지 출력, 홀수는 빨간색 짝수는 파란색
+{
+    for(i=0; i<=10; i++) {
+        if(i%2==0){
+            document.write("<span style='color:blue'>"+i+"</span>",",")
+        } else {
+            document.write("<span style='color:red'>"+i+"</span>",",")
         }
-        func();
+    }
+}
+
+document.write("<br><br>")
+
+//for 문으로 배열 값 출력
+{
+    const num = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+    for(i=0; i<num.length; i++) {
+        document.write(num[i],",");
+    }
+    
+    document.write("<br><br>")
+
+    num.forEach(function (el) {
+        document.write(el, ",")
+    });
+
+    document.write("<br><br>")
+
+    for(let i in num){
+        document.write(num[i],",")
     }
 
-    //3. 매개변수 함수
-    {
-        function func(str){
-            document.write(str)
-        }
-        func("함수가 실행되었습니다.3 <br>");
+    document.write("<br><br>")
+    
+    for(let i of num){
+        document.write(i,",")
     }
+}
 
-    //4. 리턴값 함수
-    {
-        function func(){
-            const str = "함수가 실행되었습니다.4<br>";
-            return str;
-        }
-        document.write(func());
-    }
-
-    //5. 선언적 함수 화살표
-    {
-        func = () => {
-            document.write("함수가 실행되었습니다.5<br>")
-        }
-        func();
-    }
-
-    //6. 익명 함수 화살표
-    {
-        const func = () => {
-            document.write("함수가 실행되었습니다6<br>")
-        }
-        func();
-    }
-
-    //7. 매개변수 함수 화살표
-    {
-        func = (str) => {
-            document.write(str)
-        }
-        func("함수가 실행되었습니다.7<br>");
-    }
-
-    //8. 리턴값 함수 화살표
-    {
-        func = () => {
-            const str = "함수가 실행되었습니다.8<br>";
-            return str;
-        }
-        document.write(func());
-    }
-
-    //9. 익명 함수 + 매개변수 + 리턴값
-    {
-        const func = function (str){
-            return str;
-        }
-        document.write(func("함수가 실행되었습니다.9 <br>"));
-    }
-
-    //10. 익명 + 매개변수 + 리턴값 + 괄호 생략
-    {
-        
-    }
-
-    //11. 익명 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
-
-    //12. 선언적 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
+document.write("<br><br>")
+   
     </script>
 </body>
 </html>

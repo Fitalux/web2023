@@ -173,6 +173,9 @@
     const quizAnswerConfirm = quizWrap.querySelectorAll(".quiz__answer .confirm");     //정답 버튼
     const quizAnswerInput = quizWrap.querySelectorAll(".quiz__answer .input");      // 사용자 정답
     const dogWrap = quizWrap.querySelectorAll(".dog__wrap");
+    const dogWrapTrue = quizWrap.querySelector(".true");
+    const dogWrapFalse = quizWrap.querySelector(".false");
+    
     //문제 정보
    const quizInfo = [
     {
@@ -290,12 +293,15 @@
                 quizAnswerConfirm[num].style.display = "none";   // 정답 확인 버튼 숨김
                 quizAnswerResult[num].style.display = "block";   // 정답 보이기
                 quizDesc[num].style.display = "block";           // 해설 보이기
+                
 
                  // 사용자 정답 == 문제 정답
                  if(userAnswer == quizInfo[num].infoAnswer){
                     dogWrap[num].classList.add("like");
+                    dogWrapTrue.style.display ="block";
                 } else {
                     dogWrap[num].classList.add("dislike");
+                    dogWrapFalse.style.display = "block";
                 }
             });
         });

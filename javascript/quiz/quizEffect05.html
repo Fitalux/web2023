@@ -177,6 +177,8 @@
         
         //선택자
         const quizWrap = document.querySelector(".quiz__wrap");
+        const dogWrapTrue = quizWrap.querySelectorAll(".true");
+        const dogWrapFalse = quizWrap.querySelectorAll(".false");
         let quizScore = 0;
 
         //출력
@@ -254,7 +256,7 @@
 
         //정답 확인
         const answerQuiz = () => {
-            const quizChoices = document.querySelectorAll(".quiz__choice");
+        const quizChoices = document.querySelectorAll(".quiz__choice");
 
             //사용자가 체크한 답과 문제의 정답이 일치하는지 확인
             quizInfo.forEach((question, number) => {
@@ -264,12 +266,9 @@
                 const dogWrap = quizWrap.querySelectorAll(".dog__wrap");
                 
                 if(userAnswer == question.infoAnswer) {
-                    console.log("정답");
                     dogWrap[number].classList.add("like");
                     quizScore++;
-                    
                 } else {
-                    console.log("오답");
                     dogWrap[number].classList.add("dislike");
                 }
             });
