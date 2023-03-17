@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인 기능사(임시)</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+
+<body>
+    <header id="header">
+        
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap"> 
+            <!-- <div class="quiz">
+                <div class="quiz__header">
+                    <h2 class="quiz__title"></h2>
+                </div>
+                <div class="quiz__main">
+                    <div class="quiz__question"></div>
+                    <div class="quiz__view">
+                        <div class="dog__wrap">
+                            <div class="true">정답</div>
+                            <div class="false">오답</div>
+                            <div class="card-container">
+                                <div class="dog">
+                                    <div class="head">
+                                        <div class="ears"></div>
+                                        <div class="face"></div>
+                                        <div class="eyes">
+                                            <div class="teardrop"></div>
+                                        </div>
+                                        <div class="nose"></div>
+                                        <div class="mouth">
+                                            <div class="tongue"></div>
+                                        </div>
+                                        <div class="chin"></div>
+                                    </div>
+                                    <div class="body">
+                                        <div class="tail"></div>
+                                        <div class="legs"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz__choice">
+                        <label for="choice1">
+                            <input type="radio" id="choice1" name="choice" value="1">
+                            <span></span>
+                        </label>
+                        <label for="choice2">
+                            <input type="radio" id="choice2" name="choice" value="2">
+                            <span></span>
+                        </label> 
+                        <label for="choice3">
+                            <input type="radio" id="choice3" name="choice" value="3">
+                            <span></span>
+                        </label> 
+                        <label for="choice4">
+                            <input type="radio" id="choice4" name="choice" value="4">
+                            <span></span>
+                        </label> 
+                    </div>
+                    <div class="quiz__answer">
+                        <button class="confirm">정답 확인하기</button>
+                    </div>
+                    <div class="quiz__desc"></div>
+                </div>
+            </div> -->
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:goed0522@gmail.com">goed0522@gmail.com</a>   
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        //문제 정보
+        const quizInfo = [
+        {
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110401",
+                infoQuestion: "디자인의 합목적성에 대한 설명으로 옳은 것은?",
+                infoChoice: {
+                    1:"정해진 바탕으로 최상의 디자인을 창출하는 것을 말한다.",
+                    2:"디자인을 할 때 목적에 맞는 수단을 사용하였는지를 말한다.",
+                    3:"보다 실용적이고 심미적으로 개선, 발전 시키는 것을 말한다.",
+                    4:"개성적인 미의식을 창출해내는 것을 말한다."
+                },
+                infoAnswer:"2",
+                infoDesc: "합목적성은 기능성의 문제라고도 할 수 있습니다. <br> 어떤 물건의 존재가 일정한 목적에 부합되는 것으로 일정한 목적에 도달하는데 적합한 행위를 의미합니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110402",
+                infoQuestion: "식욕을 자극하는 색상으로 옳은 것은?",
+                infoChoice: {
+                    1: "빨강",
+                    2: "청록",
+                    3: "보라",
+                    4: "검정"
+                },
+                infoAnswer:"1",
+                infoDesc: "붉은색 계열은 식욕을 자극하는 색입니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110403",
+                infoQuestion: "동시대비에 해당하지 않는 것은?",
+                infoChoice:{
+                    1:"명도대비",
+                    2:"색상대비",
+                    3:"보색대비",
+                    4:"유사대비"
+                },
+                infoAnswer:"4",
+                infoDesc: "동시대비:2가지 이상의 색을 동시에 볼 때 일어나는 대비현상<br> 색상대비, 명도대비, 채도대비, 보색대비가 있습니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110404",
+                infoQuestion: "다음 중 색의 3속성이 아닌 것은?",
+                infoChoice:{
+                    1:"색상",
+                    2:"명도",
+                    3:"채도",
+                    4:"대비"
+                },
+                infoAnswer:"4",
+                infoDesc: "색의 3속성: 색을 구별하는데 필요한 색상, 명도, 채도를 색의 3요소 또는 색의 3속성이라고 합니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110405",
+                infoQuestion: "다음 중 주위 색의 영행으로 오히려 인접색에 가깝게 느껴지는 현상을 의미하는 것은?",
+                infoChoice:{
+                    1:"동화 현상",
+                    2:"명시 현상",
+                    3:"색의 수축성",
+                    4:"중량 현상"
+                },
+                infoAnswer:"1",
+                infoDesc: "동화(同化)현상은 동류의 원리로 가장 가까운 색채끼리의 배색은 친근감과 조화를 느끼게 합니다. 동화(同化)의 동(同)은 같을 동이므로, 인접한(거의 같은)으로 이해하면 쉽습니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110406",
+                infoQuestion: "다음 중 무엇을 구하는 도형인가? <br><img src= img/quiz6.png>",
+                infoChoice:{
+                    1:"심메트리",
+                    2:"황금분할",
+                    3:"루트구형",
+                    4:"아심메트리"
+                },
+                infoAnswer:"2",
+                infoDesc: ""
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110407",
+                infoQuestion: "유채색의 기본 색명은 먼셀 10색상에 따라 10개의 색명으로 정의하였다. 다음 중 색명과 기호의 연결이 다른 것은?",
+                infoChoice:{
+                    1:"주황 - YP",
+                    2:"청록 - BG",
+                    3:"남색 - BR",
+                    4:"초록 - G"
+                },
+                infoAnswer:"3",
+                infoDesc: "먼셀의 10색상 = 기본색상 + 중간색상 <br> 빨강(R), 주황(YR), 노랑(Y), 연두(GY), 초록(G), 청록(BG), 파랑(B), 남색(PB), 보라(P), 자주(RP)"
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110408",
+                infoQuestion: "디자인 원리 중 율동의 요소와 거리가 먼 것은?",
+                infoChoice:{
+                    1:"대칭",
+                    2:"점증",
+                    3:"반복",
+                    4:"변칙"
+                },
+                infoAnswer:"1",
+                infoDesc: "율동은 리듬을 표현하는 것입니다.<br> 반복되는 악센트, 순환하는 강약, 시각적 자극과 자극 간의 간격이라고 볼 수 있습니다.<br> 반복, 점증, 변칙이 대표적이며 대칭은 균형과 관련이 없습니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110409",
+                infoQuestion: "색광혼합의 결과가 잘못된 것은?",
+                infoChoice:{
+                    1:"Red + Green = Yellow",
+                    2:"Green + Blue = Cyan",
+                    3:"Red + Green + blue = Black",
+                    4:"Red + Blue = Magenta"
+                },
+                infoAnswer:"3",
+                infoDesc: "색광(色光)혼합은 빛의 혼합으로 빨간색과 파란색, 초록색을 섞으면 흰 색이 나옵니다.<br> 빨강(Red) + 녹색(Green) + 파랑(blue) = 흰색(WHITE)"
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110410",
+                infoQuestion: "통일성을 주는 방법과 거리가 먼 것은?",
+                infoChoice:{
+                    1:"각 요소들을 근접 시킨다.",
+                    2:"각 요소들을 반복 시킨다.",
+                    3:"각 요소들을 연속 시킨다.",
+                    4:"각 요소들을 분리 시킨다."
+                },
+                infoAnswer:"4",
+                infoDesc: "통일성을 주는 방법에는 각 요소들마다 근접, 반복, 연속 등의 방법이 있습니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110411",
+                infoQuestion: "다음이 설명하고 있는 표색계는?<br>-헤링의 4원색 설을 기본으로 한다.<br>-색상 분할을 원주의 4등분이 서로 보색이 되도록 하였다. <br>-8가지 기본색을 다시 각각 3색상으로 나누어 24색상환으로 하였다.",
+                infoChoice:{
+                    1:"CIE 표색계",
+                    2:"NCS 표색계",
+                    3:"오스트발트 표색계",
+                    4:"DIN 표색계"
+                },
+                infoAnswer:"3",
+                infoDesc: "오스트발트는 헤링의 4원색설, 즉 노란색과 남색, 빨간색과 청록색인 서로 다른 보색을 의도적으로 연결하여 배치하고, 그 사이에 주황색과 파란색, 보라색과 연두색을 배치하여 8가지의 기본색을 정립하였고, 또 이 8색상을 다시 3색상으로 나누어 24색상이 되도록 하였습니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110412",
+                infoQuestion: "먼셀 표색계에 대한 설명으로 틀린 것은?",
+                infoChoice:{
+                    1:"색상은 H(hue)라고 한다.",
+                    2:"명도는 V(value)라고 한다.",
+                    3:"채도는 C(chroma)라고 한다.",
+                    4:"표기는 HVC로 한다."
+                },
+                infoAnswer:"4",
+                infoDesc: "표기는 HV/C로 합니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110413",
+                infoQuestion: "태양광선이 투사되는 위치에 프리즘을 놓아 굴절된 광선을 스크린에 투사하여 나타난 여러 가지 색의 띠를 무엇이라고 하는가?",
+                infoChoice:{
+                    1:"전자파",
+                    2:"감마선",
+                    3:"스펙트럼",
+                    4:"자외선"
+                },
+                infoAnswer:"3",
+                infoDesc: "전자파: 전기 및 자기의 흐름에서 발생하는 일종의 전자기 에너지<br>감마선: 방사선 물질에서 방출되는 방사선<br>자외선:태양광의 스펙트럼을 사진으로 찍었을 때, 가시광선의 단파장보다 바깥쪽에 나타나는 눈에 보이지 않는 빛"
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110414",
+                infoQuestion: "미술 공예 운동의 창시자는?",
+                infoChoice:{
+                    1:"윌리엄 모리스",
+                    2:"헨리 포드",
+                    3:"반 데 벨데",
+                    4:"무테지우스"
+                },
+                infoAnswer:"1",
+                infoDesc: "윌리엄 모리스: 수공업을 중심으로 근대 미술 공예 운동의 창시자<br>헤르만 무지테우스: 기계중심으로 독일공작연맹(DWB)의 창시자"
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110415",
+                infoQuestion: "색채조화의 공통 원리에 관한 설명으로 틀린 것은?",
+                infoChoice:{
+                    1:"질서의 원리 - 색채의 조화는 의식할 수 있으며, 효과적인 반응을 일으키는 질서 있는 계획에 따라 선택된 색체들에서 생긴다.",
+                    2:"비모호성의 원리 - 색채조화는 두 색 이상의 배색에 있어서 모호함이 없는 명료한 배색에서만 얻어진다.",
+                    3:"동류의 원리 - 가장 가까운 색채끼리의 배색은 보는 사람에게 친근감을 주며 조화를 느끼게 한다.",
+                    4:"대비의 원리 - 배색된 색채들이 서로 공통되는 상태와 속성을 가질 때 그 색채는 조화된다."
+                },
+                infoAnswer:"4",
+                infoDesc: "공통서의 원리 - 배색된 색채들이 서로 공통되는 상태와 속성을 가질 때 그 색채군은 조화된다는 원리. <br>참고로 저드의 조화론에는 질서의 원리, 친근성의 원리, 공통성의 원리, 명백성(비모호성)의 원리가 있습니다"
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110416",
+                infoQuestion: "형과 형태에 대한 설명으로 틀린 것은?",
+                infoChoice:{
+                    1:"형은 단순히 우리 눈에 비쳐지는 모양이다.",
+                    2:"형태는 일정한 크기, 색채, 질감을 가진 모양이다.",
+                    3:"형은 현실적인 형과 이념적 형이 있다.",
+                    4:"형은 3차원적 표현이고, 형태는 2차원적인 표현이다."
+                },
+                infoAnswer:"4",
+                infoDesc: "형은 2차원적 표현이고, 형태는 3차원적 표현입니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110417",
+                infoQuestion: "디자인의 원리 중 비례에 대한 설명이 잘못된 것은?",
+                infoChoice:{
+                    1:"균형의 가장 정형적인 구성 형식이다.",
+                    2:"부분과 부분, 부분과 전체에 균형이 잡혀있음을 말한다.",
+                    3:"조형을 구성하는 모든 단위의 크기를 결정한다.",
+                    4:"객관적 질서와 과학적 근거를 명확하게 드러내는 구성 형식이다."
+                },
+                infoAnswer:"1",
+                infoDesc: "비례: 부분과 부분 또는 부분과 전체의 수량적 관계를 말합니다.<br>가장 친근하고 구체적인 구성형식이며, 보는 사람의 감정에 직접적으로 호소하는 힘을 가지고 있을 뿐만 아니라, 객관적 질서와 과학적 근거를 명확하게 드러내는 구성형식입니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110418",
+                infoQuestion: "균형을 잡기 위한 디자인 기본 요소가 아닌 것은?",
+                infoChoice:{
+                    1:"명암",
+                    2:"반복",
+                    3:"크기",
+                    4:"질감"
+                },
+                infoAnswer:"2",
+                infoDesc: "반복: 동일한 요소나 대상이 일정한 간격을 두고 되풀이 하는 것을 말하며, 대상의 의미나 내용을 강조하는 수단으로 쓰입니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110419",
+                infoQuestion: "다음 중 주목성에 대한 설명으로 잘못된 것은?",
+                infoChoice:{
+                    1:"명시성이 높은 색은 어느 정도 주목성이 높다.",
+                    2:"따뜻한 난색은 차가운 한색보다 주목성이 높다.",
+                    3:"초록색이 빨강보다 주목성이 높다.",
+                    4:"주목성은 색의 3속성과 관계가 있다."
+                },
+                infoAnswer:"3",
+                infoDesc: "주목성이란 시선유도를 잘하는 성질을 의미하는 용어로, 빨강이 초록색보다 주목성이 더 높습니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110420",
+                infoQuestion: "다음 중 프로덕트 디자인 분야가 아닌 것은?",
+                infoChoice:{
+                    1:"영상 디자인",
+                    2:"완구 디자인",
+                    3:"가전 디자인",
+                    4:"주방용품 디자인"
+                },
+                infoAnswer:"1",
+                infoDesc: "영상 디자인은 시각디자인 4차원 영역에 해당합니다.<br> 프로덕트(PRODUCT) 디자인은 제품 디자인으로 완구 디자인, 가정용품 디자인, 주방용품 디자인, 제품 디자인에 해당합니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110421",
+                infoQuestion: "정보 검색 연산자의 설명으로 옳은 것은?",
+                infoChoice:{
+                    1:"OR : 연산자 좌우 검색어 중 하나라도 들어 있는 자료를 찾는다.",
+                    2:"구절검색 : 연산자 앞 쪽의 검색어는 포함하고, 뒤 쪽 검색어는 포함하지 않은 자료를 찾는다.",
+                    3:"AND : 두 개 이상의 단어가 순서대로 연속해서 나오는 것을 찾는다.",
+                    4:"	NOT : 연산자 좌우의 검색어를 모두 만족시키는 자료를 찾는다."
+                },
+                infoAnswer:"1",
+                infoDesc: '구절검색 : 2개이상의 단어를 큰 따옴표("")로 묶어 한단어로 검색하는 것 <br> AND : 연산자 좌우의 검색어를 모두 만족시키는 자료<br> 인접연산자 : 두 개 이상의 단어가 순서대로 연속해서 나오는 것을 찾는 것'
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110422",
+                infoQuestion: "인터넷 익스플로러 6.0의 [인터넷 옵션]에서 설정할 수 없는 것은?",
+                infoChoice:{
+                    1:"보안",
+                    2:"열어본 페이지 목록 지우기",
+                    3:"언어 및 글꼴 선택",
+                    4:"페이지 설정"
+                },
+                infoAnswer:"4",
+                infoDesc: "페이지 설정은 [파일] 메뉴에 있습니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110423",
+                infoQuestion: "자바스크립트에서 일정한 시간마다 브라우저 상태를 파악하거나 동작을 수행하는데 사용되는 함수는?",
+                infoChoice:{
+                    1:"window.setInterval()",
+                    2:"window.setTimer()",
+                    3:"window.timer()",
+                    4:"window.setTime()"
+                },
+                infoAnswer:"1",
+                infoDesc: "window.setInterval()함수는 일정한 시간 간격으로 함수를 반복적으로 실행합니다.<br> 첫번째 인수는 실행할 함수이고, 두번째 인수는 실행 간격(밀리초)이 됩니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110424",
+                infoQuestion: "자바스크립트 브라우저 내장 객체가 아닌 것은?",
+                infoChoice:{
+                    1:"Location 객체",
+                    2:"Image 객체",
+                    3:"History 객체",
+                    4:"Vision 객체"
+                },
+                infoAnswer:"4",
+                infoDesc: "Vision 객체는 Google Cloud Vision API를 사용하여 이미지 분석을 수행하는데 사용되는 자바스크립트 라이브러리입니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110425",
+                infoQuestion: "<BODY> 태그에서 사용할 수 있는 속성과 그 의미의 연결이 올바르지 않은 것은?",
+                infoChoice:{
+                    1:"BGCOLOR - 배경색을 지정한다.",
+                    2:"BG - 배경으로 사용될 이미지 파일을 지정한다.",
+                    3:"TEXT - 일반 글자색을 지정한다.",
+                    4:"LINK - 링크로 설정한 글자색을 지정한다."
+                },
+                infoAnswer:"2",
+                infoDesc: "배경이미지 삽입하는 태그는 background-image: url( )입니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110426",
+                infoQuestion: "웹 브라우저의 종류가 아닌 것은?",
+                infoChoice:{
+                    1:"Mosaic",
+                    2:"Opera",
+                    3:"Leno",
+                    4:"Internet Explorer"
+                },
+                infoAnswer:"3",
+                infoDesc: "텍스트 기반의 브라우저로는 링스, 아라크네 ,심바가 있고 그래픽 기반의 브라우저는 Mosaic(모자이크:최초의 그래픽 브라우저), 네스케이프, 핫자바, 오페라, 인터넷 익스플로러 등이 있습니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110427",
+                infoQuestion: "다음이 설명하고 있는 것은? <br> -인터넷 상의 일정 용량의 저장 공간을 제공하여 플로피디스켓과 같은 다른 보조기억장치 없이 인터넷이 연결된 곳이면 어느 곳에서나 파일을 다운로드 할 수 있는 인터넷 하드 디스크 서비스",
+                infoChoice:{
+                    1:"웹 하드",
+                    2:"슈퍼 디스크",
+                    3:"USB 메모리",
+                    4:"ZIP 드라이브"
+                },
+                infoAnswer:"1",
+                infoDesc: "웹하드는 인터넷상에 일정 용량의 저장공간으로 파일을 업로드, 다운로드 할 수 있는 기능입니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110428",
+                infoQuestion: "네트워크에 연결된 시스템의 논리주소를 물리주소로 변환 시켜주는 프로토콜은?",
+                infoChoice:{
+                    1:"TCP",
+                    2:"IP",
+                    3:"FTP",
+                    4:"ARP"
+                },
+                infoAnswer:"4",
+                infoDesc: "APR: 주소 결정 프로토콜(논리주소 = IP주소, 물리주소 = MAC 주소, 랜카드에 부여된 주소)"
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110429",
+                infoQuestion: "자바스크립트의 변수에 대한 설명으로 옳지 않은 것은?",
+                infoChoice:{
+                    1:"변수를 선언하지 않고 사용하는 경우에는 전역변수가 된다.",
+                    2:"지역변수는 반드시 함수 내에서만 선언 되어야 한다.",
+                    3:"지역변수 선언은 Dim 키워드를 사용하여 선언한다.",
+                    4:"지역변수는 선언된 중괄호{ } 안에서만 사용할 수 있다."
+                },
+                infoAnswer:"3",
+                infoDesc: "Dim은 비주얼 베이직에서 변수 선언 시 사용하는 예약어입니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110430",
+                infoQuestion: "IPv4 주소에서 각 클래스별 첫 8bit의 값이 옳은 것은?",
+                infoChoice:{
+                    1:"A: 0000 0000~0111 1110 B: 1000 0001~1011 1111",
+                    2:"A: 0000 0000~0111 1111 B: 1000 0000~1011 1111",
+                    3:"A: 0000 0001~0111 1110 B: 1000 0000~1011 1111",
+                    4:"A: 0000 0001~0111 1111 B: 1000 0001~1011 1111"
+                },
+                infoAnswer:"3",
+                infoDesc: "A클래스는 첫번째 숫자가 127보다 작습니다. <br> B클래스는 첫번째 숫자가 128에서 191 까지입니다.<br> C클래스는 첫번째 숫자가 192에서 223 까지입니다. <br> D클래스는 첫번째 숫자가 224에서 255 까지입니다."
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110431",
+                infoQuestion: "",
+                infoChoice:{
+                    1:"",
+                    2:"",
+                    3:"",
+                    4:""
+                },
+                infoAnswer:"",
+                infoDesc: ""
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110431",
+                infoQuestion: "",
+                infoChoice:{
+                    1:"",
+                    2:"",
+                    3:"",
+                    4:""
+                },
+                infoAnswer:"",
+                infoDesc: ""
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110432",
+                infoQuestion: "",
+                infoChoice:{
+                    1:"",
+                    2:"",
+                    3:"",
+                    4:""
+                },
+                infoAnswer:"",
+                infoDesc: ""
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110433",
+                infoQuestion: "",
+                infoChoice:{
+                    1:"",
+                    2:"",
+                    3:"",
+                    4:""
+                },
+                infoAnswer:"",
+                infoDesc: ""
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110434",
+                infoQuestion: "",
+                infoChoice:{
+                    1:"",
+                    2:"",
+                    3:"",
+                    4:""
+                },
+                infoAnswer:"",
+                infoDesc: ""
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110435",
+                infoQuestion: "",
+                infoChoice:{
+                    1:"",
+                    2:"",
+                    3:"",
+                    4:""
+                },
+                infoAnswer:"",
+                infoDesc: ""
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110436",
+                infoQuestion: "",
+                infoChoice:{
+                    1:"",
+                    2:"",
+                    3:"",
+                    4:""
+                },
+                infoAnswer:"",
+                infoDesc: ""
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110437",
+                infoQuestion: "",
+                infoChoice:{
+                    1:"",
+                    2:"",
+                    3:"",
+                    4:""
+                },
+                infoAnswer:"",
+                infoDesc: ""
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110438",
+                infoQuestion: "",
+                infoChoice:{
+                    1:"",
+                    2:"",
+                    3:"",
+                    4:""
+                },
+                infoAnswer:"",
+                infoDesc: ""
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110439",
+                infoQuestion: "",
+                infoChoice:{
+                    1:"",
+                    2:"",
+                    3:"",
+                    4:""
+                },
+                infoAnswer:"",
+                infoDesc: ""
+            },{
+                infoType: "웹디자인 기능사",
+                infoTime: "2011년 4회(7월 31일)",
+                infoNumber : "20110440",
+                infoQuestion: "",
+                infoChoice:{
+                    1:"",
+                    2:"",
+                    3:"",
+                    4:""
+                },
+                infoAnswer:"",
+                infoDesc: ""
+            }
+        ]
+        
+        //선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        let quizScore = 0;
+
+        //출력
+        const updateQuiz = () => {
+            const exam = [];
+
+            quizInfo.forEach((question, number) => {
+                exam.push(`
+                <div class="quiz">
+                    <div class="quiz__header">
+                        <h2 class="quiz__title">${question.infoType} ${question.infoTime}</h2>
+                    </div>
+                    <div class="quiz__main">
+                        <div class="quiz__question"><em>${number+1}</em>. ${question.infoQuestion}</div>
+                        <div class="quiz__view">
+                            <div class="dog__wrap">
+                                <div class="true">정답</div>
+                                <div class="false">오답</div>
+                                <div class="card-container">
+                                    <div class="dog">
+                                        <div class="head">
+                                            <div class="ears"></div>
+                                            <div class="face"></div>
+                                            <div class="eyes">
+                                                <div class="teardrop"></div>
+                                            </div>
+                                            <div class="nose"></div>
+                                            <div class="mouth">
+                                                <div class="tongue"></div>
+                                            </div>
+                                            <div class="chin"></div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="tail"></div>
+                                            <div class="legs"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quiz__choice">
+                            <label for="choice1${number}">
+                                <input type="radio" id="choice1${number}" name="choice${number}" value="1">
+                                <span>${question.infoChoice[1]}</span>
+                            </label>
+                            <label for="choice2${number}">
+                                <input type="radio" id="choice2${number}" name="choice${number}" value="2">
+                                <span>${question.infoChoice[2]}</span>
+                            </label> 
+                            <label for="choice3${number}">
+                                <input type="radio" id="choice3${number}" name="choice${number}" value="3">
+                                <span>${question.infoChoice[3]}</span>
+                            </label> 
+                            <label for="choice4${number}">
+                                <input type="radio" id="choice4${number}" name="choice${number}" value="4">
+                                <span>${question.infoChoice[4]}</span>
+                            </label> 
+                        </div>
+                        <div class="quiz__desc">정답 : <em>${question.infoAnswer}</em>번<br>${question.infoDesc}</div>
+                    </div>
+                </div>
+                `);
+            });
+
+            exam.push(`
+            <div class="quiz__info">??점</div>
+            <div class="quiz__check">정답 확인하기</div>
+            `);
+            quizWrap.innerHTML = exam.join(' ');
+
+            //설명 숨기기
+            document.querySelectorAll(".quiz__desc").forEach(el => el.style.display = "none");
+        }
+        updateQuiz();
+
+        //정답 확인
+        const answerQuiz = () => {
+            const quizChoices = document.querySelectorAll(".quiz__choice");
+
+            //사용자가 체크한 답과 문제의 정답이 일치하는지 확인
+            quizInfo.forEach((question, number) => {
+                const userSelector = `input[name=choice${number}]:checked`;
+                const quizSelectorWrap = quizChoices[number];
+                const userAnswer = (quizSelectorWrap.querySelector(userSelector) || {}).value;
+                const dogWrap = quizWrap.querySelectorAll(".dog__wrap");
+                
+                if(userAnswer == question.infoAnswer) {
+                    console.log("정답");
+                    dogWrap[number].classList.add("like");
+                    quizScore++;
+                    
+                } else {
+                    console.log("오답");
+                    dogWrap[number].classList.add("dislike");
+                }
+            });
+            //해설보이기
+            document.querySelectorAll(".quiz__desc").forEach(el => el.style.display = "block");
+            
+            //점수 보이기
+            document.querySelector(".quiz__info").innerHTML = Math.round((quizScore / quizInfo.length) * 100) + "점";
+        }
+
+        //정답 클릭
+        document.querySelector(".quiz__check").addEventListener("click", answerQuiz);
+
+    </script>
+</body>
+</html>

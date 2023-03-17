@@ -89,6 +89,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 .quiz__wrap .quiz {
     width: 500px;
@@ -96,7 +97,6 @@
     border: 8px ridge #a12cd3;
     margin: 10px;
 }
-.quiz__header {}
 .quiz__title {
     background-color: #a12cd3;
     border: 3px ridge #a12cd3;
@@ -107,8 +107,6 @@
     color: #fffffff8;
     text-align: center;
 }
-.quiz__main {}
-
 .quiz__question {
     padding: 20px;
     font-size: 24px;
@@ -189,7 +187,7 @@
     clip: rect(0 0 0 0);
     width: 1px;
     height: 1px;
-    margin: 11px;
+    margin: -1px;
     overflow: hidden;
 }
 .quiz__choice label span {
@@ -209,6 +207,7 @@
     background-color: #fff;
     box-shadow: inset 0 0 0 4px #63068a;
     transition: all 0.2s;
+    flex-shrink: 0;
 }
 .quiz__choice label input:checked + span {
     background-color: #f6ecfa;
@@ -216,6 +215,44 @@
 .quiz__choice label input:checked + span::before {
     box-shadow: inset 0 0 0 8px #63068a;
 }
+.quiz__check {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 110px;
+    height: 110px;
+    line-height: 110px;
+    border-radius: 50%;
+    z-index: 1000;
+    background-color: #9d07f4;
+    text-align: center;
+    font-family: 'ElandChoice';
+    color: #fff;
+    cursor: pointer;
+}
+.quiz__info {
+    position: fixed;
+    width: 130px;
+    height: 50px;
+    border-radius: 10px;
+    line-height: 50px;
+    right: 20px;
+    bottom: 170px;
+    background-color: #9d07f4;
+    text-align: center;
+    font-family: 'ElandChoice';
+    color: #fff;
+}
+.quiz__info::after {
+    content: '';
+    position: absolute; 
+    left: 50%;
+    bottom: -10px;
+    border-top: 10px solid #9d07f4;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
 /* dog__wrap */
 .dog .tail,
 .dog .chin,
