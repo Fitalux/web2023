@@ -11,6 +11,8 @@
 
 퀴즈 이펙트 : https://fitalux.github.io/web2023/javascript/quiz/quizEffect01.html    
 
+마우스 이펙트 : https://fitalux.github.io/web2023/javascript/mouse/mouseEffect01.html    
+
 
 #2023 사이트 프로젝트   
 이미지 유형 01 : https://fitalux.github.io/web2023/site/imageType/imageType01.html   
