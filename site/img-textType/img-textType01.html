@@ -25,6 +25,14 @@
             vertical-align: top;
             width: 100%;
         }
+        .blind {
+            position:absolute;
+            clip:rect(0 0 0 0);
+            width:1px;
+            height:1px;
+            margin:-1px;
+            overflow:hidden
+        }
         .mt10 {margin-top: 10px !important;}
         .mt20 {margin-top: 20px !important;}
         .mt30 {margin-top: 30px !important;}
@@ -87,44 +95,92 @@
             display: flex;
             flex-wrap: wrap;
         }
+        .img-text__inner article {
+            width: 31.3333%;
+        }
         .img-text__inner .text {
-            width: 374px;
-            height: 500px;
-            margin-right: 15px;
-            line-height: 1.55;
+            position: relative;
+            padding-left: 14px;
         }
-        .image__body {
-            width: 374px;
-            height: 500px;
-            margin-right: 10px;
-            border-radius: 10%;
+        .img-text__inner .text span {
+            background-color: #AC43FF;
+            font-size: 14px;
+            color: #fff;
+            padding: 1px 20px;
+            border-radius: 50px;
+            margin-bottom: 15px;
+            display: inline-block;
         }
-
-        </style>
+        .img-text__inner .text h3 {
+            font-size: 50px;
+            margin-bottom: 17px;
+        }
+        .img-text__inner .text p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #666;
+            margin-bottom: 12px;
+        }
+        .img-text__inner .text::before {
+            content:'';
+            width: 4px;
+            height: 4px;
+            position: absolute;
+            left: 0;
+            top: 8px;
+            line-height: 1.5;
+            font-size: 16px;
+        }
+        .img-text__inner .image {
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 500px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .img-text__inner .image a {
+            position:absolute;
+            left: 20px;
+            bottom: 20px;
+            background-color: #9909F1;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 40px;
+        }
+        .img-text__inner .image.img1 {
+                background-image: url(../asset/img/img-textType01_01.jpg);
+        }
+        .img-text__inner .image.img2 {
+                background-image: url(../asset/img/img-textType01_02.jpg);
+        }
+        /* .imgText__inner .img.i1 a {
+            background-color: #AC43FF;
+        }
+        .imgText__inner .img.i2 a {
+            background-color: #AC43FF;
+        } */
+    </style>
 </head>
 <body>
     <section class="img-text__wrap section nexon">
+        <h2 class="blind"></h2>
         <div class="container">
             <div class="img-text__inner">
                 <article class="text">
-                    <span class="section__small">notice</span>
-                    <h2 class="section__h2">나선형 은하(Spiral Galaxy)</h2>
-                    <span class="desc">나선형 은하는 중심 부분에 바(bar)와 팔(arm) 형태로 뻗어나가는 구조입니다.</span>
-                    <p class="desc">
+                    <span>notice</span>
+                    <h3>나선형 은하(Spiral Galaxy)</h3>
+                    <p class="subtitle">나선형 은하는 중심 부분에 바(bar)와 팔(arm) 형태로 뻗어나가는 구조입니다.</p>
+                    <p>
                         나선형 은하 안에는 주로 별들이 모여있는 은하원반이 있습니다. 이 은하원반 안에는 다양한 크기와 모양의 은하들이 분포해 있습니다.
                         이러한 은하들은 대부분 나선형 은하 안의 중심 부분인 바 주변이나 나선형 팔 사이에 위치하고 있습니다. 이러한 은하들을 위성 은하(Satellite Galaxy) 또는 동반 은하(Companion Galaxy)라고 합니다.
                         이렇게 나선형 은하 안에 위치한 위성 은하들은 나선형 은하와 서로 상호작용하면서 형태를 바꾸는 등의 영향을 끼치기도 하며, 형태에 따라 다양한 종류가 있습니다.</p>
                 </article>
-                    <article class="image">
-                        <figure class="image__body">
-                            <img src="../asset/img/img-textType01_01.jpg" alt="나선 은하">
-                        </figure>
-                    </article>
-                    <article>
-                        <figure class="image__body">
-                            <img src="../asset/img/img-textType01_02.jpg" alt="나선형 은하">
-                        </figure>
-                    </article>
+                <article class="image img1">
+                        <a href="#">나선형 은하</a>
+                </article>
+                <article class="image img2">
+                        <a href="#">위성 은하</a>
+                </article>
             </div>
         </div>
     </section>
