@@ -176,12 +176,12 @@
 
 
         // 4 getAttribute();
-        docment.querySelectorAll(".mouse__text span").forEach(function(span){
+        document.querySelectorAll(".mouse__text span").forEach(function(span){
             let attr= span.getAttribute("class");               // attr = s1 ~ s6
-            span.addEventListener("mouseover", function(){
+            span.addEventListener("mouseover",function(){
                 cursor.classList.add(attr);
             });
-            span.addEventListener("mouseout", function(){
+            span.addEventListener("mouseout",function(){
                 cursor.classList.remove(attr);
             });
         });
