@@ -49,10 +49,10 @@ body.bg01::after {
     background: rgba(56, 54, 54, 0.37);
 }
 body.bg02::after {
-    background:  rgba(221, 188, 239, 0.37);
+    background: rgba(158, 186, 250, 0.37);
 }
 body.bg03::after {
-    background: rgba(158, 186, 250, 0.37);
+    background:  rgba(221, 188, 239, 0.8);
 }
 body.bg04::after {
     background: rgba(242, 174, 155, 0.37);
