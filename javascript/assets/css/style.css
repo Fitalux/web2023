@@ -84,11 +84,32 @@ body {
     padding: 40px 0;
     border-bottom: 1px dashed #dcdcdc;
 }
-.main__menu {
+.main_menu {
     padding-bottom: 40px;
     border-bottom: 1px dashed #dcdcdc;
 }
-.main__desc {
+.main_menu li{
+    line-height: 2;
+}
+.main_menu li strong {
+    position: relative;
+}
+.main_menu li strong::before {
+    content: '';
+    background-color: #f0cdfb;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    z-index: -1;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+.main_menu li:hover strong::before {
+    height: 100%;
+}
+.main__desc h3{
     font-size: 24px;
     margin-bottom: 10px;
 }
@@ -157,7 +178,22 @@ body {
 .main__sample .notice p {
     margin-bottom: 0;
 }
-
+.main__sample ul {
+    margin: 20px 0;
+}
+.main__sample li {
+    position: relative;
+    padding-left: 12px;
+}
+.main__sample li::before {
+    content: '';
+    width: 3px;
+    height: 3px;
+    background-color: #b608ef;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
 /* 푸터 영역 */
 #footer {
     padding: 40px;
