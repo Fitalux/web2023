@@ -10,131 +10,28 @@
     <script>
        
 
-        // {//7-1. 선언적 함수
-        //     function func() {
-        //         document.write("선언적 함수")
-        //     }
-        //     func();
-        // }
+    //    let num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    //     for(let i=9; i>=0; i--){
+    //     switch(num[i] % 2){
+    //         case 1:
+    //             console.log(num[i]);
+    //             break;
+    //         default:
+    //             console.log("*");
+    //     }
+    // }
 
-        // {//7-2. 익명함수
-        //     const func= function func() {
-        //         document.write("익명함수")
-        //     }
-        //     func();
-        // }
+    const arr = [100, 200, 300, 400, 500];
 
-        // {//7-3. 매개변수 함수
-        //     function func(str) {
-        //         document.write(str)
-        //     }
-        //     func("매개변수함수");
-        // }
+const text1 = arr.join("*");
+arr.push("600");
+const text3 = arr.join("");
+arr.pop();
+const text4 = arr.join(" ");
 
-        // {//7.4. 리턴값 함수
-        //     function func(str) {
-        //         const func = str;
-        //         return str;
-        //     }
-        //     document.write(func("리턴값 함수"));
-        // }
-
-        // {//8-1. 선언적 함수 화살표
-        //     func = () => {
-        //         document.write("선언적 함수 화살표")
-        //     }
-        //     func();
-        // }
-
-        // {//8-2 익명함수 화살표
-        //     const func = () => {
-        //         document.write("익명함수 화살표")
-        //     }
-        //     func();
-        // }
-
-        // {//8-3. 매개변수 함수 화살표
-        //     func = (str) => {
-        //         document.write(str)
-        //     }
-        //     func("매개변수함수 화살표");
-        // }
-
-        // {//8-4. 리턴값 함수 화살표
-        //     func = (str) => {
-        //         const func = str;
-        //         return str;
-        //     }
-        //     document.write(func("리턴값 함수 화살표"));
-        // }
-
-
-
-
-
-
-
-//1~10까지 출력    
-{
-    for(let i=1; i<=10; i++){
-        document.write(i,",");
-    }
-}
-document.write("<br><br>")
-
-
-//1~10 짝수만 출력
-{
-    for(i=0; i<=10; i++) {
-        if(i%2==0){
-            document.write(i,",")
-        }
-    }
-}
-
-document.write("<br><br>")
-
-//1~10까지 출력, 홀수는 빨간색 짝수는 파란색
-{
-    for(i=0; i<=10; i++) {
-        if(i%2==0){
-            document.write("<span style='color:blue'>"+i+"</span>",",")
-        } else {
-            document.write("<span style='color:red'>"+i+"</span>",",")
-        }
-    }
-}
-
-document.write("<br><br>")
-
-//for 문으로 배열 값 출력
-{
-    const num = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-
-    for(i=0; i<num.length; i++) {
-        document.write(num[i],",");
-    }
-    
-    document.write("<br><br>")
-
-    num.forEach(function (el) {
-        document.write(el, ",")
-    });
-
-    document.write("<br><br>")
-
-    for(let i in num){
-        document.write(num[i],",")
-    }
-
-    document.write("<br><br>")
-    
-    for(let i of num){
-        document.write(i,",")
-    }
-}
-
-document.write("<br><br>")
+console.log(text1);
+console.log(text3);
+console.log(text4);
    
     </script>
 </body>
