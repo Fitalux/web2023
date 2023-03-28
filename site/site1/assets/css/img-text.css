@@ -1,0 +1,103 @@
+.img-text__inner {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+}
+.img-text__inner article {
+    width: 31.3333%;
+}
+.img-text__inner .text {
+    position: relative;
+    padding-left: 14px;
+}
+.img-text__inner .text span {
+    background-color: #9909F1;
+    font-size: 14px;
+    color: #fff;
+    padding: 1px 20px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+.img-text__inner .text h3 {
+    font-size: 50px;
+    margin-bottom: 17px;
+}
+.img-text__inner .text p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 12px;
+}
+.img-text__inner .text::before {
+    content:'';
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    top: 8px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+.img-text__inner .image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+.img-text__inner .image a {
+    position:absolute;
+    left: 20px;
+    bottom: 20px;
+    background-color: #9909F1;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 40px;
+}
+.img-text__inner .image.img1 {
+        background-image: url(../img/img-textType01_01.jpg);
+}
+.img-text__inner .image.img2 {
+        background-image: url(../img/img-textType01_02.jpg);
+}
+/* .imgText__inner .img.i1 a {
+    background-color: #AC43FF;
+}
+.imgText__inner .img.i2 a {
+    background-color: #AC43FF;
+} */
+
+@media(max-width: 960px) {
+    .img-text__inner .text {
+        width: 100%;
+        text-align: center;
+    }
+    .img-text__inner .image {
+        width: 49%;
+    }
+    .img-text__inner .text h3 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+    .img-text__inner .text .ul {
+        display: none;
+    }
+    .img-text__inner .text p {
+        font-size: 18px;
+        margin-bottom: 40px;
+        font-weight: 300;
+    }
+}
+@media(max-width: 600px) {
+    .img-text__inner .image {
+        width: 100%;
+        margin-bottom: 3%;
+    }
+    .img-text__inner .text h3 {
+        font-size: 30px;
+    }
+    .img-text__inner .text p {
+        font-size: 16px;
+    }
+}

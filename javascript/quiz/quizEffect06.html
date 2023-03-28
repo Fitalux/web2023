@@ -21,6 +21,7 @@
                 <li><a href="quizEffect04.html">4</a></li>
                 <li><a href="quizEffect05.html">5</a></li>
                 <li class="active"><a href="quizEffect06.html">6</a></li>
+                <li><a href="quizEffect07.html">7</a></li>
             </ul>
     </header>
     <!-- //header -->
@@ -37,6 +38,9 @@
                         <div class="dog__wrap">
                             <div class="true">정답</div>
                             <div class="false">오답</div>
+                            <div class="count"></div>
+                            <div>맞춘 문제 수: <span class="quiz__truescore">0</span></div>
+                            <div>틀린 문제 수: <span class="quiz__falsescore">0</span></div>
                             <div class="card-container">
                                 <div class="dog">
                                     <div class="head">
@@ -155,13 +159,22 @@
         const quizAnswer = quizWrap.querySelector(".quiz__answer");
         const quizNext = quizWrap.querySelector(".quiz__answer .next");
         const quizDesc = quizWrap.querySelector(".quiz__desc");
-
-        let questionCount = 0;
+        const quizScoreElement = document.querySelector(".quiz__info");
+        const dogWrapCount = quizWrap.querySelector(".dog__wrap .count");
+        
+        let quizInfoLength = quizInfo.length;       // 전체 문제 수
         let quizCount = 0;
-        let quizScore = 0;
+        let truescore = 0;                          //맞은 문제 수 
+        let falsescore = 0;                         //틀린 문제 수
+        let quizScore = 0;                          //최종 점수
 
         //문제출력
         const updateQuiz = (index) => {
+
+            if(index>=quizInfo.length) {
+                return;
+            }
+
             let TypeTag = `
                 <span>${quizInfo[index].infoType}</span>
                 <em>${quizInfo[index].infoTime}</em>
@@ -200,7 +213,8 @@
             quizQuestion.innerHTML = QuestionTag;
             quizChoice.innerHTML = ChoiceTag;
             quizDesc.innerHTML = DescTag;
-
+            dogWrapCount.innerHTML = `총 ${quizInfoLength}문제 중에 ${quizInfoLength-quizCount} 문제 남았습니다.`
+            
 
             //객관식 보기 선택자
             const quizChoiceSpan = quizWrap.querySelectorAll(".quiz__choice span");
@@ -222,7 +236,6 @@
         };
         updateQuiz(quizCount);
 
-        
         function choiceSelected(answer){
             let userAnswer = answer.textContent;                            //사용자 정답
             let currentAnswer = quizInfo[quizCount].infoAnswer;             //문제 정답
@@ -230,19 +243,34 @@
             if(userAnswer == currentAnswer) {
                 console.log("O");
                 dogWrap.classList.add("like");
+                truescore++;
+
             } else {
                 console.log("X");
                 dogWrap.classList.add("dislike");
+                falsescore++;
             }
 
             //나타내기
             quizAnswer.style.display = "block";
             quizDesc.style.display = "block";
+            
+            document.querySelector(".quiz__truescore").innerHTML = truescore;
+            document.querySelector(".quiz__falsescore").innerHTML = falsescore;
+
+            quizScore = Math.round((quizScore/quizInfo.length)*100);
+            let quizResult = (quizScore > 60) ? "합격" : "불합격"
+
+            //마지막 문제일 때
+            if(quizCount==quizInfo.length){
+                quizAnswer.style.display = "none";
+                dogWrapCount.innerHTML = `모든 문제가 종료되었습니다.<br> 맞춘 문제는 ${truescore}개이고,<br>
+                틀린 문제는 ${falsescore}개이며, 점수는 ${quizScore}입니다.<br> ${quizResult}입니다. <br>수고하셨습니다.`
+            }
         }
-        
 
         //정답 확인
-        quizNext.addEventListener("click",()=>{
+        quizNext.addEventListener("click", ()=>{
             quizCount++;
             updateQuiz(quizCount);
             dogWrap.classList.remove("like","dislike")
