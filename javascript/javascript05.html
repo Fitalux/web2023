@@ -79,16 +79,15 @@
                     <li><a hrer="#sample28">28.<strong>string.prototype.toUpperCase()</strong>       메서드는 문자열을 대문자로 설정하고, 대문자 문자열을 반환한다.</a></li>
                     <li><a hrer="#sample29">29.<strong>string.prototype.toString()</strong>          메서드는 데이터를 문자열로 변환하고, 문자열을 반환한다.</a></li>
                     <li><a hrer="#sample30">30.<strong>string.prototype.trim()</strong>★              메서드는 문자열의 앞/뒤 공백을 제거하고, 새로운 문자열을 반환한다.</a></li>
-                    <li><a hrer="#sample31">31.<strong>string.prototype.trimEnd()</strong>           메서드는 문자열의 앞 공백을 제거하고, 새로운 문자열을 반환한다.</a></li>
-                    <li><a hrer="#sample32">32.<strong>string.prototype.trimStart()</strong>         메서드는 문자열의 뒤 공백을 제거하고, 새로운 문자열을 반환한다.</a></li>
+                    <li><a hrer="#sample32">31.<strong>string.prototype.trimStart()</strong>         메서드는 문자열의 뒤 공백을 제거하고, 새로운 문자열을 반환한다.</a></li>
+                    <li><a hrer="#sample31">32.<strong>string.prototype.trimEnd()</strong>           메서드는 문자열의 앞 공백을 제거하고, 새로운 문자열을 반환한다.</a></li>
                     <li><a hrer="#sample33">33.<strong>string.prototype.valueOf()</strong>           메서드는 객체의 원시값을 반환한다.</a></li>
                 </ul>
             </div> 
             
             <div class="main__sample">
-
                 <div id="sample06" class="sample">
-                    <h3>06. 문자열 메서드 : includes()</h3>
+                    <h3>06. includes()</h3>
                     <p>문자열 포함 여부를 검색하여, 불린(true, false)을 반환한다.</p>
                     <div class="script">
 <pre><code class="language-js">{
@@ -111,7 +110,7 @@
                 <!-- //sample06 -->
 
                 <div id="sample07" class="sample">
-                    <h3>07. 문자열 메서드 : indexOf</h3>
+                    <h3>07. indexOf( )</h3>
                     <p>문자열을 검색하여, 주어진 값과 일치하는 첫 번째 위치값(index)을 반환한다.</p>
                     <div class="script">
 <pre><code class="language-js">{
@@ -145,7 +144,7 @@
                 <!-- //sample07 -->
 
                 <div id="sample08" class="sample">
-                    <h3>08. 문자열 메서드 : lastindexOf</h3>
+                    <h3>08. lastindexOf( )</h3>
                     <p>메서드는 문자열을 역순으로 검색하여, 주어진 값과 일치하는 첫 번째 위치값(index)을 반환한다.</p>
                     <div class="script">
 <pre><code class="language-js">{
@@ -179,7 +178,7 @@
                 <!-- //sample07 -->
 
                 <div id="sample10" class="sample">
-                    <h3>배열 메서드 : match()</h3>
+                    <h3>10. match()</h3>
                     <p>문자열(정규식)을 검색하고, 문자열(배열)을 반환한다.</p>
                     <div class="script">
 <pre><code class="language-js">{
@@ -210,7 +209,7 @@
                 <!-- //sample10 -->
 
                 <div id="sample18" class="sample">
-                    <h3>배열 메서드 : search()</h3>
+                    <h3>18. search()</h3>
                     <p>문자열(정규식)을 검색하고, 위치값(숫자)을 반환한다.</p>
                     <div class="script">
 <pre><code class="language-js">{
@@ -237,6 +236,140 @@
                 </div>
                 <!-- //sample18 -->
 
+                <div id="sample19" class="sample">
+                    <h3>19. slice( )</h3>
+                    <p>문자열에서 일부분을 추출하여 새로운 문자열을 반환하는 함수</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    let str = "hello world";
+    let subStr = str.slice(0, 5);
+
+    console.log(subStr); // 출력결과: "hello"
+}
+</code></pre>
+                    </div>
+                    <div class="notice">
+                        <h4>slice( )</h4>
+                        <p>문자열.slice(시작 위치)</p>
+                        <p>문자열.slice(시작 위치, 끝 위치)</p>
+                        <p>첫 번째 인수로 시작 위치를, 두 번째 인수로 추출할 부분의 위치를 지정한다.</p>
+                        <p>첫 번째 인수는 필수적이며, 두 번째 인수는 선택적이다.</p>
+                        <p>두 번째 인수를 생략하면 추출할 문자열은 첫 번째 인수로 지정된 위치부터 문자열의 끝까지를 추출하여 반환한다.</p>
+                        <p>slice( ) 함수는 인수값을 음수로도 받을 수 있다.</p>
+                    </div>
+                </div>
+                <!-- //sample19 -->
+
+                <div id="sample20" class="sample">
+                    <h3>20.substring( )</h3>
+                    <p>문자열에서 지정된 위치에 있는 문자들의 부분 문자열(substring)을 반환한다.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    let str = "hello world";
+    let subStr = str.substring(0, 5);
+
+    console.log(subStr); // 출력결과: "hello"   
+}
+</code></pre>
+                    </div>
+                    <div class="notice">
+                        <h4> substring( )</h4>
+                        <p>문자열.substring(시작 위치)</p>
+                        <p>문자열.substring(시작 위치, 끝 위치)</p>
+                        <p>이 메서드는 문자열 객체의 메서드로 사용된다.<p>
+                        <p>substring( ) 메서드는 두 개의 매개변수를 가질 수 있다.(추출할 부분의 시작 위치와 끝 위치를 인수로 받는다)</p>
+                        <p>첫 번째 매개변수는 부분 문자열의 시작 인덱스이고, 두 번째 매개 변수는 부분 문자열의 끝 인덱스이다.</p>
+                        <p>두 번째 매개변수는 생략할 수 있으며, 생략한 경우 끝부분까지 부분 문자열을 반환한다.</p>
+                        <p>substr( )함수와 비슷하게 동작하지만 시작 위치와 추출할 문자열의 길이를 받는 substr과는 다르게</p>
+                        <p>substring( )함수는 시작 위치와 끝 위치를 인수로 받는다.</p>
+                    </div>
+                </div>
+                <!-- //sample20 -->
+
+                <div id="sample22" class="sample">
+                    <h3>22.split( )</h3>
+                    <p>문자열을 지정한 구분자를 기준으로 분할할여 배열로 반환하는 함수</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    let str = "apple,banana,kiwi";
+    let arr = str.split(",");
+
+    console.log(arr); // 출력결과: ["apple", "banana", "kiwi"]
+}
+</code></pre>
+                    </div>
+                    <div class="notice">
+                        <h4> split( )</h4>
+                        <p>문자열. split(구분자[제한])</p>
+                        <p>이 함수는 문자열 객체의 메서드로 사용된다.<p>
+                        <p>구분자로는 문자열, 정규식 등을 줄 수 있으며 지정하지 않는 것도 가능하다.</p>
+                        <p>주로 문자열을 파싱하거나 특정 문자열을 기준으로 분할해야할 때 사용된다.</p>
+                    </div>
+                </div>
+                <!-- //sample22 -->
+
+                <div id="sample30" class="sample">
+                    <h3>30.trim( )</h3>
+                    <p>문자열 양 끝의 공백을 제거하는데 사용된다.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const str = "   Hello, World!   ";
+    const trimmedStr = str.trim(); // "Hello, World!"
+}
+</code></pre>
+                    </div>
+                    <div class="notice">
+                        <h4> split( )</h4>
+                        <p>trim( ) 메서드는 공백이 제거된 새 문자열을 반환한다.</p>
+                        <p>원본 문자열은 변경시키지 않는다.</p>
+                        <p>trim( ) 메서드는 사용자가 입력한 폼 데이터의 공백 제거,</p>
+                        <p>문자열 검색을 위해 문자열의 앞뒤 공백 제거, </p>
+                        <p> 문자열을 비교하기 전에 앞뒤 공백을 제거하여 정확한 비교 수행 등에 사용된다.</p>
+                    </div>
+                </div>
+                <!-- //sample30 -->
+
+                <div id="sample31" class="sample">
+                    <h3>31.trimStart()</h3>
+                    <p>문자열을 지정한 구분자를 기준으로 분할할여 배열로 반환하는 함수</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    let str = "apple,banana,kiwi";
+    let arr = str.split(",");
+
+    console.log(arr); // 출력결과: ["apple", "banana", "kiwi"]
+}
+</code></pre>
+                    </div>
+                    <div class="notice">
+                        <h4>trimStart()</h4>
+                        <p>trimStart()문자열. split(구분자[제한])</p>
+                        <p>trimStart()이 함수는 문자열 객체의 메서드로 사용된다.<p>
+                        <p>구분자로는 문자열, 정규식 등을 줄 수 있으며 지정하지 않는 것도 가능하다.</p>
+                        <p>주로 문자열을 파싱하거나 특정 문자열을 기준으로 분할해야할 때 사용된다.</p>
+                    </div>
+                </div>
+                <!-- //sample31 -->
+
+                <div id="sample32" class="sample">
+                    <h3>32.trimEnd()</h3>
+                    <p>문자열 끝의 공백 문자를 제거한 후 새로운 문자열을 반환하는 메서드.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const str = "     Hello World!     ";
+    console.log(str.trimEnd()); // "     Hello World!"
+}
+</code></pre>
+                    </div>
+                    <div class="notice">
+                        <h4>trimEnd()</h4>
+                        <p>문자열.trimEnd( )</p>
+                        <p>문자열 끝에 여러 개의 공백이 있을 경우 모든 공백을 제거한다.<p>
+                        <p>원본 문자열을 변경하지 않으면서 공백을 제거한 새로운 문자열을 반환한다.</p>
+                        <p>trim( )과 달리 문자열 끝의 공백만을 제거한다.</p>
+                    </div>
+                </div>
+                <!-- //sample32 -->
             </div>
         </div>
     </main>

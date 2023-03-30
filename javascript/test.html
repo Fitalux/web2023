@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    {
+            let a=2, r=3, total=a;
+        
+        for(let i=0; i<3; i++) {
+            a*=r
+            total+=a
+        }
+        console.log("a의 값은"+a)
+        console.log("r의 값은"+r)
+        console.log("total의 값은"+total)
+    }
+
+    {
+        let a, b, c, sum;
+
+        a = b =1;
+        sum = a+b;
+
+        for(let i=3; i<=5; i++) {
+            c = a+b;
+            sum += c;
+            a = b;
+            b = c;
+        }
+        console.log("2번 문제 a의 값은"+a)
+        console.log("2번 문제 b의 값은"+b)
+        console.log("2번 문제 c의 값은"+c)
+        console.log("2번 문제 sum의 값은"+sum)
+    } 
+    </script>
+</body>
+</html>

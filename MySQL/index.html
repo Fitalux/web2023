@@ -241,15 +241,27 @@ mysql> show databases;
                     <h3 id="intro5" class="page-header">테이블</h3>
                     <h4 id="intro5-1" class="page-header">테이블 만들기</h4>
                     <div class="bs-callout bs-callout-info">create table 테이블 이름;</div>
-<pre><code class="language-js"> create table member(
+<pre><code class="language-js"> create table members(
     memberID int(10) unsigned auto_increment,
     youEmail varchar(40) NOT NULL,
     youName varchar(10) NOT NULL,
     youPass varchar(20) NOT NULL,
     youBirth int(10) NOT NULL,
     youAge int(5) NOT NULL,
-    regTime int(30) NOT NULL, (UNIQUE, DEFAULT(값))
+    regTime int(30) NOT NULL,
     PRIMARY KEY(memberID)
+    ) charset=utf8;
+</code></pre>
+
+<h3 id="intro5" class="page-header">테이블</h3>
+                    <h4 id="intro5-1" class="page-header">테이블 만들기</h4>
+                    <div class="bs-callout bs-callout-info">create table 테이블 이름;</div>
+<pre><code class="language-js"> create table reviews(
+    reviewID int(10) unsigned auto_increment,
+    memberID int(10) unsigned,
+    youText tinytext NOT NULL,
+    regTime int(30) NOT NULL,
+    PRIMARY KEY(reviewID)
     ) charset=utf8;
 </code></pre>
                     <h4 id="intro5-2" class="page-header">테이블 전체보기</h4>
@@ -325,6 +337,21 @@ Empty set (0.00 sec)
     INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("dripidea77@gmail.com","김시연","1234","19930313","31","03140316");
     INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("itshena01@gmail.com","조한미","1234","19930211","31","03140316");
     INSERT INTO members(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES("aimee00418@gmail.com","권현정","1234","19830211","39","03140316");
+</code></pre>
+
+                    <h4 id="intro5-6" class="page-header">테이블 복사</h4>
+                    <div class="bs-callout bs-callout-info"></div>
+<pre><code class="language-js">
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("4", "정말 감사합니다. 잘 보고 갑니다.", "1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("1", "하나쯤 있으면 도움이 될 것 같아요.", "1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("5", "광고만큼 효과가 좋지는 않네요.", "1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("8", "적은 돈은 아닌데 생각보다 금방 망가지네요.", "1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("9", "많이 파세요.", "1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("10", "쓸만해요", "1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("3", "가격도 괜찮고 품질도 괜찮아요.", "1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("6", "정말 감사합니다. 잘 보고 갑니다.", "1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("2", "번창하세요.", "1234567");
+    INSERT INTO reviews(memberID, youText, regTime) VALUES("7", "잘 구매했습니다.", "1234567");
 </code></pre>
                 </div>  
                 <!-- //intro5 -->
@@ -512,8 +539,6 @@ Empty set (0.00 sec)
 <pre><code class="language-js">
     SELECT * FROM member ORDER BY youName DESC;
 </code></pre>
-
-
 
                     <h4 id="intro6-4" class="page-header">데이터 삭제하기</h4>
                     <div class="bs-callout bs-callout-info"><code>DELETE</code> <code>FROM</code> 테이블명 <code>WHEHE</code> 조건</div>

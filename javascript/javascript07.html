@@ -48,11 +48,62 @@
         <div class="container">
             <div class="main_menu">
                 <ul>
-                    <li><a href="#">수학 메서드 : Math.round( ) : 반올림</a></li>
-                    <li><a href="#">수학 메서드 : Math.floor( ) : 버림</a></li>
-                    <li><a href="#">수학 메서드 : Math.ceil( ) : 올림</a></li>
-                    
+                    <li><a href="#sample01">01. 수학 메서드 : Math.random( ) - 랜덤값 반환(0~1 사이의 난수 값만을 반환)</a></li>
+                    <li><a href="#">01. 수학 메서드 : Math.round( ) - 반올림</a></li>
+                    <li><a href="#">01. 수학 메서드 : Math.floor( ) - 버림</a></li>
+                    <li><a href="#">01. 수학 메서드 : Math.cell( ) - 올림</a></li>
+                    <li><a href="#">01. 수학 메서드 : Math.max( ) - 가장 큰 값을 반환</a></li>
+                    <li><a href="#">01. 수학 메서드 : Math.min( ) - 가장 작은 값을 반환</a></li>
+                    <li><a href="#">01. 수학 메서드 : Math.abs( ) - 절댓값을 반환.</a></li>
+                    <li><a href="#">01. 수학 메서드 : Math.trulc( ) - 값의 정수만을 반환</a></li>
+                    <li><a href="#">01. 수학 메서드 : Math. PI( ) - 원의 둘레에 대한 지름의 비율(π)을 반환</a></li>
+                    <li><a href="#">01. 수학 메서드 : Math. sqrt( ) - 값의 제곱근을 반환</a></li>
                  </ul>
+
+                 <div class="main__sample">
+                    <div id="sample01" class="sample">
+                        <h3 class="sample">Math.random( )</h3>
+                        <p class="sample">Math.random( ) - 랜덤값을 반환하는 메서드</p>
+                        <ul>
+                            <li>0 - 1 사이의 난수값을 반환</li>
+                        </ul>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="th">번호</th>
+                                <th class="th">기본값</th>
+                                <th class="th">메서드</th>
+                                <th class="th">리턴값</th>
+                                <th class="th">클릭</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="sample01_N1 td"></td>
+                                <td class="sample01_Q1 td"></td>
+                                <td class="sample01_M1 td"></td>
+                                <td class="sample01_P1 td"></td>
+                                <td class="sample01_B1 td"><button>클릭</button></td>
+                            </tr>
+                            <tr>
+                                <td class="sample01_N2 td"></td>
+                                <td class="sample01_Q2 td"></td>
+                                <td class="sample01_M2 td"></td>
+                                <td class="sample01_P2 td"></td>
+                                <td class="sample01_B2 td"><button>클릭</button></td>
+                            </tr>
+                            <tr>
+                                <td class="sample01_N3 td"></td>
+                                <td class="sample01_Q3 td"></td>
+                                <td class="sample01_M3 td"></td>
+                                <td class="sample01_P3 td"></td>
+                                <td class="sample01_B3 td"><button>클릭</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //sample21 -->
+                </div>
             </div> 
         </div>
     </main>
@@ -64,8 +115,30 @@
     <!-- //footer -->
 
     <script>
-   
-    </script>
+        //01
+        document.querySelector(".sample01_N1").innerHTML = "1";
+        document.querySelector(".sample01_Q1").innerHTML = "0~1/(난수)";
+        document.querySelector(".sample01_M1").innerHTML = "Math.random( )";
+        document.querySelector(".sample01_B1").addEventListener("click",()=>{
+            document.querySelector(".sample01_P1").innerHTML = Math.random();
+        });
 
+        //02
+        document.querySelector(".sample01_N2").innerHTML = "2";
+        document.querySelector(".sample01_Q2").innerHTML = "0~9(정수)";
+        document.querySelector(".sample01_M2").innerHTML = "Math.random( )";
+        document.querySelector(".sample01_B2").addEventListener("click",()=>{
+            document.querySelector(".sample01_P2").innerHTML = Math.floor(Math.random()*10)
+        });
+
+        //03
+        document.querySelector(".sample01_N3").innerHTML = "3";
+        document.querySelector(".sample01_Q3").innerHTML = "1~100";
+        document.querySelector(".sample01_M3").innerHTML = "Math.random( )";
+        document.querySelector(".sample01_B3").addEventListener("click",()=>{
+            document.querySelector(".sample01_P3").innerHTML = Math.floor(Math.random()*100+1);
+        });
+        
+    </script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연습문제 2</title>
+  <link rel="stylesheet" href="ex2.css">
+</head>
+<body>
+  <button id="bttn">&#9776;</button>
+
+  <nav id="nav">
+    <ul>
+      <li class="active js"><a href="#">Javascript</a></li>
+      <li class="active ts"><a href="#">Typescript</a></li>
+      <li class="active node"><a href="#">Node.js</a></li>
+    </ul>
+  </nav>
+
+
+  <script>
+    let btn = document.querySelector("#bttn");
+    let menu = document.querySelector("#nav")
+
+    btn.addEventListener("click",()=>{
+        btn.classList.add("active");
+        nav.classList.add("active");
+    });
+    btn.addEventListener("mouseout",()=>{
+        btn.classList.remove("active");
+        nav.classList.remove("active");
+    });
+
+  </script>
+</body>
+</html>
