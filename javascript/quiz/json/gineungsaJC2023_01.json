@@ -1,12 +1,45 @@
 [
     {
-        "subject": "소프트웨어 설계",
-        "question": "GoF(Gang of Rour)의 디자인 패턴에 속하는 것은?",
-        "question_img": "2020-02",
-        "question_desc": "문제 설명",
-        "corrent_answer" : "Vosotor",
-        "incrrent_answer": ["Builder","prototype","Bridge"],
-        "desc": "문제 해설",
-        "keyword": "디자인 패턴"
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
+    }, {
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
+    }, {
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
+    }, {
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
+    }, {
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
+    }, {
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
     }
 ]
