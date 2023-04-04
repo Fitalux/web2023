@@ -39,7 +39,7 @@
     },{
         "subject": "웹디자인 기능사",
         "question": "다음 중 무엇을 구하는 도형인가? <br>",
-        "question_img" : "<img src=img/2011-04-01.png>",
+        "question_img" : "<img src=img/gineungsaWD2011_04_01.jpg>",
         "correct_answer": "황금분할",
         "incorrect_answers": ["심메트리","루트구형","아심메트리"],
         "desc": "황금분할은 근사치 1:1.618 (약5:8)로 표현되는 비율입니다. 이 비율로 면을 분할하는 것을 황금 분할이라고 합니다."
