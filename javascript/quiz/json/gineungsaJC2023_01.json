@@ -1,40 +1,205 @@
 [
     {
         "subject": "정보처리 기능사",
-        "question": "",
+        "question": "스택 연산에서 데이터를 삽입하거나 삭제하는 동작을 나타내는 연산으로 바르게 나타낸 것은?",
 	    "question_img" : "",
-        "correct_answer": "",
-        "incorrect_answers": ["","",""],
-        "desc": ""
+        "correct_answer": "PUSH, POP",
+        "incorrect_answers": ["ADD, SUB","LOAD, STORE","MOV, MUL"],
+        "desc": "PUSH: 데이터 삽입, POP: 데이터 삭제"
     }, {
+        "subject": "정보처리 기능사",
+        "question": " MIMD(Multiple Instruction Multiple Data)구조를 갖는 것은?",
+	    "question_img" : "",
+        "correct_answer": "다중 처리기",
+        "incorrect_answers": ["배열 처리기","벡터 처리기","파이프라인 처리기"],
+        "desc": "MIMD(Multiple Instruction Multiple Data) : 멀티 명령어 멀티데이터란 뜻으로 다중 명령, 다중 데이터라고 해석할수 있습니다. 즉, 다중처리기에 관한 내용입니다"
+    }, {
+        "subject": "정보처리 기능사",
+        "question": "논리적 주소에서 물리적 주소 또는 다른 논리적 주소로 번역하는 것은?",
+	    "question_img" : "",
+        "correct_answer": "주소 바인딩",
+        "incorrect_answers": ["매핑","적재","재배치"],
+        "desc": "물리적 주소 또는 논리적 주소로 번역하는 것은 '주소 바인딩'입니다. '주소'라는 단어를 통하여 주소 바인딩을 기억하시는 것이 좋습니다."
+    }, {
+        "subject": "정보처리 기능사",
+        "question": "컴퓨터의 중앙처리장치(CPU)의 구성 부분에 해당되지 않는 것은?",
+	    "question_img" : "",
+        "correct_answer": "보조기억 장치",
+        "incorrect_answers": ["주기억장치","연산장치","제어장치"],
+        "desc": "CPU의 주 기능은 연산과 제어입니다.<br>여기에 추가적으로 기억기능이 포함될 수 있습니다.<br>CPU의 기억기능으로는 레지스터가 있습니다"
+    }, {
+        "subject": "정보처리 기능사",
+        "question": "명령어의 주소(Address)부를 연산주소(Address)로 이용하는 주소지정방식은?",
+	    "question_img" : "",
+        "correct_answer": "직접 Address 방식",
+        "incorrect_answers": ["상대 Address 방식","절대 Address 방식","간접 Address 방식"],
+        "desc": "절대주소는 실제주소(유효주소)이며 0,1,2,3... 순서로 차례대로 지정되는 주소방식입니다.<br>절대주소는 1byte 마다 연속된 16진수 번호를 부여하며 기계어의 정보가 기억되어 있습니다."
+    }, {
+        "subject": "정보처리 기능사",
+        "question": "인터럽트 발생 시 인터럽트를 처리하고 원래 수행하고 있었던 프로그램으로 되돌아가는데 사용되는 레지스터는?",
+	    "question_img" : "",
+        "correct_answer": "Stack",
+        "incorrect_answers": ["PC","MBR","PSW"],
+        "desc": "인터럽트 발생시 현재 수행하고 있던 프로그램 주소를 스택(Stack)에 기억시킨 뒤 인터럽트 처리 후 스택의 주소를 참조하여 원래 수행하던 프로그램으로 되돌아 갑니다."
+    },{
+        "subject": "정보처리 기능사",
+        "question": "다음과 가장 관계있는 장치로 옳은 것은?<br>-논리회로<br>-가산기<br>-누산기<br>-감산기",
+	    "question_img" : "",
+        "correct_answer": "연산 장치",
+        "incorrect_answers": ["입/출력 장치","제어 장치","기억 장치"],
+        "desc": "논리회로 : 논리연산, 가산기 : 덧셈기, 누산기 : 연산결과 일시저장, 감산기 : 뺄셈기 <br> 위 회로들은 모두 연산 관련 장치 입니다."
+    },{
+        "subject": "정보처리 기능사",
+        "question": "전원이 꺼져도 내용이 그대로 저장되어 있는 메모리는?",
+	    "question_img" : "",
+        "correct_answer": "Flash memory",
+        "incorrect_answers": ["SRAM","DDR RAM","SDRAM"],
+        "desc": "Flash memory(플래시 메모리)는 USB 메모리나 디지털 카메라 메모리, MP3플레이어 메모리로 많이 사용됩니다.<br>위 장치들은 전원이 꺼지더라도 기억된 내용을 그대로 유지합니다."
+    },{
+        "subject": "정보처리 기능사",
+        "question": " 누를 때마다 ON, OFF가 교차되는 스위치를 만들고자 할 때 사용되는 플립플롭은?",
+	    "question_img" : "",
+        "correct_answer": "T 플립플롭",
+        "incorrect_answers": ["RS 플립플롭","D 플립플롭","JK 플립플롭"],
+        "desc": "누를 때마다 ON, OFF 교차란 뜻은 토글을 말합니다.<br>키보드의 토글키를 누르면 상태가 반전되는 것과 같습니다.<br>물론 JK플립플롭으로도 구성 가능하지만(J=1, K=1)가장 적합한 것은 T(토글)플리플롭 입니다."
+    },{
+        "subject": "정보처리 기능사",
+    "question": "1~2개의 대규모 집적회로의 칩을 중앙처리장치에 해당하는 부분을 내장시켜 기능을 수행하게 하는 것은?",
+	    "question_img" : "",
+        "correct_answer": "마이크로프로세서",
+        "incorrect_answers": ["레지스터","컴파일러","소프트웨어"],
+        "desc": "마이크로프로세서는 작은 연산장치라는 뜻으로 1~2개의 집적회로에 CPU 기능을 모두 넣어둔 것을 말합니다."
+    },{
+        "subject": "정보처리 기능사",
+        "question": "패리티 검사(parity check)에 대한 설명으로 옳은 것은?",
+	    "question_img" : "",
+        "correct_answer": "코드에 여분의 비트를 검사 비트로 첨가하여 착오를 검출하는 방법이다.",
+        "incorrect_answers": ["기수 패리티체크는 1bit의 수가 짝수가 되도록 한다.",
+                            "두 bit가 동시에 에러를 발생해도 검출이 가능하다.",
+                            "우수 패리티체크는 1bit의 개수가 홀수가 되도록 한다."],
+        "desc": "기수체크 : 홀수체크<br>우수체크 : 짝수체크<br>패리티검사 방식은 여분의 1비트에 패리티 코드를 삽입하여 1의 갯수의 합을 홀수 또는 짝수개로 맞추어서 전송하는 방식으로 1개 이상의 비트에서 에러 발생시 에러를 검출할수 없습니다."
+    },{
+        "subject": "정보처리 기능사",
+        "question": "다음 게이트에서 입력 A, B에 대한 설명으로 옳은 것은?<br><img src=img/20100131-01.png>",
+	    "question_img" : "",
+        "correct_answer": "<img src=img/-a+-b.png width='100' height='50'>",
+        "incorrect_answers": ["<img src=img/a-+b.png width='100' height='50'",
+                            "<img src=img/a+-b.png width='100' height='50'>",
+                            " A + B"],
+        "desc": "And 기호에 Not을 더한것. NAND 입니다."
+    },{
         "subject": "정보처리 기능사",
         "question": "",
 	    "question_img" : "",
         "correct_answer": "",
         "incorrect_answers": ["","",""],
         "desc": ""
-    }, {
+    },{
         "subject": "정보처리 기능사",
         "question": "",
 	    "question_img" : "",
         "correct_answer": "",
         "incorrect_answers": ["","",""],
         "desc": ""
-    }, {
+    },{
         "subject": "정보처리 기능사",
         "question": "",
 	    "question_img" : "",
         "correct_answer": "",
         "incorrect_answers": ["","",""],
         "desc": ""
-    }, {
+    },{
         "subject": "정보처리 기능사",
         "question": "",
 	    "question_img" : "",
         "correct_answer": "",
         "incorrect_answers": ["","",""],
         "desc": ""
-    }, {
+    },{
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
+    },{
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
+    },{
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
+    },{
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
+    },{
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
+    },{
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
+    },{
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
+    },{
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
+    },{
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
+    },{
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
+    },{
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
+    },{
+        "subject": "정보처리 기능사",
+        "question": "",
+	    "question_img" : "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""],
+        "desc": ""
+    },{
         "subject": "정보처리 기능사",
         "question": "",
 	    "question_img" : "",

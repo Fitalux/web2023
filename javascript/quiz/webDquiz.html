@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈 이펙트 07</title>
+    <title>웹디자인 기능사 기출문제</title>
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/quiz.css">
@@ -25,6 +25,7 @@
                 <li><a href="quizEffect06.html">6</a></li>
                 <li><a href="quizEffect07.html">7</a></li>
                 <li class="active"><a href="webDquiz.html">WD</a></li>
+                <li><a href="JCquiz.html">JC</a></li>
             </ul>
     </header>
     <!-- //header -->
@@ -117,7 +118,7 @@
                             number: index+1
                         }
                         const answerChoices = [...item.incorrect_answers];          //오답 불러오기
-                        formattedQuestion.answer = Math.floor(Math.random() * answerChoices.length)+1;
+                        formattedQuestion.answer = Math.round(Math.random() * answerChoices.length)+1;
                         answerChoices.splice(formattedQuestion.answer - 1, 0, item.correct_answer);
     
                         //보기 추가

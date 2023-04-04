@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈 이펙트 07</title>
+    <title>정보처리기능사 기출문제</title>
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/quiz.css">
@@ -15,7 +15,7 @@
 </head>
 <body>
     <header id="header">
-            <h1><a href="../javascript14.html">Quiz <em> 객관식 확인하기(CBT) 유형</em></a></h1>
+            <h1><a href="../javascript14.html">Quiz <em> 객관식 확인하기(CBT/OMR) 유형</em></a></h1>
             <ul>
                 <li><a href="quizEffect01.html">1</a></li>
                 <li><a href="quizEffect02.html">2</a></li>
@@ -23,17 +23,17 @@
                 <li><a href="quizEffect04.html">4</a></li>
                 <li><a href="quizEffect05.html">5</a></li>
                 <li><a href="quizEffect06.html">6</a></li>
-                <li class="active"><a href="quizEffect07.html">7</a></li>
+                <li><a href="quizEffect07.html">7</a></li>
                 <li><a href="webDquiz.html">WD</a></li>
-                <li><a href="JCquiz.html">JC</a></li>
-            </ul>
+                <li class="active"><a href="JCquiz.html">JC</a></li>
+            </ul> 
     </header>
     <!-- //header -->
 
     <main id="main">
         <div class="quiz__wrap__cbt">
             <div class="cbt__header">
-                <h2>2020년 1회 정보처리기능사 기출 문제 </h2>
+                <h2>정보처리기능사 2010년 1회 (01월 31일)</h2>
             </div>
             <div class="cbt__content">
                 <div class="cbt__quiz">
@@ -104,13 +104,12 @@
             const cbtQuiz = document.querySelector(".cbt__quiz");
             const cbtOmr = document.querySelector(".cbt__omr");
             const cbtSubmit = document.querySelector(".cbt__submit");
-            const ShowQuestionNumber = document.querySelector(".cbt__score");
     
             let questionAll = [];                          //모든 문제 정보
     
             //데이터 가져오기
             const dataQuestion = () => {
-                fetch("json/gisa2020_01.json")
+                fetch("json/gineungsaJC2023_01.json")
                 .then(res => res.json())
                 .then(items => {
                     questionAll = items.map((item, index)=>{
@@ -149,49 +148,50 @@
                 })   
                 .catch((err) => console.log(err));
         }
+            
     
             //문제 만들기 
             const newQuestion = () => {
                 const exam = [];
                 const omr = [];
-
                 questionAll.forEach((question, number) => {
+                    //let img = question.questionImg ? `<div class="cbt__question__img">${question.questionImg}</div>` : "";
                     exam.push(`
                         <div class="cbt">
                             <div class="cbt__question"><span>${question.number}</span>. ${question.question}</div>
-                            <div class="cbt__question__img"></div>
                             <div class="cbt__selects">
-                                <input type="radio" id="select${number}_1"  name="select${number}" value="${number}_1" onclick="answerSelect2(this)">
+                                <div class="cbt__question__img">${question.questionImg}</div>
+                                <input type="radio" id="select${number}_1"  name="select${number}" value="${number+1}_1" onclick="answerSelect(this)">
                                 <label for="select${number}_1"><span>${question.choice1}</span></label>
-                                <input type="radio" id="select${number}_2"  name="select${number}" value="${number}_2" onclick="answerSelect2(this)">
+                                <input type="radio" id="select${number}_2"  name="select${number}" value="${number+1}_2" onclick="answerSelect(this)">
                                 <label for="select${number}_2"><span>${question.choice2}</span></label>
-                                <input type="radio" id="select${number}_3"  name="select${number}" value="${number}_3" onclick="answerSelect2(this)">
+                                <input type="radio" id="select${number}_3"  name="select${number}" value="${number+1}_3" onclick="answerSelect(this)">
                                 <label for="select${number}_3"><span>${question.choice3}</span></label>
-                                <input type="radio" id="select${number}_4"  name="select${number}" value="${number}_4" onclick="answerSelect2(this)">
+                                <input type="radio" id="select${number}_4"  name="select${number}" value="${number+1}_4" onclick="answerSelect(this)">
                                 <label for="select${number}_4"><span>${question.choice4}</span></label>
                                 </div>
                             <div class="cbt__desc hide">${question.desc}</div>
                         </div>
                     `);
-
+                    
                     omr.push(`
-                    <div class="omr">
-                        <strong>${question.number}</strong>
-                        <input type="radio" name="omr${number}" id="omr${number}_1" value="${number}_1 onclick="answerSelect(this)">
-                        <label for="omr${number}_1"><span class="label-inner">1</span></label>
-                        <input type="radio" name="omr${number}" id="omr${number}_2" value="${number}_2 onclick="answerSelect(this)">
-                        <label for="omr${number}_2"><span class="label-inner">2</span></label>
-                        <input type="radio" name="omr${number}" id="omr${number}_3" value="${number}_3 onclick="answerSelect(this)">
-                        <label for="omr${number}_3"><span class="label-inner">3</span></label>
-                        <input type="radio" name="omr${number}" id="omr${number}_4" value="${number}_4 onclick="answerSelect(this)">
-                        <label for="omr${number}_4"><span class="label-inner">4</span></label>
-                    </div>
-                `)
+                        <div class="omr">
+                            <strong>${question.number}</strong>
+                            <input type="radio" name="omr${number}" id="omr${number}_1" value="${number}_0">
+                            <label for="omr${number}_1"><span class="label-inner">1</span></label>
+                            <input type="radio" name="omr${number}" id="omr${number}_2" value="${number}_1">
+                            <label for="omr${number}_2"><span class="label-inner">2</span></label>
+                            <input type="radio" name="omr${number}" id="omr${number}_3" value="${number}_2">
+                            <label for="omr${number}_3"><span class="label-inner">3</span></label>
+                            <input type="radio" name="omr${number}" id="omr${number}_4" value="${number}_3">
+                            <label for="omr${number}_4"><span class="label-inner">4</span></label>
+                        </div>
+                    `)
             });                                                 
                 cbtQuiz.innerHTML = exam.join('');
                 cbtOmr.innerHTML = omr.join('');
         }
-   
+        
             //정답 확인
             const answerQuiz = () => {
                 const cbtSelects = document.querySelectorAll(".cbt__selects");
