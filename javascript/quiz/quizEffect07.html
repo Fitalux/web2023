@@ -113,7 +113,7 @@
                     </div>
                 </div>
             </div>
-        <!-- <div class="cbt__start">
+        <div class="cbt__start">
             <div class="cbt__modal">
                 <h2>종목 선택</h2>
                 <div class="cbt__items">
@@ -172,7 +172,7 @@
                     <button id="startbtn" class="minimal">시험 시작</button>
                 </div>
             </div>
-        </div> -->
+        </div>
     </main>
     <!-- //main -->
 
@@ -188,7 +188,7 @@
         const cbtSubmit = document.querySelector(".cbt__submit");
         const cbtCount = document.querySelector(".cbt__count");
         const cbtLength = document.querySelector(".cbt__length");
-        const cbtStart = document.getElementById("startbtn")
+        const cbtStart = document.querySelector(".cbt__start");
 
         let questionAll = [];                          //모든 문제 정보
         let quizLength = 0;                     //전체 문항 수
@@ -196,7 +196,6 @@
 
         //데이터 가져오기
         const dataQuestion = () => {
-            document.getElementById("startbtn").addEventListener("click",dataQuestion);
             fetch("json/gisa2020_01.json")
             .then(res => res.json())
             .then(items => {
@@ -233,6 +232,12 @@
                     return formattedQuestion;
                 });
                 newQuestion();          //문제 만들기
+
+                
+                //modal창 제거
+                document.getElementById("startbtn").addEventListener("click",() => {
+                    cbtStart.style.display = "none";
+                });
 
                 //전체 문항 수
                 quizLength = questionAll.length;
