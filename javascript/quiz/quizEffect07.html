@@ -15,7 +15,7 @@
 </head>
 <body>
     <header id="header">
-            <h1><a href="../javascript14.html">Quiz <em> 객관식 확인하기(CBT) 유형</em></a></h1>
+            <h1><a href="../javascript14.html">Quiz </a><em> 객관식 확인하기(CBT) 유형</em></h1>
             <ul>
                 <li><a href="quizEffect01.html">1</a></li>
                 <li><a href="quizEffect02.html">2</a></li>
@@ -40,7 +40,6 @@
                     <!-- <div class="cbt">
                         <div class="cbt__question"><span>1. </span>객체지향 프로그램에서 데이터를 추상화하는 단위는?</div>
                         <div class="cbt__question__img"><img src="img/gineungsaJC2020-02.jpg" alt=""></div>
-                        <div class="cbt__question__desc">객체 지향 언어는  ___________ 이다.</div>
                         <div class="cbt__selects">
                         <div>
                                 <input type="radio" id="select1">
@@ -57,7 +56,6 @@
                     </div> -->
                     <div class="cbt">
                         <div class="cbt__question"><span>1. </span>객체지향 프로그램에서 데이터를 추상화하는 단위는?</div>
-                        <div class="cbt__question__img"><img src="img/gineungsaJC2020-02.jpg" alt=""></div>
                         <div class="cbt__question__desc">객체 지향 언어는  ___________ 이다.</div>
                         <div class="cbt__selects">
                             <div>
@@ -79,17 +77,17 @@
             <div class="cbt__aside">
                 <div class="cbt__info">
                     <div>
-                        <div class="cbt__time">남은 시간 : </div>
-                        <div class="cbt__submit">답안지 제출</div>
+                        <span class="cbt__time">남은 시간 :<em></em></span>
+                        <button class="cbt__submit">답안지 제출</button>
                     </div>
                     <div>
-                            <div class="cbt__title">수험자 : <em></em></div>
-                            <div class="cbt__score">
-                                <span> 전체 문항 수 : <em class="cbt__length"></em>문항</span> <br>
-                                <span> 잔여 문항 수 : <em class="cbt__count"></em>문항</span> <br>
-                            </div>
-                         </div>
+                        <div class="cbt__title">수험자 : <em class="cbt__name"></em></div>
+                        <div class="cbt__score">
+                            <span> 전체 문항 수 : <em class="cbt__length"></em>문항</span> <br>
+                            <span> 잔여 문항 수 : <em class="cbt__count"></em>문항</span> <br>
+                        </div>
                     </div>
+                </div>
                     <div class="cbt__omr">
                         <!-- <div class="omr">
                             <strong>1</strong>
@@ -111,13 +109,13 @@
                             </label>
                         </div> -->
                     </div>
-                </div>
             </div>
+        </div>
         <div class="cbt__start">
-            <div class="cbt__modal">
+            <div class="cbt__modal__start">
                 <h2>종목 선택</h2>
                 <div class="cbt__items">
-                    <select name="cbtTime" id="cbtTime" class="items1">
+                    <select name="cbtTime" id="cbtTime" class="items1" onchange="changeSelect(this)">
                         <option value="gineungsaJC2005_02">정보처리기능사 2005년 2회</option>
                         <option value="gineungsaJC2005_04">정보처리기능사 2005년 4회</option>
                         <option value="gineungsaJC2005_05">정보처리기능사 2005년 5회</option>
@@ -141,7 +139,7 @@
                         <option value="gineungsaJC2011_04">정보처리기능사 2011년 4회</option>
                         <option value="gineungsaJC2011_05">정보처리기능사 2011년 5회</option>
                     </select>
-                    <select name="cbtTime" id="cbtTime" class="items2">
+                    <select name="cbtTime" id="cbtTime" class="items2" onchange="changeSelect(this)">
                         <option value="gineungsaWD2009_05">웹디자인기능사 2009년 5회</option>
                         <option value="gineungsaWD2010_01">웹디자인기능사 2010년 1회</option>
                         <option value="gineungsaWD2010_02">웹디자인기능사 2010년 2회</option>
@@ -168,8 +166,25 @@
                         <option value="gineungsaWD2016_04">웹디자인기능사 2016년 4회</option>
                     </select>
                 </div>
+                <div class="cbt__view">
+                    수험자의 성함은 <input type="text" class="name"> 입니다. <br>
+                    종목은 <span class="subject"></span>가 선택 되었습니다.
+                </div>
                 <div data-lit-hue="20" data-lit-count="100" class="lit-container">
                     <button id="startbtn" class="minimal">시험 시작</button>
+                </div>
+            </div>
+            <div class="cbt__end">
+                <div class="cbt__modal__end">
+                    <h2>🎊 수고하셨습니다.</h2>
+                    <div class="cbt__endsore">
+                        <span>
+                            총 ~ 문항을 맞추셨습니다.<br>
+                            틀린 문항 수는 ~ 이며, <br>
+                            총점은 ~ 입니다.
+                        </span>
+                    </div>
+                    <button class="return">시험지로 돌아가기 </button>
                 </div>
             </div>
         </div>
@@ -188,15 +203,40 @@
         const cbtSubmit = document.querySelector(".cbt__submit");
         const cbtCount = document.querySelector(".cbt__count");
         const cbtLength = document.querySelector(".cbt__length");
+        const cbtIndex = document.querySelector(".cbt__index");
+        const cbtViewSubject = document.querySelector(".cbt__view .subject");
+        const cbtHeader = document.querySelector(".cbt__header h2");
         const cbtStart = document.querySelector(".cbt__start");
+        const cbtEnd = document.querySelector(".cbt__end");
+        const cbtStartBtn = document.querySelector(".cbt__start .minimal");
+        const cbtEndBtn = document.querySelector(".cbt__end .return");
+        const cbtTime = document.querySelector(".cbt__time em");
 
         let questionAll = [];                          //모든 문제 정보
         let quizLength = 0;                     //전체 문항 수
         let questioncount = quizLength;         //남은 문항 수
+        let TimeLimit = "";
+        let RemainTime = "3600";
+
+        cbtEnd.style.display = "none";
+
+        //시험 시작
+        const startQuiz = () => {
+            cbtStart.classList.add("hide");          //modal 제거
+
+            const inputEl = document.querySelector('.name');            // input에서 입력받은 요소 선택
+            const userName = document.querySelector(".cbt__title em");  // em 요소 선택
+            const inputValue = inputEl.value;                           //input에서 입력된 값 가져오기
+
+            userName.textContent = inputValue;                          // em 요소에 입력된 값 넣기
+
+            //제한시간
+            TimeLimit = setInterval(reduceTime, 3600);
+        }
 
         //데이터 가져오기
-        const dataQuestion = () => {
-            fetch("json/gisa2020_01.json")
+        const dataQuestion = (value) => {
+            fetch(`https://kebab000.github.io/web2023/gineungsaJSON/${value}.json`)
             .then(res => res.json())
             .then(items => {
                 questionAll = items.map((item, index)=>{
@@ -233,12 +273,6 @@
                 });
                 newQuestion();          //문제 만들기
 
-                
-                //modal창 제거
-                document.getElementById("startbtn").addEventListener("click",() => {
-                    cbtStart.style.display = "none";
-                });
-
                 //전체 문항 수
                 quizLength = questionAll.length;
                 cbtLength.innerHTML = quizLength;
@@ -256,7 +290,7 @@
                     exam.push(`
                         <div class="cbt">
                             <div class="cbt__question"><span>${question.number}</span>. ${question.question}</div>
-                            ${question.question_img ?`<div class="cbt__question__img">${question.question_img}</div>` : ''}
+                            ${question.question_img ?`<div class="cbt__question__img"><img src="https://kebab000.github.io/web2023/gineungsaJPG/${question.question_img}.jpg"></div>` : ''}
                             ${question.question_desc ? `<div class="cbt__question__desc">${question.question_desc}</div>` : ''}
                             <div class="cbt__selects">
                                 <input type="radio" id="select${number}_1" name="select${number}" value="${number}_1" onclick="answerSelect2(this)">
@@ -267,7 +301,7 @@
                                 <label for="select${number}_3"><span>${question.choice3}</span></label>
                                 <input type="radio" id="select${number}_4" name="select${number}" value="${number}_4" onclick="answerSelect2(this)">
                                 <label for="select${number}_4"><span>${question.choice4}</span></label>
-                                </div>
+                            </div>
                             <div class="cbt__desc hide">${question.desc}</div>
                         </div>
                     `);
@@ -285,10 +319,26 @@
                         <label for="omr${number}_4"><span class="label-inner">4</span></label>
                     </div>
                 `)
-            });                                                 
+            });                                              
                 cbtQuiz.innerHTML = exam.join('');
                 cbtOmr.innerHTML = omr.join('');
-        }
+
+
+                // //해설의 undefind 제거
+                // document.querySelectorAll(".cbt__question__desc").forEach(desc => {
+                //     if(desc.innerText === "undefined"){
+                //         desc.classList.add("hide");
+                //     }
+                // });
+                // //이미지의 undefind 제거
+                // document.querySelectorAll(".cbt__question__img").forEach(img => {
+                //             let src = img.querySelector("img").src;
+
+                //             if(src.includes("undefined")){
+                //                 img.classList.add("hide");
+                //      }
+                // });
+            };  
 
             //정답 확인
             const answerQuiz = () => {
@@ -321,7 +371,10 @@
                     } else {
                         quizDesc[number].classList.remove("hide");
                     }
+                    
+                    cbtEnd.style.display= "block";         //end modal 나타내기
                 });
+                
             }
 
             //선택지 체크
@@ -351,9 +404,50 @@
             cbtCount.innerHTML = quizLength - answerInput.length;
         }
 
-        cbtSubmit.addEventListener("click", answerQuiz);
-        dataQuestion();
+        //종목 선택
+        const changeSelect = (ev) => {
+            let selectValue = ev.value;
+            let selectText = ev.options[ev.selectedIndex].text;
 
+            cbtViewSubject.innerText = selectText;
+            cbtHeader.innerText = selectText;
+
+            dataQuestion(selectValue);
+        }
+
+        //제한시간 설정
+        const reduceTime = () => {
+            RemainTime--;
+
+            if(RemainTime == 0) endQuiz();
+
+            cbtTime.innerText = displayTime();
+        }
+
+        //제한 시간 표시 
+        const displayTime = () => {
+            if(RemainTime <= 0){
+                return "0분 00초";
+            } else {
+                let minutes = Math.floor(RemainTime / 60);
+                let seconds = RemainTime % 60;
+
+                return minutes + "분" + seconds + "초";
+            }
+        }
+
+        //시험 종료 시
+        const endQuiz = () => {
+           
+        }
+
+        const closeQuiz = () => {
+            cbtEnd.style.display= "none";         //end modal 제거
+        }
+
+        cbtSubmit.addEventListener("click", answerQuiz);
+        cbtStartBtn.addEventListener("click", startQuiz);
+        cbtStartBtn.addEventListener("click", closeQuiz);
 
         const bubbleBttn = () => {
                 const clip = (v, min, max = Infinity) => {
@@ -400,7 +494,6 @@
                     }
             });
         };
-
         bubbleBttn();
     </script>
 </body>

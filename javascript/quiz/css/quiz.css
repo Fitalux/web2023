@@ -84,6 +84,10 @@
 #main {
     padding: 100px 0;
 }
+/* common */
+.hide {
+    display: none !important;
+}
 /* quiz__wrap */
 .quiz__wrap {
     display: flex;
@@ -581,12 +585,13 @@
     justify-content: center;
 }
 .cbt__start > div {
-    width: 50%;
-    height: 50vh;
-    background-color: #8ec6ed;
-    border: 10px ridge #666;
+    width: 55%;
+    height: 60vh;
+    background-color: #e1b8ff;
+    border: 5px ridge #666;
 }
-.cbt__modal h2 {
+.cbt__modal__start h2,
+.cbt__modal__end h2 {
     text-align: center;
     font-family: 'ElandChoice';
     font-weight: bold;
@@ -601,26 +606,66 @@
 #cbtTime {
     font-family: 'ElandChoice';
     align-items: center;
-}
-.cbt__items .items1,
-.cbt__items .items2 {
-    margin-right: 100px;
-    margin-bottom: 20px;
-    height: 50px;
-    margin-top: 50px;
+
+    height: 40px;
+    margin-top: 30px;
+    margin:  30px 100px;
     font-size: 20px;
     text-align: center;
     line-height: 1.5;
 }
 button.minimal {
-    margin-top: 50px;
+    margin-top: 30px;
     border-radius: 15px;
     font-family: 'ElandChoice';
-    background-color: #2c6be2;
+    background-color: #710bd0;
     color: #fff;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 30px;
     cursor: pointer;
+}
+button.minimal:hover {
+    background-color: #440460;
+}
+.cbt__view {
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+    font-family: 'ElandChoice';
+    line-height: 1.5;
+    font-size: 20px;
+}
+.cbt__view input {
+    border: 2px solid #666;
+    padding: 5px;
+    font-family: 'ElandChoice';
+}
+.cbt__endsore span {
+    margin-top: 30px;
+    display: block;
+    font-size: 40px;
+    font-family: 'ElandChoice';
+    padding: 10px;
+    text-align: center;
+    line-height: 1.5;
+}
+button.return{
+    background-color: #710bd0;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 300px;
+    height: 80px;
+    margin: 0 auto;
+    font-family: 'ElandChoice';
+    font-size: 25px;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 100px;
+    border-radius: 15px;
 }
 
 /* dog__wrap */

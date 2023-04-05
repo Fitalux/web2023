@@ -173,9 +173,9 @@
         //문제출력
         const updateQuiz = (index) => {
 
-            if(index>=quizInfo.length) {
-                return;
-            }
+            // if(index>=quizInfo.length) {
+            //     return;
+            // }
 
             let TypeTag = `
                 <span>${quizInfo[index].infoType}</span>
@@ -238,6 +238,7 @@
         };
         updateQuiz(quizCount);
 
+        //객관식 선택지
         function choiceSelected(answer){
             let userAnswer = answer.textContent;                            //사용자 정답
             let currentAnswer = quizInfo[quizCount].infoAnswer;             //문제 정답
@@ -246,6 +247,8 @@
                 console.log("O");
                 dogWrap.classList.add("like");
                 truescore++;
+                quizAnswer.style.display = "block";
+                quizDesc.style.display = "block";
 
             } else {
                 console.log("X");
@@ -260,14 +263,14 @@
             document.querySelector(".quiz__truescore").innerHTML = truescore;
             document.querySelector(".quiz__falsescore").innerHTML = falsescore;
 
-            quizScore = Math.round((quizScore/quizInfo.length)*100);
+            let quizScore = Math.round((quizScore/quizInfo.length)*100);
             let quizResult = (quizScore > 60) ? "합격" : "불합격"
 
             //마지막 문제일 때
-            if(quizCount==quizInfo.length){
+            if(quizCount == quizInfo.length - 1){
                 quizAnswer.style.display = "none";
-                dogWrapCount.innerHTML = `모든 문제가 종료되었습니다.<br> 맞춘 문제는 ${truescore}개이고,<br>
-                틀린 문제는 ${falsescore}개이며, 점수는 ${quizScore}입니다.<br> ${quizResult}입니다. <br>수고하셨습니다.`
+                dogWrapCount.innerHTML = 
+                "모든 문제가 종료되었습니다.<br> 맞춘 문제는"+truescore+"개이고,<br> 틀린 문제는 "+falsescore+"개이며, 점수는 "+quizScore+"입니다.<br>"+quizResult+"입니다. <br>수고하셨습니다.";
             }
         }
 
