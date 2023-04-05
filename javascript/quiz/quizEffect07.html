@@ -174,20 +174,15 @@
                     <button id="startbtn" class="minimal">시험 시작</button>
                 </div>
             </div>
-            <div class="cbt__end">
-                <div class="cbt__modal__end">
-                    <h2>🎊 수고하셨습니다.</h2>
-                    <div class="cbt__endsore">
-                        <span>
-                            총 ~ 문항을 맞추셨습니다.<br>
-                            틀린 문항 수는 ~ 이며, <br>
-                            총점은 ~ 입니다.
-                        </span>
-                    </div>
-                    <button class="return">시험지로 돌아가기 </button>
-                </div>
+        </div>
+        <div class="cbt__end">
+            <div class="cbt__modal__end">
+                <h2>🎊 수고하셨습니다.</h2>
+                <div class="cbt__endscore"></div>
+                <button class="return">시험지로 돌아가기 </button>
             </div>
         </div>
+        
     </main>
     <!-- //main -->
 
@@ -211,15 +206,21 @@
         const cbtStartBtn = document.querySelector(".cbt__start .minimal");
         const cbtEndBtn = document.querySelector(".cbt__end .return");
         const cbtTime = document.querySelector(".cbt__time em");
+        const cbtEndscore = document.querySelector(".cbt__endscore");
 
         let questionAll = [];                          //모든 문제 정보
         let quizLength = 0;                     //전체 문항 수
         let questioncount = quizLength;         //남은 문항 수
+
+        //시험 결과 관련 변수
+        let truescore = 0;                  //맞은 갯수
+        let falsescore = 0;                 //틀린 갯수
+
+        //제한시간 변수
         let TimeLimit = "";
         let RemainTime = "3600";
 
-        cbtEnd.style.display = "none";
-
+        cbtEnd.classList.add("hide");
         //시험 시작
         const startQuiz = () => {
             cbtStart.classList.add("hide");          //modal 제거
@@ -236,7 +237,7 @@
 
         //데이터 가져오기
         const dataQuestion = (value) => {
-            fetch(`https://kebab000.github.io/web2023/gineungsaJSON/${value}.json`)
+            fetch(`json/gineungsaWD2011_04.json`)
             .then(res => res.json())
             .then(items => {
                 questionAll = items.map((item, index)=>{
@@ -343,6 +344,7 @@
             //정답 확인
             const answerQuiz = () => {
                 const cbtSelects = document.querySelectorAll(".cbt__selects");
+                let Score = 0;
 
                 questionAll.forEach((question, number) => {
                     const quizSelectsWrap = cbtSelects[number];
@@ -353,28 +355,32 @@
 
                     if(numberAnswer == question.answer) {
                         console.log("정답")
+                        truescore++;
                         cbtSelects[number].parentElement.classList.add("good");
                     } else {
                         console.log("오답")
+                        falsescore++;
                         cbtSelects[number].parentElement.classList.add("bad");
 
                         //오답일 경우 정답 표시
                         const label = cbtSelects[number].querySelectorAll("label");
                         label[question.answer-1].classList.add("correct");
                     }
-
+                    
                     //설명 숨기기
                     const quizDesc = document.querySelectorAll(".cbt__desc");
-
+                    
                     if(quizDesc[number].innerText == "undefined"){
                         quizDesc[number].classList.add("hide");
                     } else {
                         quizDesc[number].classList.remove("hide");
                     }
                     
-                    cbtEnd.style.display= "block";         //end modal 나타내기
                 });
-                
+                Score = Math.round((Score/questionAll.length)*100);
+                cbtEnd.classList.remove("hide");
+                cbtEndscore.innerHTML = "총"+truescore+"문항을 맞추셨습니다.<br> 틀린 문항 수는 "+falsescore+"개 이며, 총점은 "+Score+"입니다.";
+
             }
 
             //선택지 체크
@@ -432,22 +438,31 @@
                 let minutes = Math.floor(RemainTime / 60);
                 let seconds = RemainTime % 60;
 
+                //초의 단위가 한자리 수가 되면 앞에 0을 붙여주기
+                if(minutes.toString().length == 1){
+                    minutes = "0"+minutes;
+                }
+
+                if(seconds.toString().length == 1){
+                    seconds = "0"+seconds;
+                }
+
                 return minutes + "분" + seconds + "초";
             }
         }
 
         //시험 종료 시
         const endQuiz = () => {
-           
+            
         }
 
         const closeQuiz = () => {
-            cbtEnd.style.display= "none";         //end modal 제거
+            cbtEnd.classList.add("hide");
         }
 
         cbtSubmit.addEventListener("click", answerQuiz);
         cbtStartBtn.addEventListener("click", startQuiz);
-        cbtStartBtn.addEventListener("click", closeQuiz);
+        cbtEndBtn.addEventListener("click", closeQuiz);
 
         const bubbleBttn = () => {
                 const clip = (v, min, max = Infinity) => {
