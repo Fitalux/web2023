@@ -224,20 +224,20 @@
         //시험 시작
         const startQuiz = () => {
             cbtStart.classList.add("hide");          //modal 제거
-
+            
             const inputEl = document.querySelector('.name');            // input에서 입력받은 요소 선택
             const userName = document.querySelector(".cbt__title em");  // em 요소 선택
             const inputValue = inputEl.value;                           //input에서 입력된 값 가져오기
-
+            
             userName.textContent = inputValue;                          // em 요소에 입력된 값 넣기
-
+            
             //제한시간
             TimeLimit = setInterval(reduceTime, 3600);
         }
 
         //데이터 가져오기
         const dataQuestion = (value) => {
-            fetch(`json/gineungsaWD2011_04.json`)
+            fetch(`https://kebab000.github.io/web2023/gineungsaJSON/${value}.json`)
             .then(res => res.json())
             .then(items => {
                 questionAll = items.map((item, index)=>{
@@ -344,7 +344,6 @@
             //정답 확인
             const answerQuiz = () => {
                 const cbtSelects = document.querySelectorAll(".cbt__selects");
-                let Score = 0;
 
                 questionAll.forEach((question, number) => {
                     const quizSelectsWrap = cbtSelects[number];
