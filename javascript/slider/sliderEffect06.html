@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+
+    <title>06. 슬라이드 이펙트</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/slider.css">
+
+    <style>
+      .slider__wrap {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .slider__img {                /*이미지가 나타나는(보이는) 영역*/
+        position: relative;
+        width: 800px;
+        height: 450px;
+        overflow: hidden;
+      }
+      .slider__inner {              /*이미지가 슬라이드 되는(움직이는) 영역*/
+        display: flex;
+        flex-wrap: wrap;
+        width: 4800px;
+        height: 450px;
+      }
+      .slider {
+        position: relative;
+        width: 800px;
+        height: 450px;
+      }
+      .slider__btn a{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60px;
+        height: 60px;
+        /* background-color: #fff; */
+      }
+      .slider__btn a.previous {
+        left: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-chevrons-left' width='60' height='60' viewBox='0 0 24 24' stroke-width='2' stroke='%23ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpolyline points='11 7 6 12 11 17' /%3E%3Cpolyline points='17 7 12 12 17 17' /%3E%3C/svg%3E");
+        text-indent: -99999px;
+    }
+      .slider__btn a.next {
+        right: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-chevrons-right' width='60' height='60' viewBox='0 0 24 24' stroke-width='2' stroke='%23ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpolyline points='7 7 12 12 7 17' /%3E%3Cpolyline points='13 7 18 12 13 17' /%3E%3C/svg%3E");
+        text-indent: -99999px;
+    }
+      .slider__btn a.previous:hover {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-chevrons-left' width='60' height='60' viewBox='0 0 24 24' stroke-width='2' stroke='%23000000' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpolyline points='11 7 6 12 11 17' /%3E%3Cpolyline points='17 7 12 12 17 17' /%3E%3C/svg%3E");
+      }
+      .slider__btn a.next:hover {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-chevrons-right' width='60' height='60' viewBox='0 0 24 24' stroke-width='2' stroke='%23000000' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpolyline points='7 7 12 12 7 17' /%3E%3Cpolyline points='13 7 18 12 13 17' /%3E%3C/svg%3E");
+      }
+      .slider__dot {
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+      }
+      .slider__dot .dot {
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        display: inline-block;
+        border-radius: 50%;
+        text-indent: -9999px;
+        transition: all 0.5s;
+        margin: 3px;
+      }
+      .slider__dot .dot.active{
+        background-color: rgba(0, 0, 0, 1.5);
+      }
+    </style>
+</head>
+<body class="img09 bg02 font09">
+    <header id="header">
+        <h1>Javascript Slider Effect 06</h1>
+        <p>슬라이드 이펙트 (슬라이드 버튼, 도트 메뉴)</p>
+        <ul>
+            <li><a href="sliderEffect01.html">1</a></li>
+            <li><a href="sliderEffect02.html">2</a></li>
+            <li><a href="sliderEffect03.html">3</a></li>
+            <li><a href="sliderEffect04.html">4</a></li>
+            <li><a href="sliderEffect05.html">5</a></li>
+            <li  class="active"><a href="sliderEffect06.html">6</a></li>
+        </ul>
+    </header> 
+    <!-- header -->
+
+    <main id="main">
+        <div class="slider__wrap">
+            <div class="slider__img">
+                <div class="slider__inner">
+                    <div class="slider s01"><img src="./img/sliderEffect02-min.jpg" alt="이미지1"></div>
+                    <div class="slider s02"><img src="./img/sliderEffect04-min.jpg" alt="이미지2"></div>
+                    <div class="slider s03"><img src="./img/sliderEffect06-min.jpg" alt="이미지3"></div>
+                    <div class="slider s04"><img src="./img/sliderEffect08-min.jpg" alt="이미지4"></div>
+                    <div class="slider s05"><img src="./img/sliderEffect07-min.jpg" alt="이미지5"></div>
+                </div>
+            </div>
+            <div class="slider__btn">
+                <a href="#" class="previous">previous (이전)</a>
+                <a href="#" class="next">next (다음)</a>
+            </div>
+            <div class="slider__dot">
+                <!-- <a href="#" class="dot active">1</a>
+                <a href="#" class="dot">2</a>
+                <a href="#" class="dot">3</a>
+                <a href="#" class="dot">4</a>
+                <a href="#" class="dot">5</a> -->
+            </div>
+        </div>
+    </main>
+    <!-- main -->
+
+    <script>
+        //선택자
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderImg = sliderWrap.querySelector(".slider__img");
+        const sliderInner = sliderWrap.querySelector(".slider__inner");
+        const slider = sliderWrap.querySelectorAll(".slider");
+        const sliderDot = sliderWrap.querySelector(".slider__dot");
+        const sliderBtn = sliderWrap.querySelectorAll(".slider__btn a");
+
+        let currentIndex = 0;                   //현재 보이는 (가장 위에 있는) 이미지
+        let sliderInterval = 3000;              //다음 이미지로 넘어가는 간격의 시간
+        let sliderCount = slider.length;        //전체 이미지의 총 수
+        let sliderWidth = sliderWrap.querySelector(".slider__img").offsetWidth;            //이미지 width 값
+        let dotIndex = "";
+        
+        function init() {
+            //슬라이드 될 이미지만큼 도트 메뉴 생성
+            slider.forEach(()=>dotIndex += "<a href='#' class='dot'></a>");
+            sliderDot.innerHTML = dotIndex;
+            
+            //도트 메뉴 활성화 (첫 번째)
+            sliderDot.firstChild.classList.add("active");
+        }
+        init();
+
+        //슬라이드 이미지의 위치 변경
+        function moveSlider(num){
+            sliderInner.style.transition = "all 400ms";
+            sliderInner.style.transform = `translateX(-${sliderWidth * num}px)`;
+            currentIndex = num;
+
+
+            //버튼 활성화
+            let DotActive = document.querySelectorAll(".slider__dot .dot");
+            DotActive.forEach((active)=>active.classList.remove("active"));
+            DotActive[num].classList.add("active");
+        }
+
+        // 도트 메뉴 클릭 시 이동
+        sliderDot.querySelectorAll(".dot").forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                moveSlider(index);
+            });
+        });
+
+        //슬라이드 버튼 클릭 시
+        sliderBtn.forEach((btn, index)=>{
+            btn.addEventListener("click",()=>{
+                let previousIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
+                let nextIndex = (currentIndex + 1) % sliderCount;
+
+                if(btn.classList.contains("previous")){
+                    moveSlider(previousIndex);
+                } else {
+                    moveSlider(nextIndex);
+                }
+            });
+        });
+
+        
+    </script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script>
+
+    </script>
+    
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>
