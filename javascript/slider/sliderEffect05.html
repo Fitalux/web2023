@@ -38,7 +38,7 @@
       }
     </style>
 </head>
-<body class="img09 bg02 font09">
+<body class="img05 bg05 font05">
     <header id="header">
         <h1>Javascript Slider Effect 05</h1>
         <p>슬라이드 이펙트 (상방으로 연속 슬라이드)</p>
@@ -49,6 +49,7 @@
             <li><a href="sliderEffect04.html">4</a></li>
             <li  class="active"><a href="sliderEffect05.html">5</a></li>
             <li><a href="sliderEffect06.html">6</a></li>
+            <li><a href="sliderEffect07.html">7</a></li>
         </ul>
     </header> 
     <!-- header -->
@@ -88,7 +89,7 @@
         let sliderClone = sliderInner.firstElementChild.cloneNode(true);        //슬라이드 이미지 중 첫번째 요소(이미지)를 복사
 
         
-        //sliderClone을 슬라이드 될 이미지의 마지막에 추가(붙여넣기)
+        // //sliderClone을 슬라이드 될 이미지의 마지막에 추가(붙여넣기)
         // sliderInner.appendChild(sliderClone);
 
         // function sliderEffect() {
@@ -101,7 +102,7 @@
         //     if(currentIndex == sliderCount){
         //         setTimeout(()=>{
         //             sliderInner.style.transition = "0s";
-        //             sliderInner.style.transform = "translateX(0px)"
+        //             sliderInner.style.transform = "translateY(0px)"
         //         },500);
         //         currentIndex = 0;
         //     }
@@ -136,19 +137,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <script>
-        setInterval(() => {
-            const sliderClone = $(".slider__inner .slider:first-child").clone(true);
-            $(".slider__inner").append(sliderClone);
-            currentIndex++;
-            let sliderHeight = -currentIndex * $(".slider__img").height();
-            $(".slider__inner").css("transition", "all 0.5s").css("transform", `translateY(${sliderHeight}px)`);
-            if (currentIndex == sliderCount) {
-                setTimeout(() => {
-                $(".slider__inner").css("transition", "0s").css("transform", "translateY(0px)");
-                }, 500);
-                currentIndex = 0;
-            }
-        }, sliderInterval);
+        // setInterval(() => {
+        //     const sliderClone = $(".slider__inner .slider:first-child").clone(true);
+        //     $(".slider__inner").append(sliderClone);
+        //     currentIndex++;
+        //     let sliderHeight = -currentIndex * $(".slider__img").height();
+        //     $(".slider__inner").css("transition", "all 0.5s").css("transform", `translateY(${sliderHeight}px)`);
+        //     if (currentIndex == sliderCount) {
+        //         setTimeout(() => {
+        //         $(".slider__inner").css("transition", "0s").css("transform", "translateY(0px)");
+        //         }, 500);
+        //         currentIndex = 0;
+        //     }
+        // }, sliderInterval);
     </script>
 </body>
 </html>

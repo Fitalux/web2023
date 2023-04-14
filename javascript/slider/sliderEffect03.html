@@ -38,7 +38,7 @@
       }
     </style>
 </head>
-<body class="img09 bg09 font10">
+<body class="img03 bg03 font03">
     <header id="header">
         <h1>Javascript Slider Effect 03</h1>
         <p>슬라이드 이펙트 (위쪽으로 슬라이드)</p>
@@ -49,6 +49,7 @@
             <li><a href="sliderEffect04.html">4</a></li>
             <li><a href="sliderEffect05.html">5</a></li>
             <li><a href="sliderEffect06.html">6</a></li>
+            <li><a href="sliderEffect07.html">7</a></li>
         </ul>
     </header> 
     <!-- header -->
@@ -84,12 +85,12 @@
         let sliderCount = slider.length;        //전체 이미지의 총 수
         let sliderInterval = 3000;              //다음 이미지로 넘어가는 간격의 시간
 
-        // sliderInner.style.transition = "all 0.8s";
-        // setInterval(()=>{
-        //     currentIndex = (currentIndex+1) % sliderCount;
+        sliderInner.style.transition = "all 0.8s";
+        setInterval(()=>{
+            currentIndex = (currentIndex+1) % sliderCount;
         
-        //     sliderInner.style.transform = "translateY("+ -450 * currentIndex + "px)";
-        // },sliderInterval);
+            sliderInner.style.transform = "translateY("+ -450 * currentIndex + "px)";
+        },sliderInterval);
 
     </script>
     <!--GSAP-->
