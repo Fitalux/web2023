@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://webfontworld.github.io/Oswald/Oswald.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/HSGaeulSenggak/HSGaeulSenggak2.css" rel="stylesheet">
+
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 1200px;
+            margin: 0 auto;
+            background-color: #000;
+        }
+        .quote {
+            font-size: 24px;
+            color: #fff;
+            text-align: center;
+            line-height: 1.5;
+            padding: 20px 0 50px 0;
+            font-family: 'Oswald';
+            position: relative;
+        } 
+        .author {
+            color: #fff;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Oswald';
+        }
+        .writebtn {
+            width: 150px;
+            height: 50px;
+            border-radius: 15px;
+            background-color: skyblue;
+            color: #000;
+            font-family: 'HSGaeulSenggak2';
+            font-size: 24px;
+            cursor: pointer;
+        }
+        #btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="write">
+        <div class="quote"></div>
+        <div class="author"></div>
+        <button id="btn" class="writebtn">start</button>
+    </div>
+</body>
+</html>
+    <script>
+        const dummy = (value) => {
+            fetch(`dummy01.json`)
+            .then(res => res.json())
+            .then(items => { 
+                    const write = document.querySelector(".write")
+                    const random = Math.round(Math.random()*30);
+                    write.querySelector(".quote").innerHTML = items.quotes[random].quote;
+                    write.querySelector(".author").innerHTML = ` - ${items.quotes[random].author}`;
+
+                    console.log(items)
+            })
+            .catch((err) => console.log(err)); 
+            }
+            dummy();
+            const btnDummy = document.querySelector(".writebtn");
+            btnDummy.addEventListener("click", dummy);
+    </script>
+
