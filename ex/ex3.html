@@ -57,7 +57,6 @@
     <div class="write">
         <div class="quote"></div>
         <div class="author"></div>
-        <button id="btn" class="writebtn">start</button>
     </div>
 </body>
 </html>
@@ -70,13 +69,10 @@
                     const random = Math.round(Math.random()*30);
                     write.querySelector(".quote").innerHTML = items.quotes[random].quote;
                     write.querySelector(".author").innerHTML = ` - ${items.quotes[random].author}`;
-
-                    console.log(items)
             })
             .catch((err) => console.log(err)); 
             }
             dummy();
-            const btnDummy = document.querySelector(".writebtn");
-            btnDummy.addEventListener("click", dummy);
+            setInterval(dummy,10000);
     </script>
 
