@@ -161,13 +161,13 @@
     <script>
         window.addEventListener("scroll",()=>{
             let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; 
-            
+
             document.querySelectorAll(".parallax__item").forEach((item, index) => {
-                if(scrollTop >= item.offsetTop - 2) {
-                    document.querySelectorAll(".parallax__nav li").forEach((el, index)=>{
-                        el.classList.remove("active");
+                if (scrollTop >= item.offsetTop - 2) {
+                    document.querySelectorAll(".parallax__nav li").forEach((li) => {
+                        li.classList.remove("active");
                     });
-                    document.querySelector(".parallax__nav li:nth-child("+(index+1)+")").classList.add("active"); 
+                    document.querySelector(".parallax__nav li:nth-child(" + (index + 1) + ")").classList.add("active"); 
                 }
             });
 
@@ -183,7 +183,7 @@
 
             //info scroll
 
-            // document.querySelector(".scroll span").innerText = parseInt(scrollTop);
+             document.querySelector(".scroll span").innerText = parseInt(scrollTop);
             // document.querySelector(".info .offset1").innerText = document.getElementById("section1").offsetTop;
             // document.querySelector(".info .offset2").innerText = document.getElementById("section2").offsetTop;
             // document.querySelector(".info .offset3").innerText = document.getElementById("section3").offsetTop;
@@ -195,14 +195,32 @@
             // document.querySelector(".info .offset9").innerText = document.getElementById("section9").offsetTop;
 
 
-            // for(let i=1; i<=9; i++){
-            //     document.querySelector(`.info .offset${[i]}`).innerText = document.getElementById(`section${[i]}`).offsetTop;
-            // }
+            for(let i=1; i<=9; i++){
+                document.querySelector(`.info .offset${[i]}`).innerText = document.getElementById(`section${[i]}`).offsetTop;
+            }
 
             // document.querySelectorAll('.info [class^="offset"]').forEach((el, i) => {
             //     el.innerText = document.getElementById(`section${i + 1}`).offsetTop;
             // });
 
+
+    
+            // document.querySelectorAll(".info span").forEach((e, i) => {
+            //     e.innerHTML = document.getElementById(`section${i + 1}`).offsetTop;
+            // });
+
+            // const infoSpans = document.querySelectorAll(".info span");
+            // for (let i in [class^="offset"]) {
+            //     const e = [class^="offset"][i];
+            //     e.innerHTML = document.getElementById(`section${parseInt(i) + 1}`).offsetTop;
+            // }     
+            
+            
+            // const infoSpans = document.querySelectorAll(`.info .offset${[i]}`);
+            // for (const e of infoSpans) {
+            //     const index = Array.from(infoSpans).indexOf(e);
+            //     e.innerHTML = document.getElementById(`section${[i]}`).offsetTop;
+            // }
 
         //     const offsetElems = document.querySelectorAll('.info [class^="offset"]');
         //     for (let elem of offsetElems) {
@@ -217,10 +235,6 @@
         //             elem.textContent = sectionElem.offsetTop;
         //         }
         });
-
-
-
-
         ///for in
         //for of
     </script>
