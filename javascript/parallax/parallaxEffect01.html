@@ -183,7 +183,7 @@
 
             //info scroll
 
-            document.querySelector(".scroll span").innerText = parseInt(scrollTop);
+            // document.querySelector(".scroll span").innerText = parseInt(scrollTop);
             // document.querySelector(".info .offset1").innerText = document.getElementById("section1").offsetTop;
             // document.querySelector(".info .offset2").innerText = document.getElementById("section2").offsetTop;
             // document.querySelector(".info .offset3").innerText = document.getElementById("section3").offsetTop;
@@ -195,14 +195,32 @@
             // document.querySelector(".info .offset9").innerText = document.getElementById("section9").offsetTop;
 
 
-            for(let i=1; i<=9; i++){
-                document.querySelector(`.info .offset${[i]}`).innerText = document.getElementById(`section${[i]}`).offsetTop;
-            }
+            // for(let i=1; i<=9; i++){
+            //     document.querySelector(`.info .offset${[i]}`).innerText = document.getElementById(`section${[i]}`).offsetTop;
+            // }
 
-            
+            // document.querySelectorAll('.info [class^="offset"]').forEach((el, i) => {
+            //     el.innerText = document.getElementById(`section${i + 1}`).offsetTop;
+            // });
+
+
+        //     const offsetElems = document.querySelectorAll('.info [class^="offset"]');
+        //     for (let elem of offsetElems) {
+        //         const sectionElem = document.getElementById(`section${elem.classList[0].substr(-1)}`);
+        //         elem.textContent = sectionElem.offsetTop;
+        //     } 
+        
+                const offsetElems = document.querySelectorAll('.info [class^="offset"]');
+                for (let i in offsetElems) {
+                    const elem = offsetElems[i];
+                    const sectionElem = document.getElementById(`section${elem.classList[0].slice(-1)}`);
+                    elem.textContent = sectionElem.offsetTop;
+                }
         });
 
-        //forEach
+
+
+
         ///for in
         //for of
     </script>
