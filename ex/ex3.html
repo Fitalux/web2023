@@ -22,7 +22,7 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
-        .write {
+        .dummywrite {
             border: 5px solid royalblue;
             margin-top: 150px;
             background-color: rgba(255, 255, 255, 0.6);
@@ -44,7 +44,7 @@
     </style>
 </head>
 <body>
-    <div class="write">
+    <div class="dummywrite">
         <div class="quote"></div>
         <div class="author"></div>
     </div>
@@ -52,11 +52,11 @@
 </html>
     <script>
         const dummy = (value) => {
-            fetch(`dummy01.json`)
+            fetch(`https://fitalux.github.io/web2023/ex/dummy01.json`)
             .then(res => res.json())
             .then(items => { 
                 const BGI = document.querySelector("body")
-                const write = document.querySelector(".write")
+                const write = document.querySelector(".dummywrite")
                 const random = Math.floor(Math.random() * items.quotes.length);
                 write.querySelector(".quote").innerHTML = items.quotes[random].quote;
                 write.querySelector(".author").innerHTML = ` - ${items.quotes[random].author}`;

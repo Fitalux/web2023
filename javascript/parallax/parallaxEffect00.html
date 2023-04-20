@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parallax Effect 00</title>
+
+    <link href="https://webfontworld.github.io/recia/ReciaSerifDisplay.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'ReciaSerifDisplay';
+        }
+
+        body {
+            height: 20000px;
+            background: #102a46;
+        }
+
+        .scrollTop {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+            z-index: 1000;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            font-size: 14px;
+            line-height: 40px;
+            color: #fff;
+        }
+
+        .fixed {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .s1-text1 {
+            font-size: 30vw;
+            color: #fff;
+            text-align: center;
+        }
+
+        .s1-text2 {
+            font-size: 0vw;
+            line-height: 2;
+            padding-top: 8vw;
+            color: #fff;
+            text-align: center;
+        }
+
+        .s1-text3 {
+            font-size: 0vw;
+            line-height: 2;
+            padding-top: 8vw;
+            color: #fff;
+            text-align: center;
+        }
+
+        .s1-text4 {
+            font-size: 0vw;
+            line-height: 2;
+            padding-top: 8vw;
+            color: #fff;
+            text-align: center;
+        }
+
+        .s1-img1 {
+            width: 200vw;
+            height: 100vh;
+        }
+
+        .s1-img1>div:nth-child(1) {
+            padding: 0 0vh;
+        }
+
+        .s1-img1>div:nth-child(2) {
+            padding: 0 0vh;
+        }
+
+        .s1-img1>div:nth-child(3) {
+            padding: 0 0vh;
+        }
+
+        .s1-img1>div:nth-child(4) {
+            padding: 0 0vh;
+        }
+
+        .s1-img1>div:nth-child(5) {
+            padding: 0 0vh;
+        }
+
+        .s1-img1>div {
+            height: 20vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .s1-img1>div>div {
+            width: 19vh;
+            height: 19vh;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: 5px solid #000;
+        }
+
+        .s1-img1-1>div:first-child {
+            background-image: url(https://source.unsplash.com/500x500?moon);
+        }
+
+        .s1-img1-1>div:last-child {
+            background-image: url(https://source.unsplash.com/500x500?moonlight);
+        }
+
+        .s1-img1-2>div:first-child {
+            background-image: url(https://source.unsplash.com/500x500?mikyway);
+        }
+
+        .s1-img1-2>div:last-child {
+            background-image: url(https://source.unsplash.com/500x500?galaxy);
+        }
+
+        .s1-img1-3>div:first-child {
+            background-image: url(https://source.unsplash.com/500x500?Moon);
+        }
+
+        .s1-img1-3>div:last-child {
+            background-image: url(https://source.unsplash.com/500x500?Moonlight);
+        }
+
+        .s1-img1-4>div:first-child {
+            background-image: url(https://source.unsplash.com/500x500?Milkyway);
+        }
+
+        .s1-img1-4>div:last-child {
+            background-image: url(https://source.unsplash.com/500x500?Galaxy);
+        }
+
+        .s1-img1-5>div:first-child {
+            background-image: url(https://source.unsplash.com/500x500?sky);
+        }
+
+        .s1-img1-5>div:last-child {
+            background-image: url(https://source.unsplash.com/500x500?Moonsky);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scrollTop"></div>
+    <section id="section1">
+        <div class="s1-text1 fixed" data-0="font-size: 0vw; opacity:1" data-1000="font-size: 30vw; opacity:1"
+            data-2000="font-size: 0vw; opacity:1" data-3000="font-size: 0vw; opacity:0">HELLO
+        </div>
+
+        <div class="s1-text2 fixed" data-2500="font-size: 0vw; transform: translate(-50%, -50%) rotate(0deg);"
+            data-3000="font-size: 30vw; transform: translate(-50%, -50%) rotate(1080deg);"
+            data-8500="font-size: 0vw;">MOON
+        </div>
+        
+        <div class="s1-img1 fixed" 
+        data-3500="width: 200vw;" 
+        data-4000="width: 20vw;" 
+        data-5000="width: 90vw;">
+            
+            <div class="s1-img1-1" data-3500="transform: rotate(270deg);" data-5000="transform: rotate(0deg);">
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="s1-img1-2" 
+                data-4000="margin:0 auto; width: 200vw;" 
+                data-5000="width: 20vw; transform: rotate(360deg);"
+                data-6000="width: 200vw; transform: rotate(0deg); width: 90vw;">
+                <div data-3500="display: none;" data-5000="display: block;"></div>
+                <div data-3500="display: none;" data-5000="display: block;"></div>
+            </div>
+
+            <div class="s1-img1-3" data-6000="width: 20vw; transform: rotate(360deg);"
+                data-7000="margin:0 auto; width: 200vw; transform: rotate(0deg); width: 90vw;">
+                <div data-3500="display: none;" data-6000="display: block;"></div>
+                <div data-3500="display: none;" data-6000="display: block;"></div>
+            </div>
+
+            <div class="s1-img1-4" 
+                data-7000="margin:0 auto;  width: 20vw; transform: rotate(360deg);"
+                data-8000="width: 200vw; transform: rotate(0deg); width: 90vw;">
+                <div data-3500="display: none;" data-7000="display: block;"></div>
+                <div data-3500="display: none;" data-7000="display: block;"></div>
+            </div>
+
+            <div class="s1-img1-5" 
+                data-8000="margin:0 auto; width: 20vw; transform: rotate(360deg);"
+                data-9000="width: 200vw; transform: rotate(0deg); width: 90vw;">
+                <div data-3500="display: none;" data-8000="display: block;"></div>
+                <div data-3500="display: none;" data-8000="display: block;"></div>
+            </div> 
+
+            <div class="s1-text3 fixed" data-8500="font-size: 0vw; transform: translate(-50%, -50%) rotate(0deg);"
+            data-10000="font-size: 10vw; transform: translate(-50%, -50%) rotate(1080deg);"
+            data-11000="font-size: 0vw;"
+            > A SKY FULL OF STARS
+            </div>
+
+            <div class="s1-text4 fixed" data-11000="font-size: 0vw; transform: translate(-50%, -50%) rotate(0deg);"
+            data-12000="font-size: 3vw; transform: translate(-50%, -50%) rotate(1080deg);"> 
+            The moon shows us itself without changing, <br> providing us with an opportunity to search for ourselves. <br>- Hiroshi Matsumoto.
+            </div>
+
+        </div>
+    </section>
+</body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script type="text/javascript">
+        let s = skrollr.init();
+
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || window.scrollY
+
+            document.querySelector(".scrollTop").innerText = parseInt(scrollTop);
+
+        });
+    </script>
+</html>
