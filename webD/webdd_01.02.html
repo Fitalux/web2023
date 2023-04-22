@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="01_2.css">
+</head>
+<body>
+    <div class="wrap">
+        <aside id="aside">
+            <div class="logo"><img src="img/images/logo01.jpg" alt=""></div>
+            <div class="menu">
+                <div class="service">서비스</div>
+                <div class="b">분야별 정책정보</div>
+                <div class="c">정책뉴스</div>
+                <div class="d">연구 보고서</div>
+                <div class="e">간행물</div>
+                <div class="f">정책자료</div>
+                <div class="g">정책정보</div>
+                <div class="h">기관정보</div>
+                <div class="is">고객센터</div>
+            </div>
+        </aside>
+
+        <section id="section">
+            <div class="banner">
+                <div class="banner__inner">
+                    <img src="img/images/banner01.jpg" alt="">
+                    <!-- <img src="img/images/banner01.jpg" alt="">
+                    <img src="img/images/banner01.jpg" alt="">
+                    <img src="img/images/banner01.jpg" alt="">
+                    <img src="img/images/banner01.jpg" alt=""> -->
+                </div>
+            </div>
+            <div class="cont">
+                <div class="text">
+                    <span class="text1">자주 찾는 서비스 | </span> 
+                    <span class="text2">키워드 서비스</span>
+                </div>
+                <div class="contimg">
+                    <div class="icon">
+                        <img src="img/images/icon01.jpg" alt=""> 
+                        <p>주민등록표등본<br>(초본)교부</p>
+                    </div>
+                    
+                    <div class="icon">
+                        <img src="img/images/icon02.jpg" alt=""> 
+                        <p>토지(임야)대장<br>열람/등본 발급신청</p>
+                    </div>
+
+                    <div class="icon">
+                        <img src="img/images/icon03.jpg" alt=""> 
+                        <p>건축물대장 등/초본<br>발급(열람)신청</p>
+                    </div>
+
+                    <div class="icon">
+                        <img src="img/images/icon04.jpg" alt=""> 
+                        <p>지방세 납세증명</p>
+                    </div>
+                    
+                    <div class="icon">
+                        <img src="img/images/icon05.jpg" alt=""> 
+                        <p>지적도(임야도)등본<br>발급및열람</p>
+                    </div> 
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardbox">
+                    <span>공지사항</span>
+                    <img src="img/images/icon06.jpg" alt="">
+                    <ul>
+                        <li><a href="#">· [어디서나 대학민원] 호서대학교 팩스···</a></li>
+                        <li><a href="#">· [전라북도 고창군] 새올행정시스템 D···</a></li>
+                        <li><a href="#">· 교육부 행정전자서명인증센터 시스템···</a></li>
+                    </ul>
+                </div>
+                <div class="cardbox">
+                    <span>자료실</span>
+                    <img src="img/images/icon07.jpg" alt="">
+                    <ul>
+                        <li><a href="#">· 인터넷 민원발급 위한 프로그램(주민···</a></li>
+                        <li><a href="#">· 정부24 발급물 등록 프로그램</a></li>
+                        <li><a href="#">· 전자문서 관련 설치 프로그램</a></li>
+                    </ul>
+                </div>
+                <div class="cardbox">
+                    <span>FAQ</span>
+                    <img src="img/images/icon08.jpg" alt="">
+                    <ul>
+                        <li><a href="#">· '민원발급불가' 또는 '발급불가' 프린터···</a></li>
+                        <li><a href="#">· 가족관계증명서 프린터 발급이 가능···</a></li>
+                        <li><a href="#">· 온라인 전입신고 시 [세대주 확인]은 어···</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <footer id="footer">
+            <div class="footerwrap">
+                <div class="left">
+                    <img src="img/images/logo02.jpg" alt="">
+                   <span>
+                        03171 서울특별시 세종대로 209(세종로) 행정안전부<br>
+                        정부24콜센터 1588-2188 정부민원안내콜센터 국번없이 110<br>
+                        Copyright ⓒ Ministry of the Interior and Safety. All Rights reserved.
+                   </span> 
+                </div>
+
+                <div class="footerimg">
+                    <img src="img/images/icon09.jpg" alt=""></img>
+                    <img src="img/images/icon10.jpg" alt=""></img>
+                    <img src="img/images/icon11.jpg" alt=""></img>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script>
+    const sliderWrap = document.querySelector(".wrap");
+    const sliderImg = sliderWrap.querySelector(".banner");
+    const sliderInner = sliderWrap.querySelector(".banner__inner");
+    const slider = sliderWrap.querySelectorAll("img");
+
+        let currentIndex = 0;                   //현재 보이는 (가장 위에 있는) 이미지
+        let sliderCount = slider.length;        //전체 이미지의 총 수
+        let sliderInterval = 3000;              //다음 이미지로 넘어가는 간격의 시간
+
+        sliderInner.style.transition = "all 0.8s";
+        setInterval(()=>{
+            currentIndex = (currentIndex+1) % sliderCount;
+        
+            sliderInner.style.transform = "translateY("+ -786 * currentIndex + "px)";
+        },sliderInterval);
+
+    </script>
+</script>
+</html>

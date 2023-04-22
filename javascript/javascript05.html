@@ -53,7 +53,7 @@
                     <li><a hrer="#sample02">02.<strong>string.prototype.charAt()</strong>            메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 단일문자를 반환한다.</a></li>
                     <li><a hrer="#sample03">03.<strong>string.prototype.charCodeAt()</strong>        메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 유니코드 정수 값을 반환한다.</a></li>
                     <li><a hrer="#sample04">04.<strong>string.prototype.charPointAt()</strong>       메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 유니코드 포인트 정수 값을 반환한다.</a></li>
-                    <li><a hrer="#sample05">05.<strong>string.prototype.concat()</strong>            메서드는 매개변수로 전달된 문자열을 받어, 결합된 새로운 문자열을 반환한다.</a></li>
+                    <li><a hrer="#sample05">05.<strong>string.prototype.concat()</strong>            메서드는 매개변수로 전달된 문자열을 받아, 결합된 새로운 문자열을 반환한다.</a></li>
                     <li><a hrer="#sample06">06.<strong>string.prototype.includes()</strong>★          메서드는 문자열 포함 여부를 검색하여, 불린(true, false)을 반환한다.</a></li>
                     <li><a hrer="#sample07">07.<strong>string.prototype.indexOf()</strong>★           메서드는 문자열을 검색하여, 주어진 값과 일치하는 첫 번째 위치값(index)을 반환한다.</a></li>
                     <li><a hrer="#sample08">08.<strong>string.prototype.lastIndexOf()</strong>       메서드는 문자열을 역순으로 검색하여, 주어진 값과 일치하는 첫 번째 위치값(index)을 반환한다.</a></li>
@@ -83,9 +83,153 @@
                     <li><a hrer="#sample31">32.<strong>string.prototype.trimEnd()</strong>           메서드는 문자열의 앞 공백을 제거하고, 새로운 문자열을 반환한다.</a></li>
                     <li><a hrer="#sample33">33.<strong>string.prototype.valueOf()</strong>           메서드는 객체의 원시값을 반환한다.</a></li>
                 </ul>
+                <br>
+                <br>
+                <ul>
+                    <li><a href="#sampleExtra01">Extra 01.<strong> 유니코드 코드 포인트</strong></a></li>
+                    <li><a href="#sampleExtra02">Extra 02.<strong> 보충 다국어 평면(SMP, Supplementary Multilingual Plane)</strong></a></li>
+                    <li><a href="#sampleExtra03">Extra 03.<strong> 정준분해(Canonical Decomposition)</strong></a></li>
+                    <li><a href="#sampleExtra04">Extra 04.<strong> 정준결합(Canonical Composition)</strong></a></li>
+                    <li><a href="#sampleExtra05">Extra 05.<strong> 호환성 분해(Compatibility Decomposition)</strong></a></li>
+                    <li><a href="#sampleExtra06">Extra 06.<strong> 호환성 결합(Compatibility Composition)</strong></a></li>
+                    <li><a href="#sampleExtra07">Extra 07.<strong> 결합 문자(Combining Character)</strong></a></li>
+                    <li><a href="#sampleExtra08">Extra 08.<strong> 결합문자 시퀀스</strong></a></li>
+                </ul>
             </div> 
             
             <div class="main__sample">
+                <div id="sample01" class="sample">
+                    <h3>01. at()</h3>
+                    <p>지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 요소를 반환한다.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const str = 'Hello, world!';
+
+    console.log(str.at(1)); // 'e'
+    console.log(str.at(-1)); // '!'
+    console.log(str.at(4, 7)); // 'o'
+}
+</code></pre>
+                    </div>
+                    <div class="notice">
+                        <h4>문자열.at(반환할 문자의 위치값), 문자열.at(반환할 문자의 시작 위치값, 반환할 문자의 마지막 위치값)</h4>
+                        <p>문자열에서 특정 인덱스에 해당하는 문자를 반환하는 메서드이다.</p>
+                        <p>일반적인 배열 인덱싱과는 달리 유니코드 코드 포인트를 기준으로 문자를 반환하기 때문에</p>
+                        <p>서로 다른 유니코드 문자를 포함하는 문자열에서 올바른 결과를 반환한다.</p>
+                        <p>또한, 인덱스가 음수일 경우 문자열의 끝에서부터 역순으로 찾는다.</p>
+                        <p>이 인덱스는 반드시 정수형 숫자여야 하며, 문자열을 초과하는 값을 전달 시, undefined를 반환한다.</p>
+                        <p>at( )메서드는 선택적으로 두 번째 인자를 받을 수도 있다.</p>
+                        <p>이는 문자열 내에서 인덱스의 시작 위치를 나타내는 인자이며, 기본값은 0으로 문자열의 첫 번째 문자부터 인덱싱을 시작한다.</p>
+                        <p>만약 두 번째 인자로 음수값이 주어지면 문자열의 끝에서부터 역순으로 찾는다.</p>
+                    </div>
+                </div>
+                <!-- //sample01 -->
+
+                <div id="sample02" class="sample">
+                    <h3>02. charAt()</h3>
+                    <p>지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 단일문자를 반환한다.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const str = 'Hello, world!';
+
+    const char = str.charAt(4); "o"
+    const char = str.charAt(7); // "w"
+
+    console.log(char);
+}
+</code></pre>
+                    </div>
+                    <div class="notice">
+                        <h4>문자열.charAt(위치값)</h4>
+                        <p>인자로 받은 인덱스에 해당하는 문자를 반환하며, 문자열의 길이보다 큰 인덱스를 인자로 전달하면 빈 문자열('')을 반환한다.</p>
+                        <p>여기서 str은 대상 문자열이고, index는 추출하고자 하는 문자의 인덱스를 나타낸다. </p>
+                        <p>index는 0부터 시작한다.</p>
+                        <p>charAt() 메서드는 16비트 유니코드 문자를 반환하므로, 16비트 이상의 유니코드 문자를 처리할 경우에는 at() 메서드를 사용하는 것이 좋다.</p>
+                    </div>
+                </div>
+                <!-- //sample02 -->
+
+                <div id="sample03" class="sample">
+                    <h3>03. charCodeAt()</h3>
+                    <p>지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 유니코드 정수 값을 반환한다.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const str = 'Hello, world!';
+
+    const code = str.charCodeAt(0);  // 72
+    const code = str.charCodeAt(7);    //119
+    console.log(code); 
+}
+</code></pre>
+                    </div>
+                    <div class="notice">
+                        <h4>문자열.charCodeAt(위치값)</h4>
+                        <p>문자열의 인덱스를 입력으로 받아, 해당 인덱스에 위치한 문자의 유니코드 값을 10진수로 반환한다.</p>
+                        <p>위 예제에서, charCodeAt(0)은 문자열 str의 첫 번째 인덱스인 'H'에 해당하는 유니코드 값 72를 반환한다.</p>
+                        <p>문자열에서 특정 문자의 인덱스를 알고자 할 때 유용하게 사용된다.</p>
+                        <p>또한, 유니코드 값을 기반으로 문자열을 정렬하거나 비교하는 등의 작업에서도 활용될 수 있다.</p>
+                    </div>
+                </div>
+                <!-- //sample03 -->
+
+                <div id="sample04" class="sample">
+                    <h3>04. charPointAt()</h3>
+                    <p>지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 유니코드 포인트 정수 값을 반환한다.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const str = '𐐀hello';
+
+    const code = str.codePointAt(0);
+    console.log(code); // 66304
+}
+</code></pre>
+                    </div>
+                    <div class="notice">
+                        <h4>문자열.charPointAt(위치값)</h4>
+                        <p>codePointAt()는 charCodeAt()와 유사하지만, charCodeAt()는 16비트 유니코드 문자만 처리할 수 있는 반면, codePointAt()는 21비트 유니코드 문자까지 처리할 수 있다.</p>
+                        <p>21비트 유니코드 문자는 기본 다국어 평면(BMP)에 있는 문자와 이를 초과하는 보충 다국어 평면(SMP)에 있는 일부 문자들을 포함한다.</p>
+                        <p>문자열의 인덱스를 인수로 받아 해당 인덱스에 위치한 문자의 코드 포인트 값을 반환한다.</p>
+                        <p>코드 포인트는 문자를 유니코드로 인코딩한 값으로, 10진수로 표현된다.</p>
+                        <p>codePointAt(0)은 문자열 str의 첫 번째 인덱스인 SMP 문자 '𐐀'에 해당하는 코드 포인트 값 66304를 반환한다.</p>
+                        <p>codePointAt() 메소드는 charCodeAt() 메소드와 달리, 코드 포인트를 처리할 수 있으므로 전 세계의 다양한 문자를 다루는 애플리케이션에서 유용하게 사용될 수 있다.</p>
+                    </div>
+                </div>
+                <!-- //sample04 -->
+
+                <div id="sample05" class="sample">
+                    <h3>05. concat()</h3>
+                    <p>전달된 문자열을 받아, 결합된 새로운 문자열을 반환한다.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const array1 = ['a', 'b', 'c'];
+    const array2 = ['d', 'e', 'f'];
+    const array3 = ['g', 'h', 'i'];
+
+    const newArray = array1.concat(array2, array3);
+    console.log(newArray); // ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+
+
+
+    const array1 = ['a', 'b', 'c'];
+    const value1 = 'd';
+    const value2 = ['e', 'f'];
+    const value3 = { g: 'h' };
+
+    const newArray = array1.concat(value1, value2, value3);
+    console.log(newArray); // ['a', 'b', 'c', 'd', 'e', 'f', { g: 'h' }]
+}
+</code></pre>
+                    </div>
+                    <div class="notice">
+                        <h4>문자열.concat(문자열, 문자열)</h4>
+                        <p>배열의 모든 요소를 하나의 배열로 합쳐서 새로운 배열을 반환한다다. </p>
+                        <p>이 메소드는 기존 배열을 변경하지 않고, 합쳐진 새로운 배열을 반환한다.</p>
+                        <p>인수로 배열 뿐만 아니라 값도 받을 수 있습니다. </p>
+                        <p>이 경우에는 값을 원소로 갖는 배열로 변환하여 합친다.</p>
+                    </div>
+                </div>
+                <!-- //sample05 -->
+
                 <div id="sample06" class="sample">
                     <h3>06. includes()</h3>
                     <p>문자열 포함 여부를 검색하여, 불린(true, false)을 반환한다.</p>
@@ -172,10 +316,43 @@
                         <p>✔1 검색을 인덱스 11에서 시작하기 대문에 메서드는 javascript r 하위 문자열 내애서만 검색한다. </p>
                         <p>reference 하위 문자열은 이 하위 문자열 내에서 찾을 수 없으므로 이 메서드는 -1을 반환한다.</p><br>
                         <p>✔2 검색을 전체 문자열인 javascript reference에서 시작하기 때문에 reference 하위 문자열의 마지막 발생을 인덱스 11에서 찾는다.</p>
-                        <p></p>
                     </div>
                 </div>
-                <!-- //sample07 -->
+                <!-- //sample08 -->
+
+                <div id="sample09" class="sample">
+                    <h3>09. localeCompare()</h3>
+                    <p>문자열과 문자열을 비교하여, 수치(음수, 양수, 0)을 반환한다.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const str1 = 'hello';
+    const str2 = 'world';
+    const str3 = 'Hello';
+ 
+    console.log(str1.localeCompare(str2)); // -1  (문자열2가 문자열 1보다 사전순(알파벳 순서상)으로 뒤에 오기 때문)
+    console.log(str2.localeCompare(str1)); // 1 (문자열 1이 문자열 2보다 사전순으로 앞에 오기 때문)
+    console.log(str1.localeCompare(str3)); // 1 (문자열 1이 문자열 1보다 앞에 오기 때문 / 대소문자를 구분하기 때문에 다른 문자열로 인식함)
+    console.log(str1.localeCompare(str1)); // 0 (문자열 1과 문자열 1의 위치가 같음)
+}
+</code></pre>
+                    </div>
+                    <div class="notice">
+                        <h4>문자열.localeCompare(compareString [, locales [, options]])</h4>
+                        <p>compareString: 현재 문자열과 비교할 다른 문자열이다.</p>
+                        <p>locales (선택적): 비교에 사용할 로케일(언어와 국가)을 나타내는 문자열 배열이다.</p>
+                        <p>options (선택적): 다양한 비교 옵션을 나타내는 객체이다.</p>     
+                        <p>주어진 문자열과 비교 문자열의 정렬 순서를 비교하여, 비교 결과에 따라 -1, 0, 1 중 하나를 반환한다.</p>
+                        <p>문자열을 다른 문자열과 비교하여 정렬 순서를 결정하는데 사용된다.</p>
+                        <p>이 메소드는 두 문자열을 비교하여 결과에 따라 3가지 값을 반환한다.</p>
+                        <p>0보다 작은 값: 첫 번째 문자열이 두 번째 문자열보다 앞선다.</p>
+                        <p>0: 두 문자열이 동일하다.</p>
+                        <p>0보다 큰 값: 첫 번째 문자열이 두 번째 문자열보다 뒤에 온다.</p>
+                        <p>로케일(언어, 국가, 문화권 등)을 기반으로 문자열을 비교하기 때문에, 다양한 언어와 문자 집합에서 사용할 수 있다.</p>
+                        <p>기본적으로 유니코드 순서로 문자열을 비교한다.</p>
+                        <p>또한 localeCompare() 메소드는 대소문자를 구분한다.</p>
+                    </div>
+                </div>
+                <!-- //sample09 -->
 
                 <div id="sample10" class="sample">
                     <h3>10. match()</h3>
@@ -207,6 +384,124 @@
                     </div>
                 </div>
                 <!-- //sample10 -->
+
+                <div id="sample12" class="sample">
+                    <h3>12. normalize()</h3>
+                    <p>주어진 문자열을 정규화된 형태로 반환한다.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const str1 = 'é';
+    const str2 = 'é';
+    console.log(str1 === str2); // false
+
+    const normalizedStr1 = str1.normalize();
+    const normalizedStr2 = str2.normalize();
+    console.log(normalizedStr1 === normalizedStr2); // true
+
+    const str = 'ộ';
+    console.log(str.length); // 2
+
+    const nfdStr = str.normalize("NFD");
+    console.log(nfdStr.length); // 3
+
+    const nfcStr = str.normalize("NFC");
+    console.log(nfcStr.length); // 2
+}
+</code></pre>
+                    </div>
+                    <div class="notice">
+                        <h4>문자열.normalize([form])</h4>
+                        <p>normalize() 메소드는 유니코드 문자열을 정규화하여 문자열에서 여러 버전의 같은 문자를 하나의 표준 문자로 표현한다.</p>
+                        <p>예를 들어, "é"와 "é"는 같은 문자이지만 서로 다른 유니코드 문자열이다.</p>
+                        <p>이 경우 normalize() 메소드를 사용하여 두 문자열을 모두 같은 문자로 정규화할 수 있다.</p>
+                        <p>normalize() 메소드는 문자열의 각 문자를 유니코드 정규화를 사용하여 노멀 폼(normal form)으로 변환한다.</p>
+                        <p>노멀 폼에는 다음 4가지가 있다.</p>
+                        <p>NFC (Normalization Form Canonical Composition)</p>
+                        <p>모든 음절을 Canonical Decomposition(정준 분해) 후 Canonical Composition(정준 결합) 하는 방식</p>
+                        <p>NFD (Normalization Form Canonical Decomposition)</p>
+                        <p>정준분해(Canonical Decomposition) 중 하나로, 유니코드 문자열에서 조합형 문자(combining character)를 분리하여 기본문자(base character)와 조합 문자열(combining sequence)로 분해하는 과정.  (ex. 문자열 "é"는 NFD로 분해하면 기본문자 'e'와 조합 문자열 '´'으로 분리된다.)</p>
+                        <p>NFKC (Normalization Form Compatibility Composition)</p>
+                        <p>유니코드 문자열에서 호환성 분해(compatibility decomposition)3된 문자열을 정준결합(Canonical Composition)하여 결합 문자(composed character)로 변환하는 과정</p>
+                        <p>NFKD (Normalization Form Compatibility Decomposition)</p>
+                        <p>유니코드 문자열에서 호환성 결합(compatibility composition) 5문자열을 정준분해(Canonical Decomposition)하여 분해 문자(decomposed character)로 변환하는 과정. </p>
+                        <p>NFC와 NFKC는 대부분의 경우 문자열을 합성하는 것이며, NFD와 NFKD는 문자열을 분해한다.</p>
+                        <p> 일반적으로 NFC를 사용하는 것이 권장된다.</p>
+                        <p>선택적 매개변수로 노멀 폼(normal form)을 지정할 수 있다.</p>
+                        <p>예를 들어, normalize("NFD")를 호출하면 NFD 노멀 폼으로 문자열을 분해한다.</p>
+                        <p>"ộ" 문자열을 노멀 폼으로 변환한다. 원래 문자열의 길이는 2이지만, NFD 노멀 폼으로 변환하면 3으로 늘어나게 된다. </p>
+                    </div>
+                </div>
+                <!-- //sample12 -->
+
+                <div id="sample13" class="sample">
+                    <h3>13. padEnd()</h3>
+                    <p>주어진 길이에 맞게 뒤 문자열을 채우고, 새로운 문자열을 반환한다.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const str = 'hello';
+    const paddedStr = str.padEnd(10, 'world');
+    console.log(paddedStr); // "helloWorld"
+    console.log(str); // "hello"
+}
+</code></pre>
+                    </div>
+                    <div class="notice">
+                        <h4>문자열.padEnd(targetLength [, padString])</h4>
+                        <p>현재 문자열의 끝에 지정된 길이만큼 다른 문자열을 추가하여 새로운 문자열을 생성한다.</p>
+                        <p>이 때 추가하는 문자열은 기본적으로 공백이다.</p>
+                        <p>targetLength: 현재 문자열의 길이와 합해서 목표로 하는 총 길이이다. 이 값보다 현재 문자열의 길이가 길면 추가적인 문자열을 삽입하지 않는다.</p>
+                        <p>padString (선택적): 현재 문자열의 끝에 추가할 다른 문자열이다. 이 값이 지정되지 않으면 기본값으로 공백이 사용된다.</p>
+                    </div>
+                </div>
+                <!-- //sample13 -->
+
+                <div id="sample14" class="sample">
+                    <h3>14. padStart()</h3>
+                    <p>주어진 길이에 맞게 앞 문자열을 채우고, 새로운 문자열을 반환한다.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const str = 'hello';
+    const paddedStr = str.padStart(10, 'world');
+    console.log(paddedStr); // "worldhello"
+    console.log(str); // "hello"
+}
+</code></pre>
+                    </div>
+                    <div class="notice">
+                        <h4>문자열.padStart(targetLength [, padString])</h4>
+                        <p>targetLength: 현재 문자열의 길이와 합해서 목표로 하는 총 길이입니다. 이 값보다 현재 문자열의 길이가 길면 추가적인 문자열을 삽입하지 않는다.</p>
+                        <p>padString (선택적): 현재 문자열의 시작 부분에 추가할 다른 문자열입니다. 이 값이 지정되지 않으면 기본값으로 공백이 사용된다.</p>
+                        <p>문자열을 수정하지 않고, 새로운 문자열을 반환한다.</p>
+                        <p>위 예제에서는 padStart() 메소드를 사용하여 문자열 "hello"의 시작 부분에 "world" 문자열을 추가하여 길이가 10이 되는 새로운 문자열을 만든다.</p>
+                        <p>결과적으로 paddedStr 변수에는 "worldhello" 문자열이 할당된다.</p>
+                    </div>
+                </div>
+                <!-- //sample14 -->
+
+                <div id="sample15" class="sample">
+                    <h3>15. repeat()</h3>
+                    <p>주어진 횟수만큼 반복 복사하여, 새로운 문자열을 반환한다.</p>
+                    <div class="script">
+<pre><code class="language-js">{
+    const str = 'hello';
+    const repeatedStr = str.repeat(3);
+    console.log(repeatedStr); // "hellohellohello"
+
+    const str = 'hello';
+    const repeatedStr = str.repeat(0);
+    console.log(repeatedStr); // ""
+}
+</code></pre>
+                    </div>
+                    <div class="notice">
+                        <h4>문자열.repeat(반복할 횟수)</h4>
+                        <p>문자열을 지정된 횟수만큼 반복하여 새로운 문자열을 생성하는 메서드이다.</p>
+                        <p>이 때, 반복할 횟수는 정수로 지정해야 한다.</p>
+                        <p>반복할 횟수가 0이거나 음수이면 빈 문자열을 반환한다.</p>
+                        <p>이전에는 for( ) 루프를 통하여 문자열을 반복해야만 했지만 이제는 repeat 메서드를 사용하여 간결하게 사용할 수 있다.</p>
+                    </div>
+                </div>
+                <!-- //sample15 -->
 
                 <div id="sample18" class="sample">
                     <h3>18. search()</h3>
@@ -370,8 +665,133 @@
                     </div>
                 </div>
                 <!-- //sample32 -->
+
+                <div id="sampleExtra01" class="sample">
+                    <h3>01. 유니코드 코드 포인트</h3>
+                    <p>유니코드에서 문자를 나타내는데 사용되는 고유한 정수값</p>
+                    
+                    <div class="notice">
+                        <h4>유니코드 코드 포인트</h4>
+                        <p>유니코드 코드 포인트는 0부터 00x10FFFF(1,114,1110)까지의 21비트 정수로 표현된다.</p>
+                        <p>코드 포인트는 16진수로 나타내어지며, U+XXXX와 같은 형식으로 표기된다. </p>
+                        <p>여기서 XXXX는 16진수 코드 포인트 값이다.</p>
+                        <p>예를 들어, 영어 대문자 'A'의 코드 포인트는 U+0041이고,</p>
+                        <p>한글 'ㄱ'의 코드 포인트는 U+3131입니다. 이와 같이 모든 문자와 기호는 고유한 코드 포인트를 가지고 있다.</p>
+                        <p>JavaScript에서는 문자열을 UTF-16 인코딩으로 표현한다.</p>
+                        <p>따라서 JavaScript의 문자열 메서드 중 일부는 코드 포인트를 기준으로 작동한다.</p>
+                        <p>예를 들어, String.prototype.charAt() 메서드는 16비트 단위로 문자열을 나누어 인덱싱하기 때문에, 16비트 이상의 유니코드 문자열에 대해서는 잘못된 결과를 반환할 수 있다.</p>
+                        <p>그러나, String.prototype.at() 메서드는 코드 포인트를 기준으로 인덱싱하기 때문에, 16비트 이상의 유니코드 문자열에 대해서도 올바른 결과를 반환한다.</p>
+                    </div>
+                </div>
+                <!-- //sampleExtra01 -->
+
+                <div id="sampleExtra02" class="sample">
+                    <h3>02. 보충 다국어 평면(SMP, Supplementary Multilingual Plane)</h3>
+                    <p>유니코드에서 기본 다국어 평면(BMP, Basic Multilingual Plane) 이외의 문자들을 저장하는 평면</p>
+                    
+                    <div class="notice">
+                        <h4>보충 다국어 평면(SMP, Supplementary Multilingual Plane)</h4>
+                        <p>유니코드는 전 세계의 문자를 하나의 문자 집합으로 표현하기 위한 국제 표준이다.</p>
+                        <p>BMP는 유니코드에서 0부터 65535까지의 코드 포인트를 할당하는 1번째 평면이다. </p>
+                        <p>하지만 BMP에는 모든 문자를 담을 수 없기 때문에 보충 다국어 평면(SMP)과 추가 보충 다국어 평면(SIP)이 추가되었다.</p>
+                        <p>SMP는 65536부터 1114111까지의 코드 포인트를 사용한다.</p>
+                        <p>SMP에 있는 문자들은 2개의 16비트 유니코드 코드 유닛으로 표현된다.</p>
+                        <p>BMP에 있는 문자는 1개의 16비트 유니코드 코드 유닛으로 표현된다.</p>
+                    </div>
+                </div>
+                <!-- //sampleExtra02 -->
+
+                <div id="sampleExtra03" class="sample">
+                    <h3>03. 정준분해(Canonical Decomposition)</h3>
+                    <p>유니코드 문자열에서 조합형 문자(combining character)를 분리하여 기본문자(base character)와 조합 문자열(combining sequence)로 분해하는 과정</p>
+                    
+                    <div class="notice">
+                        <h4>정준분해</h4>
+                        <p>유니코드 문자열에서 조합형 문자(combining character)를 분리하여 기본문자(base character)와 조합 문자열(combining sequence)로 분해하는 과정을 말한다.</p> 
+                        <p>이를 통해 문자열을 더 세밀하게 분해하고, 결합 문자와 기본 문자를 분리하여 처리할 수 있다.</p>
+                        <p>예를 들어, 문자열 é는 기본문자 e와 조합 문자열 ´으로 분해된다.</p>
+                    </div>
+                </div>
+                <!-- //sampleExtra03 -->
+
+                <div id="sampleExtra04" class="sample">
+                    <h3>04. 정준결합(Canonical Composition)</h3>
+                    <p>유니코드 문자열을 다시 결합하여 원래 문자열로 복원하는 과정.</p>
+                    
+                    <div class="notice">
+                        <h4>정준결합</h4>
+                        <p>정준결합은 정준분해의 반대 과정으로, 유니코드 문자열에서 결합 문자 시퀀스를 결합하여 하나의 문자로 만드는 과정이다.</p>
+                        <p>이를 통해 문자열을 더 간단하게 처리할 수 있다. </p>
+                        <p>예를 들어, e와 ´의 결합 문자 시퀀스를 정준결합하면 é라는 하나의 문자로 처리된다.</p>
+                        <p>정준분해와 정준결합은 문자열의 표준화에 중요한 역할을 한다.</p>
+                        <p>다양한 인코딩과 표현 방식이 존재하는 유니코드에서는 문자열 처리의 일관성을 유지하기 위해 이러한 표준화 기술이 필수적이다.</p>
+                    </div>
+                </div>
+                <!-- //sampleExtra04 -->
+
+                <div id="sampleExtra05" class="sample">
+                    <h3>05. 호환성 분해(Compatibility Decomposition)</h3>
+                    <p>유니코드에서는 같은 의미를 갖지만 문자 코드가 다른 문자들을 하나의 표준 문자로 통합하는 과정.</p>
+                    
+                    <div class="notice">
+                        <h4>호환성 분해(Compatibility Decomposition)</h4>
+                        <p>정준분해, 정준결합과 유사하지만, 유니코드 버전 2.0 이전에 사용되었던 문자열 표현 방식인 ASCII와 호환성을 유지하기 위해 추가된 기술이다.</p>
+                        <p>유니코드 문자열에서 기본 문자와 결합 문자를 분해할 때, ASCII와의 호환성을 유지하기 위해 일부 유니코드 문자를 ASCII 문자로 대체하는 것이다.</p>
+                        <p>예를 들어, "①"라는 문자는 유니코드에서는 1과 ⓪의 결합 문자 시퀀스로 이루어져 있지만, 호환성 분해를 하면 1로 대체된다.</p>
+                    </div>
+                </div>
+                <!-- //sampleExtra05 -->
+
+                <div id="sampleExtra06" class="sample">
+                    <h3>06. 호환성 결합(Compatibility Composition)</h3>
+                    <p>호환성 분해의 반대로, 유니코드 문자열에서 호환성을 유지하기 위해 일부 유니코드 문자를 ASCII 문자로 대체하여 결합하는 것.</p>
+                    
+                    <div class="notice">
+                        <h4>호환성 결합(Compatibility Composition)</h4>
+                        <p>유니코드 문자열에서 호환성을 유지하기 위해 일부 유니코드 문자를 ASCII 문자로 대체하여 결합하는 것이다.</p>
+                        <p>예를 들어, 1과 ⓪의 결합 문자 시퀀스를 호환성 결합하면 ①라는 문자로 대체된다.</p>
+                        <p>하지만 호환성 분해와 결합은 일반적으로 사용되지 않습니다. 왜냐하면 유니코드 버전 2.0 이후에는 이러한 호환성 기능이 필요 없어졌기 때문이다.</p>
+                        <p>대부분의 프로그래밍 언어와 플랫폼은 이러한 호환성을 지원하지 않으며, 정준 분해와 결합을 사용하는 것이 권장된다.</p>
+                    </div>
+                </div>
+                <!-- //sampleExtra06 -->
+
+                <div id="sampleExtra07" class="sample">
+                    <h3>07. 결합 문자(Combining Character)</h3>
+                    <p>문자의 일부분으로 표시되지만, 다른 문자와 결합하여 다른 문자를 만들어내는 문자</p>
+                    
+                    <div class="notice">
+                        <h4>결합 문자(Combining Character)</h4>
+                        <p>대표적으로 악센트 기호나 조합된 문자 등이 결합 문자에 해당한다.</p>
+                        <p>예를 들어, é라는 문자는 문자 e와 악센트 기호(´)의 결합 문자이다.</p>
+                        <p>유니코드에서는 이러한 결합 문자를 따로 구분하여 코드 포인트로 정의한다.</p>
+                        <p>하지만, 이러한 결합 문자는 렌더링될 때 기본 문자와 결합하여 새로운 문자를 만들어내므로, 문자열 처리에 있어서 주의가 필요하다.</p>
+                        <p>결합 문자는 문자열의 정렬이나 검색 등에서 문제를 일으킬 수 있다.</p>
+                        <p>예를 들어, café와 café는 결합 문자 é를 포함하고 보이는 모습상으로는 거의 비슷해 보이지만,다른 문자열이다. </p>
+                        <p>café는 악센트 기호(´)와 문자 e가 결합하여 만들어진 é 문자를 포함하는 반면, café는 일반적인 문자 e 뒤에 악센트 기호가 따로 붙어있는 결합 문자(sequence)이다. </p>
+                        <p>이러한 차이점으로 인해 café와 café는 문자열 처리에서 다른 문자열로 인식된다.</p>
+                        <p>이와 같은 문제를 해결하기 위해서는 문자열의 정규화(Normalization)가 필요한 것이다.</p>
+                    </div>
+                </div>
+                <!-- //sampleExtra07 -->
+
+                <div id="sampleExtra08" class="sample">
+                    <h3>08. 결합 문자 시퀀스</h3>
+                    <p>문자열 내에서 연속적으로 결합되어 있는 하나 이상의 결합 문자들을 의미.</p>
+                    
+                    <div class="notice">
+                        <h4>결합문자 시퀀스</h4>
+                        <p>여기서 시퀀스(sequence)란, 순서대로 배열되어 있는 것을 의미한다.</p>
+                        <p>예를 들어, 문자열 café의 경우, 문자 e 뒤에 결합 문자인 악센트 기호(´)가 따로 붙어있는 형태이므로, e와 ´를 각각의 문자로 인식하지 않고, "e´"를 하나의 결합 문자로 처리한다.</p>
+                        <p>이 때, e´를 é로 변환하여 처리하게 된다.</p>
+                        <p>이처럼 결합 문자 시퀀스를 처리하면, 올바른 문자열을 처리할 수 있다.</p>
+                    </div>
+                </div>
+                <!-- //sampleExtra08 -->
             </div>
+            <!-- sample -->
         </div>
+        <!-- container -->
     </main>
     <!-- //main -->
 

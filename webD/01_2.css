@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.wrap {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.banner__inner {              /*이미지가 슬라이드 되는(움직이는) 영역*/
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 500px;
+  }
+  .banner img{
+    width: 100%;
+    height: px;
+  }
+#aside {
+    width: 30%;
+    height: 100%;
+}
+#aside img {
+    width: 200px;
+    height: 100px;
+    margin-bottom: 50px;
+}
+.menu .service{
+    font-size: 24px;
+    color: #154ef8;
+    margin-bottom: 20px;
+}
+#section {
+    width: 70%;
+    height: 100%;
+}
+#section img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.cont {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.cont .text {
+    margin-bottom: 30px;
+    display: inline-block;
+} 
+.cont .text1 {
+    font-weight: bold;
+    font-size: 24px;
+}
+.cont .text2 {
+    font-weight: bold;
+    color: #999;
+    font-size: 24px;
+}
+.cont .contimg {
+    display: flex;
+    width: 100%;
+    height: 100%;  
+}
+.icon {
+    margin-right: 20px;
+}
+.icon>p{
+    font-size: 22px;
+    font-weight: bold;
+}
+.card {
+    width: 100%;
+    display: flex;
+}
+.cardbox {
+    margin-top: 30px;
+    border: 1px solid #666;
+    margin-right: 20px;
+    text-align: center;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 50px;
+}
+.cardbox>img {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.cardbox span {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+.cardbox li a {
+    color: #666;
+    font-size: 12px;
+}
+.file {
+    border: 1px solid #666
+}
+#footer {
+    width: 100%;
+    margin-bottom: 50px;
+}
+.footerwrap {
+    background-color: #EBF2FA;
+    display: flex;
+    position: relative
+}
+.footerwrap .left {
+    display: flex;
+}
+.footerwrap .left span {
+    margin-top: 50px;
+    margin-right: 50px;
+    font-weight: bold;
+}
+.footerwrap .left img{
+    width: 100px;
+    height: 200px;
+    margin-right: 30px;
+}
+.footerimg {
+    display: inline;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    
+}
