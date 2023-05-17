@@ -1,3 +1,7 @@
+#main {
+    width: 100%;
+    overflow: hidden;
+}
 /* header */
 #header {
     position: absolute;
@@ -219,6 +223,35 @@
 .parallax__dot li.active a {
     transform: scale(0.5);
     /* text-indent: 0; */
+}
+.parallax__top {
+    position: fixed;
+    right: -200px;
+    bottom: 20px;
+    z-index: 1000;
+    transition: all 0.5s;
+}
+.parallax__top.show {
+    right: 20px;
+    bottom: 20px;
+}
+.parallax__top a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.5s;
+
+}
+.parallax__top a:hover {
+    background-color: #000;
+    color: #fff;
 }
 
 @media (max-width: 1200px) {
