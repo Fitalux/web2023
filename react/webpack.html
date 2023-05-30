@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="webstoryboy">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, css3, html, markup, design, Webstoryboy">
+    <title>Fiat lux |  WebPack</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/docs.min.css" rel="stylesheet">
+    <link href="../assets/css/prism.css" rel="stylesheet">
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../assets/ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../assets/ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../assets/ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../assets/ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/ico/favicon-16x16.png">
+    <link rel="manifest" href="../assets/ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="../assets/ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#FFFFFF">
+
+    <!-- Facebook meta tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Fiat lux" />
+    <meta property="og:url" content="http://fiatlux.dothome.co.kr/" />
+    <meta property="og:image" content="http://fiatlux.dothome.co.kr/assets/ico/icon01.jpg" />
+    <meta property="og:site_name" content="Fiat lux" />
+    <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
+
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="#" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
+    <meta property="twitter:image" content="#" />
+
+    <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <a class="sr-only" href="#content">Skip to main content</a>
+    <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">FITA LUX &lt;/doc&gt;</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://fitalux.tistory.com/">Blog</a></li>
+                    <li><a href="https://fitalux.github.io/web2023/">Github</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="bs-header bgs1" id="content">
+        <div class="container">
+            <h1>WebPack v1.0 &lt;/doc&gt;</h1>
+            <p><a href="https://fitalux.github.io/web2023/" target="_blank">FITA LUX</a></p>
+        </div>
+    </div>
+    <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-9">
+                <h2 class="page-header">WebPack</h2>
+
+                <div class="bs-docs-section">
+                    <h3 id="intro1" class="page-header">1. WebPack</h3>
+                    <p class="lead">
+                        모듈 번들러(module bundler)로서 JavaScript 애플리케이션을 위한 정적 모듈들을 번들링하는 도구입니다.
+                    </p>
+                    <p>
+                        웹 애플리케이션에서는 여러 개의 JavaScript 파일과 CSS, 이미지 등 다양한 종류의 파일들이 사용될 수 있습니다. 
+                        이러한 파일들을 개별적으로 로드하면 네트워크 요청이 증가하고, 애플리케이션의 로딩 시간이 길어질 수 있습니다. 
+                        이를 개선하기 위해 Webpack은 의존성 그래프(dependency graph)를 생성하여 애플리케이션에서 필요한 모든 모듈을 식별하고, 
+                        이를 하나의 번들(bundle)로 묶어줍니다.
+                    </p>
+
+                    <!-- <span class="label label-default">Default</span>
+                    <span class="label label-primary">Primary</span>
+                    <span class="label label-success">Success</span>
+                    <span class="label label-info">Info</span>
+                    <span class="label label-warning">Warning</span>
+                    <span class="label label-danger">Danger</span>
+
+                    <div class="alert alert-success" role="alert">...</div>
+                    <div class="alert alert-info" role="alert">...</div>
+                    <div class="alert alert-warning" role="alert">...</div>
+                    <div class="alert alert-danger" role="alert">...</div> -->
+                </div>  
+                <!-- //intro1 -->
+
+                <div class="bs-docs-section">
+                    <h3 id="intro2" class="page-header">2. WEBPACK 설치</h3>
+                    <h4 id="intro2-1" class="page-header">2-1.  Node.js 설치</h4>
+                    <div class="bs-callout bs-callout-info">
+                        Node.js 설치 <br>
+                        <a href="https://nodejs.org/ko" target="_blank">https://nodejs.org/ko</a>
+                    </div>
+                    <p>
+                        WEBPACK을 사용하려면 먼저 Node.js를 설치해야 합니다. <br>
+                        Node.js는 JavaScript 런타임 환경으로, React 애플리케이션을 실행하고 개발하는 데 필요합니다. <br>
+                        Node.js를 설치하면 npm(Node Package Manager)도 함께 설치됩니다. <br>
+                        npm은 React를 비롯한 다양한 자바스크립트 패키지를 관리하는 도구입니다.
+                    </p>
+
+            <h4 id="intro2-2" class="page-header">2-2. npm 초기화</h4>
+        <pre><code class="language-js">
+            {
+                "name": "webpack",
+                "version": "1.0.0",
+                "description": "",
+                "main": "index.js",
+                "scripts": {
+                  "test": "echo \"Error: no test specified\" && exit 1"
+                },
+                "keywords": [],
+                "author": "",
+                "license": "ISC",
+                "devDependencies": {
+                  "webpack": "^5.83.1",
+                  "webpack-cli": "^5.1.1"
+                }
+              }
+        </code></pre>
+
+            <h4 id="intro2-3" class="page-header">2-3. WEBPACK 설치</h4>
+    <pre><code class="language-js"> npm install webpack webpack-cli --save-dev
+        added 117 packages, and audited 118 packages in 13s
+
+        15 packages are looking for funding
+        run `npm fund` for details
+
+        found 0 vulnerabilities
+    </code></pre>
+
+            <h4 id="intro2-4" class="page-header">2-4. WEBPACK cinfig.js 설정</h4>
+            <p class="lead"><code>npx webpack</code>을 작성하면, 파일이 번들링 됩니다.</p>
+    <pre><code class="language-js"> 
+        const path = require('path');
+
+        module.exports = {
+            mode: 'production', //production, development
+            entry: {
+                index: './src/index.js'
+            },
+            output: {
+                path: path.resolve(__dirname, 'public'),
+                filename: 'js/[name].js'
+            }
+        }
+    </code></pre>
+
+            <h4 id="intro2-5" class="page-header">2-5. webpack-dev-server 설정</h4>
+            <p class="lead"><code>npm install webpack-dev-server --save-dev</code></p>
+    <pre><code class="language-js"> 
+        {
+            "name": "webpack",
+            "version": "1.0.0",
+            "description": "",
+            "main": "index.js",
+            "scripts": {
+              "test": "echo \"Error: no test specified\" && exit 1"
+            },
+            "keywords": [],
+            "author": "",
+            "license": "ISC",
+            "devDependencies": {
+              "webpack": "^5.83.1",
+              "webpack-cli": "^5.1.1",
+              "webpack-dev-server": "^4.15.0"
+            }
+          }
+          
+    </code></pre>
+
+            <h4 id="intro2-6" class="page-header">2-6. html 번들러 설정</h4>
+            <p class="lead"><code>npm install html-webpack-plugin --save-dev</code></p>
+    <pre><code class="language-js"> 
+        "devDependencies": {
+            "html-webpack-plugin": "^5.5.1",
+            "webpack": "^5.83.1",
+            "webpack-cli": "^5.1.1",
+            "webpack-dev-server": "^4.15.0"
+          }
+    </code></pre>
+
+            <h4 id="intro2-6" class="page-header">2-7. css 번들러 설정</h4>
+            <p class="lead"><code>npm install --save-dev style-loader css-loader</code></p>
+    <pre><code class="language-js"> 
+        "devDependencies": {
+            "html-webpack-plugin": "^5.5.1",
+            "webpack": "^5.83.1",
+            "webpack-cli": "^5.1.1",
+            "webpack-dev-server": "^4.15.0"
+          }
+    </code></pre>
+                </div>
+
+                <!-- //intro2 -->
+
+                <div class="bs-docs-section">
+                    <h3 id="intro3" class="page-header">3. Vite</h3>
+                    <p>현대적인 웹 개발을 위한 빠른 속도와 간단한 설정을 제공하는 웹 개발 도구입니다. 
+                        Vite는 프로젝트를 위해 빠르게 개발 서버를 설정하고, 빌드를 수행하며, 효율적인 개발 환경을 제공합니다.</p>
+                    <h4 id="intro3-1" class="page-header">3-1. </h4>
+<pre><code class="language-js">
+   
+</code></pre>
+                    <h4 id="intro3-2" class="page-header">3-2. JSX</h4>
+                     <div class="bs-callout bs-callout-info"> 
+                       </div>
+<pre><code class="language-js">
+    
+</code></pre>
+
+                        <h4 id="intro3-3" class="page-header">3-3. 객체와 함수 사용</h4>
+                        <div class="bs-callout bs-callout-info">
+                            객체와 함수를 같이 사용
+                        </div>         
+<pre><code class="language-js">
+   
+</code></pre>
+
+
+                        <h4 id="intro3-4" class="page-header">3-4. 렌더링</h4>
+<pre><code class="language-js">
+function clock(){
+const element = (
+<div>
+<div>Hello, fitalux</div>
+<h2>지금은 {new Date().toLocaleDateString()} 입니다.</h2>
+</div>
+);
+
+ReactDOM.render(element, document.getElementById('root'));
+}
+
+export default clock
+//지금은 23. 05. 08.입니다
+</code></pre>
+                </div>
+                <!-- //intro3 -->
+
+                <div class="bs-docs-section">
+                    <h3 id="intro4" class="page-header">4. React 컴포넌트 (함수형)</h3>
+                    <div class="bs-callout bs-callout-info">
+                        함수형 컴포넌트는 JavaScript 함수로 작성되며, React 컴포넌트를 반환합니다. <br>
+                        함수형 컴포넌트는 단순하고 간결하며, 최신 버전의 React에서는 훅(Hook)을 사용하여 <br>
+                        상태 및 다른 React 기능을 활용할 수 있습니다. <br>
+                    </div>
+<pre><code class="language-js">
+    import React from 'react'
+    import ReactDom from 'react-dom';
+
+    function Hello() {
+        return &lt;h1&gt;Hello, fita lux&lt;/h1&gt;
+    }
+    const element = &lt;Hello /&gt;;
+
+    ReactDom.render(element, document.getElementById('root'));
+
+    export default Hello
+</code></pre>
+
+                    <h4 id="intro4-1" class="page-header">4-1. 두 개의 함수형 컴포넌트 사용</h4>
+                     <div class="bs-callout bs-callout-info"> 
+                        Welcome과 App이라는 두 개의 컴포넌트를 사용하여 화면에 여러 개의 welcome과 이름을 렌더링하는 간단한 React를 구현한 것입니다.<br>
+                        각각의 Welcome 컴포넌트는 name 속성을 받아와서 해당 이름을 포함한 welcome을 출력합니다. <br>
+                        App 컴포넌트에서는 Welcome 컴포넌트를 여러 번 사용하여 세 가지 다른 이름에 대한 welcome을 출력합니다.
+                    </div>
+<pre><code class="language-js">
+    import React from 'react';
+    import ReactDom from 'react-dom/client';
+
+    function Welcome(props) {                           //Welcome이라는 함수형 컴포넌트는 props를 매개변수로 받아와서 이름(name)을 사용하여 welcome을 반환합니다.
+    return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;
+    }
+
+    function App (){                                    //App이라는 함수형 컴포넌트는 Welcome 컴포넌트를 세 번 사용하여 세 가지 다른 이름을 가진 welcome을 반환합니다.
+    return (
+        &lt;div&gt;
+        &lt;Welcome name = "fita lux" /&gt;
+        &lt;Welcome name = "Fita Lux" /&gt;
+        &lt;Welcome name = "FITA LUX" /&gt;
+        &lt;/div&gt;
+    )
+    }
+
+    const root = ReactDom.createRoot(document.getElementById('root'));
+    root.render(&lt;App /&gt;);
+</code></pre>
+                </div>
+                <!-- intro4 -->
+
+                <div class="bs-docs-section">
+                    <h3 id="intro5" class="page-header">5. props (속성)</h3>
+                    <div class="bs-callout bs-callout-info">
+                        props(속성)는 React 컴포넌트로 전달되는 읽기 전용 데이터이며, <br>
+                        부모 컴포넌트가 자식 컴포넌트에게 데이터를 전달할 때 사용됩니다. <br>
+                        props는 컴포넌트 내부에서 변경할 수 없으며, 컴포넌트의 상태(state)와 다릅니다. <br>
+                        부모 컴포넌트에서 자식 컴포넌트로 데이터를 전달할 때, <br>
+                        부모 컴포넌트에서 전달된 데이터는 자식 컴포넌트의 props 객체로 접근할 수 있습니다. <br>
+                        props 객체는 컴포넌트 함수나 클래스의 인자로 전달되며, 키-값 쌍의 형태로 데이터를 포함합니다. <br>
+                        자식 컴포넌트에서는 props 객체를 사용하여 전달받은 속성에 접근할 수 있습니다. <br>
+                        props는 컴포넌트 간 데이터 흐름을 가능하게 하며, 컴포넌트의 재사용성을 높이는 데 도움을 줍니다.  <br>
+                        부모 컴포넌트에서 자식 컴포넌트로 다양한 종류의 데이터를 전달할 수 있으며, <br>
+                        자식 컴포넌트는 props를 활용하여 전달받은 데이터를 화면에 렌더링하거나 다른 작업에 활용할 수 있습니다. <br>
+                    </div>
+<pre><code class="language-js">
+    import React from 'react';
+    import ReactDom from 'react-dom/client';
+
+    function Hello(props) {
+    return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;
+    }
+
+    const element = &lt;Hello name = "fita lux" /&gt;;
+
+    const root = ReactDom.createRoot(document.getElementById('root'));
+    root.render(element);
+</code></pre>
+                </div>
+                <!-- intro5 -->
+
+            </div>
+            <!-- col-md-9 -->
+
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix-top" role="complementary">
+                    <ul class="nav bs-sidenav">
+                        <li class="active"><a href="#intro1">1. WEBPACK</a></li>
+                        <li><a href="#intro2">2. WEBPACK 설치</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro2-1">2 - 1. Node.js 설치</a></li>
+                                <li><a href="#intro2-2">2 - 2. npm 초기화</a></li>
+                                <li><a href="#intro2-3">2 - 3. WEBPACK 설치</a></li>
+                                <li><a href="#intro2-4">2 - 4. WEBPACK cinfig.js 설정</a></li>
+                                <li><a href="#intro2-5">2 - 5. webpack-dev-server 설정</a></li>
+                                <li><a href="#intro2-6">2 - 6. html 번들러 설정</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro3">3. WEBPACK 기본</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro3-1">출력</a></li>
+                                <li><a href="#intro3-2">JSX</a></li>
+                                <li><a href="#intro3-3">객체와 함수 사용</a></li>
+                                <li><a href="#intro3-4">렌더링</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro4">4. React 컴포넌트 (함수형)</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro4-1">4-1. 컴포넌트 (두 개의 함수형 컴포넌트 사용)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro5">5. props (속성)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- col-md-3 -->
+
+        </div>
+        <!-- //row -->
+
+    </div>
+    <!-- //container -->
+
+    <!-- Footer -->
+    <footer class="bs-footer" role="contentinfo">
+        <div class="container">
+            <ul class="footer-links muted">
+                <li><a href="https://fitalux.github.io/web2023/">FITA LUX</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- //Footer -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/docs.min.js"></script>
+    <script src="../assets/js/prism.js"></script>
+</body>
+</html>
