@@ -3,20 +3,20 @@
 }
 
 .slider__inner {
-
-    .slider__img{
+    position: relative;
+    .slider__img {
         
         .slider {
 
             .text {
-                h3{
+                h3 {
                     font-size: 110px;
                     font-weight: 800;
                     text-transform: uppercase;
                     line-height: 1;
                     margin-bottom: 40px;
                 }
-                p{
+                p {
                     font-size: 24px;
                     line-height: 1.3;
                     margin-bottom: 50px;
@@ -26,7 +26,7 @@
                 }
             }
     
-            .img{
+            .img {
                 position: absolute;
                 right: 0;
                 top: -120px;
@@ -34,11 +34,14 @@
                 height: 600px;
                 background-image: url(../../images/Circle.jpg);
                 background-size: cover;
+                background-position: center;
 
-                img {
+               img {
                     &:nth-child(1) {
                         position: absolute;
                         width: 300px;
+                        left: -30px;
+                        transform: rotate(-25deg);
                     }
                     &:nth-child(2) {
                         position: absolute;
@@ -52,7 +55,7 @@
                         bottom: 0;
                         left: 30px;
                     }
-                }
+               }
             }
     
             .circle{
@@ -105,24 +108,25 @@
     .slider__btn{
         > a {
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 23px;
+            width: 25px;
             height: 40px;
+            top: 50%;
             background-repeat: no-repeat;
+            background-position: center;
+            transform: translateY(-50%);
         }
         .left {
             left: 30px;
-            background-image: url(../../images/slider__left.jpg);
+            background-image: url(../../images/slider__left.png);
         }
 
         .right {
             right: 30px;
-            background-image: url(../../images/slider__right.jpg);
+            background-image: url(../../images/slider__right.png);
         }
     }
 
-    .slider__dot{
+    .slider__dot {
         position: absolute;
         left: 50%;
         bottom: -70px;
@@ -132,14 +136,19 @@
                 display: inline-block;
                 width: 20px;
                 height: 20px;
-                background-color: #4857EC;
                 border-radius: 50%;
                 margin: 0 5px;
                 border: 5px solid transparent;
-
+                background-color: #4857EC;
+                box-shadow: 0 0 0 5px #4857EC transparent;
+                transition: all 0.5s;
                 &.active {
                     box-shadow: 0 0 0 5px #4857EC;
-                    border-color: transparent;
+                    border-width: 4px;
+                    background-color: #fff;
+                }
+                &:hover {
+                    transform: scale(1.2);
                 }
             }
     }

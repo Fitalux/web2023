@@ -1,20 +1,108 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ParallaxEffect 06</title>
-
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/Parallax.css">
+    <title>ParallaxEffect 07</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/Parallax.css">
     <style>
-        
-    </style>
+        .reveal > div,
+        .reveal > span {
+            opacity: 0;
+        }
+        .reveal.show > div,
+        .reveal.show > span {
+            animation: opacity 1s linear forwards;
+        }
+        .reveal {
+            position: relative;
+        }
+        .reveal::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background-color: #fff;
+            z-index: 1;
+        }
+        .reveal.reveal-TWO::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            z-index: 1;
+            background-color: cornflowerblue;
+        }
+        /* before animation (1개)*/
+        .reveal.show::before {
+            animation:  reveal 1s cubic-bezier(0, 0.78, 0.58, 1);
+        }
+        .reveal.reveal-RTL.show::before {
+            animation:  reveal-RTL  1s cubic-bezier(0, 0.78, 0.58, 1);
+        }
+        .reveal.reveal-TTB.show::before {
+            animation: reveal-TTB 1s cubic-bezier(0, 0.78, 0.58, 1);
+        }
+        .reveal.reveal-BTT.show::before {
+            animation: reveal-BTT 1s cubic-bezier(0, 0.78, 0.58, 1);
+        }
+        /*before,after (2개) */
+        .reveal.show::after {
+            animation:  reveal 1s 0.5s cubic-bezier(0, 0.78, 0.58, 1);
+        }
+        .reveal.reveal-RTL.show::after {
+            animation:  reveal-RTL  1s 0.5s cubic-bezier(0, 0.78, 0.58, 1);
+        }
+        .reveal.reveal-TTB.show::after {
+            animation: reveal-TTB 1s 0.5s cubic-bezier(0, 0.78, 0.58, 1);
+        }
+        .reveal.reveal-BTT.show::after {
+            animation: reveal-BTT 1s 0.5s cubic-bezier(0, 0.78, 0.58, 1);
+        }
+        /* animation */
+        @keyframes opacity {
+            0%          {opacity: 0;}
+            60%         {opacity: 0;}
+            70%         {opacity: 1;}
+            100%        {opacity: 1;}
+        }
+        @keyframes reveal {
+            0%      {width: 0;      left: 0;}
+            50%     {width: 100%;   left: 0;}
+            80%     {width: 100%;   left: 0;}
+            100%    {width: 0;      left: 100%;}
+        }
+        @keyframes reveal-RTL {
+            0%      {width: 0;      left: auto;  right: 0;}
+            50%     {width: 100%;   left: auto;  right: 0;}
+            80%     {width: 100%;   left: auto;  right: 0;}
+            100%    {width: 0;      left: auto;  right: 100%;}
+        }
+        @keyframes reveal-TTB {
+            0%   {width: 100%; height: 0;    top: 0;}
+            50%  {width: 100%; height: 100%; top: 0;}
+            80%  {width: 100%; height: 100%; top: 0;}
+            100% {width: 100%; height: 0;    top: 100%;}
+        }
+        @keyframes reveal-BTT {
+            0%   {width: 100%; height: 0;    bottom:0;    top: auto;}
+            50%  {width: 100%; height: 100%; bottom:0;    top: auto;}
+            80%  {width: 100%; height: 100%; bottom:0;    top: auto;}
+            100% {width: 100%; height: 0;    bottom:100%; top: auto;}
+        }
+        .parallax__item__num,
+        .parallax__item__title {
+            display: none;
+        }
+</style>
 </head>
-
-
+<body class="img07 bg07 font07">
     <header id="header">
         <h1>Javascript Parallax Effect07</h1>
         <p>패럴렉스 이펙트 : 리빌 효과</p>
@@ -29,106 +117,9 @@
             <li><a href="parallaxEffect08.html">8</a></li>
             <li><a href="parallaxEffect09.html">9</a></li>
             <li><a href="parallaxEffect10.html">10</a></li>
-
         </ul>
-        <style>
-            .reveal > div,
-            .reveal > span {
-                opacity: 0;
-            }
-            .reveal.show > div,
-            .reveal.show > span {
-                animation: opacity 1s linear forwards;
-            }
-            .reveal {
-                position: relative;
-            }
-            .reveal::before {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 0;
-                height: 100%;
-                background-color: #fff;
-                z-index: 1;
-            }
-            .reveal.reveal-TWO::after {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 0;
-                height: 100%;
-                z-index: 1;
-                background-color: cornflowerblue;
-            }
-            /* before animation (1개)*/
-            .reveal.show::before {
-                animation:  reveal 1s cubic-bezier(0, 0.78, 0.58, 1);
-            }
-            .reveal.reveal-RTL.show::before {
-                animation:  reveal-RTL  1s cubic-bezier(0, 0.78, 0.58, 1);
-            }
-            .reveal.reveal-TTB.show::before {
-                animation: reveal-TTB 1s cubic-bezier(0, 0.78, 0.58, 1);
-            }
-            .reveal.reveal-BTT.show::before {
-                animation: reveal-BTT 1s cubic-bezier(0, 0.78, 0.58, 1);
-            }
-            /*before,after (2개) */
-            .reveal.show::after {
-                animation:  reveal 1s 0.5s cubic-bezier(0, 0.78, 0.58, 1);
-            }
-            .reveal.reveal-RTL.show::after {
-                animation:  reveal-RTL  1s 0.5s cubic-bezier(0, 0.78, 0.58, 1);
-            }
-            .reveal.reveal-TTB.show::after {
-                animation: reveal-TTB 1s 0.5s cubic-bezier(0, 0.78, 0.58, 1);
-            }
-            .reveal.reveal-BTT.show::after {
-                animation: reveal-BTT 1s 0.5s cubic-bezier(0, 0.78, 0.58, 1);
-            }
-            /* animation */
-            @keyframes opacity {
-                0%          {opacity: 0;}
-                60%         {opacity: 0;}
-                70%         {opacity: 1;}
-                100%        {opacity: 1;}
-            }
-            @keyframes reveal {
-                0%      {width: 0;      left: 0;}
-                50%     {width: 100%;   left: 0;}
-                80%     {width: 100%;   left: 0;}
-                100%    {width: 0;      left: 100%;}
-            }
-            @keyframes reveal-RTL {
-                0%      {width: 0;      left: auto;  right: 0;}
-                50%     {width: 100%;   left: auto;  right: 0;}
-                80%     {width: 100%;   left: auto;  right: 0;}
-                100%    {width: 0;      left: auto;  right: 100%;}
-            }
-            @keyframes reveal-TTB {
-                0%   {width: 100%; height: 0;    top: 0;}
-                50%  {width: 100%; height: 100%; top: 0;}
-                80%  {width: 100%; height: 100%; top: 0;}
-                100% {width: 100%; height: 0;    top: 100%;}
-            }
-            @keyframes reveal-BTT {
-                0%   {width: 100%; height: 0;    bottom:0;    top: auto;}
-                50%  {width: 100%; height: 100%; bottom:0;    top: auto;}
-                80%  {width: 100%; height: 100%; bottom:0;    top: auto;}
-                100% {width: 100%; height: 0;    bottom:100%; top: auto;}
-            }
-            .parallax__item__num,
-            .parallax__item__title {
-                display: none;
-            }
-    </style>
     </header>
     <!-- header -->
-
-<body class="img07 bg07 font07">
     <main id="main">
         <div class="parallax__wrap">
            <section id="section1" class="parallax__item">
