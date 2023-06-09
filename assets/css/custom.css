@@ -52,8 +52,10 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 /* Header  */
 
 #header{
+	position: relative;
 	background:#a5d5fa center 57px;
 	padding: 10px 0 10px 0px;
+	height: 700px;
 }
 #header.sub {
 	background:url(../img/header_bg.png) center 7px;
@@ -77,7 +79,7 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 #header h1{
 	color: #fff;
 	margin-bottom: 0px;
-	margin-top: 20px;
+	margin-top: 460px;
 	font-weight: 500;
     font-family: 'Fredoka One', cursive;
 }

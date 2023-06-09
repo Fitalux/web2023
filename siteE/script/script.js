@@ -25,7 +25,7 @@ $(function(){
         $(this).find(".submenu").stop().slideUp();
     });
 
-    //팝업
+    //팝업창
     $(".popup-btn").click(function(){
         $(".popup-view").show();
     });

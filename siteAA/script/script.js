@@ -28,7 +28,7 @@ $(document).ready(function() {
 
     }, 3000);
 
-    //탭
+    //탭메뉴
     const tabBtn = $(".info-menu > a");
     const tabCont = $(".info-cont > ul");
     tabBtn.hide().eq(0).show();
