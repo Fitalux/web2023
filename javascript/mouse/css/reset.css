@@ -1,6 +1,6 @@
 @import url('https://webfontworld.github.io/vitro/VitroCore.css');
 @import url('https://webfontworld.github.io/mapo/MapoDPP.css');
-@import url('https://webfontworld.github.io/haenam/haenam.css');
+@import url('https://webfontworld.github.io/elice/EliceDigitalBaeum.css');
 @import url('https://webfontworld.github.io/TheJamsil/TheJamsil.css');
 @import url('https://webfontworld.github.io/yangjin/YangJin.css');
 @import url('https://webfontworld.github.io/tmon/Tmon.css');
@@ -10,30 +10,43 @@
 @import url('https://webfontworld.github.io/nhn/Godo.css');
 
 /* reset */
-*{
+* {
     margin: 0;
     padding: 0;
     color: #fff;
 }
-*, 
-*::before, 
+
+*,
+*::before,
 *::after {
     box-sizing: border-box;
 }
+
 a {
     text-decoration: none;
     color: #222;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: normal;
 }
-li, ul , ol {
+
+li,
+ul,
+ol {
     list-style: none;
 }
+
 img {
     vertical-align: top;
     width: 100%;
 }
+
 em {
     font-style: normal;
 }

@@ -44,7 +44,7 @@ function SliderSection (props){
                 <a href="/" className="dot"><span className="ir">이미지 3</span></a>
             </div>
         </div>
-    </section>
+        </section>
     );
 }
 

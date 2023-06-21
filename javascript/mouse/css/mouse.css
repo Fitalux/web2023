@@ -5,36 +5,47 @@ body {
     background-position: center center;
     background-size: cover;
 }
+
 body.img01 {
     background-image: url(../img/mouseEffect01-min.jpg);
 }
+
 body.img02 {
     background-image: url(../img/mouseEffect02-min.jpg);
 }
+
 body.img03 {
     background-image: url(../img/mouseEffect03-min.jpg);
 }
+
 body.img04 {
     background-image: url(../img/mouseEffect04-min.jpg);
 }
+
 body.img05 {
     background-image: url(../img/mouseEffect05-min.jpg);
 }
+
 body.img06 {
     background-image: url(../img/mouseEffect06-min.jpg);
 }
+
 body.img07 {
     background-image: url(../img/mouseEffect07-min.jpg);
 }
+
 body.img08 {
     background-image: url(../img/mouseEffect08-min.jpg);
 }
+
 body.img09 {
     background-image: url(../img/mouseEffect09-min.jpg);
 }
+
 body.img10 {
     background-image: url(../img/mouseEffect10-min.jpg);
 }
+
 body::after {
     content: ' ';
     position: absolute;
@@ -45,66 +56,87 @@ body::after {
     background: rgba(211, 147, 245, 0.37);
     z-index: -1;
 }
+
 body.bg01::after {
     background: rgba(56, 54, 54, 0.37);
 }
+
 body.bg02::after {
     background: rgba(158, 186, 250, 0.37);
 }
+
 body.bg03::after {
-    background:  rgba(221, 188, 239, 0.8);
+    background: rgba(221, 188, 239, 0.8);
 }
+
 body.bg04::after {
     background: rgba(242, 174, 155, 0.37);
 }
+
 body.bg05::after {
     background: rgba(244, 158, 250, 0.37);
 }
+
 body.bg06::after {
     background: rgba(6, 234, 242, 0.37);
 }
+
 body.bg07::after {
     background: rgba(165, 155, 253, 0.37);
 }
+
 body.bg08::after {
     background: rgba(21, 240, 192, 0.37);
 }
+
 body.bg09::after {
     background: rgba(27, 13, 120, 0.37);
 }
+
 body.bg10::after {
     background: rgba(122, 6, 247, 0.37);
 }
-body.font01{
-    font-family: 'VitroCore';   
+
+body.font01 {
+    font-family: 'VitroCore';
 }
-body.font02{
-    font-family: 'MapoDPP';   
+
+body.font02 {
+    font-family: 'MapoDPP';
 }
-body.font03{
-    font-family: 'haenam';   
+
+body.font03 {
+    font-family: 'EliceDigitalBaeum';
 }
-body.font04{
-    font-family: 'TheJamsil';  
+
+body.font04 {
+    font-family: 'TheJamsil';
 }
-body.font05{
+
+body.font05 {
     font-family: 'YangJin';
 }
-body.font06{
+
+body.font06 {
     font-family: 'Tmon';
 }
-body.font07{
-    font-family: 'DalseoDarling';  
+
+body.font07 {
+    font-family: 'DalseoDarling';
 }
-body.font08{
-    font-family: 'busan';  
+
+body.font08 {
+    font-family: 'busan';
 }
-body.font09{
+
+body.font09 {
     font-family: 'KOHIBaeum';
 }
-body.font10{
-    font-family: 'Godo';  
+
+body.font10 {
+    font-family: 'Godo';
 }
+
 /* header */
 #header {
     padding: 20px;
@@ -112,18 +144,23 @@ body.font10{
     left: 0;
     top: 0;
 }
+
 #header h1 {
     margin-bottom: 10px;
 }
+
 #header a {
     color: #fff;
 }
+
 #header p {
     margin-bottom: 10px;
 }
+
 #header li {
     display: inline-block;
 }
+
 #header li a {
     border: 1px solid #fff;
     width: 30px;
@@ -131,10 +168,12 @@ body.font10{
     display: inline-block;
     color: #fff;
 }
-#header li.active a{
+
+#header li.active a {
     background-color: #fff;
     color: #000;
 }
+
 /* footer */
 #footer {
     position: absolute;
@@ -142,6 +181,7 @@ body.font10{
     bottom: 0;
     padding: 20px;
 }
+
 #footer a {
     color: #fff;
 }

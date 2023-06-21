@@ -53,7 +53,7 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 
 #header{
 	position: relative;
-	background:#a5d5fa center 57px;
+	background:rgba(22, 0, 112, 0.6) center 57px;
 	padding: 10px 0 10px 0px;
 	height: 700px;
 }
